@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% for post in site.posts %}
+    {% if forloop.first %}
+        <div id="latest-post" class="content">
+            <h2>Latest Post</h2>
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <h4>Posted on {{ post.date | date_to_string }}</h4>
+            <p>{{ post.excerpt }}</p>
+            <p><a href="{{ post.url }}">Read Full Text &raquo;</a></p>
+        </div>
+    {% endif %}
+
+    {% if forloop.index0 == 1 %}
+        <div id="prev-post" class="content">
+            <h2>Previous Posts</h2>
+            <table>
+    {% endif %}
+
+    {% if forloop.index0 > 0 and forloop.index0 < 11 %}
+                <tr>
+                    <td>{{ post.date || date_to_string }}</td>
+                    <td>&raquo; <a href="{{ post.url }}">{{ post.title }}</a></td>
+                </tr>
+
+    {% endif %}
+
+    {% if forloop.index0 == 11 %}
+            </table>
+            <p><a href="/archives.html">See Entire Archive &raquo;</a></p>
+        </div>
+    {% endif %}
+{% endfor %}

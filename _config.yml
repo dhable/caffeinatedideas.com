@@ -1,0 +1,8 @@
+name: caffeinatedideas.com
+description: Sleep deprived thoughts of a Seattle software engineer
+url: http://caffeinatedideas.com
+
+timezone: America/Los_Angeles
+future: false
+lsi: false
+excerpt_separator: <!--EndExcerpt-->
