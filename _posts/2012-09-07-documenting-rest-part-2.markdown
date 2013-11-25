@@ -23,7 +23,18 @@ This was my first challenge with Clojure. How was I going to create a class in
 Clojure that extended from a Java class? Turns out that Clojure contains a function 
 called gen-class that would enable me to define exactly that.
 
-{% gist 6005120 %}
+{% prism clojure %}
+(gen-class
+  :name restdoc.core.RestDoclet
+    :extends com.sun.javadoc.Doclet
+    :prefix RestDoclet-
+    :methods [\#^{:static true}[start [com.sun.javadoc.RootDoc] boolean]])
+ 
+(defn RestDoclet-start
+    [root]
+    (process-doc-tree root)
+    true)
+{% endprism %}
 
 The parameters to gen-class define all the metadata about the construction of your 
 class. Most of the attributes are fairly obvious with a few points:
@@ -47,7 +58,7 @@ that makes a single JAR file with all resulting bytecode, the Clojure run time a
 dependencies that you might use. With the uberjar in hand, I could then patch the JAR file 
 into maven using:
 
-{% prism xml %}
+{% prism markup %}
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-javadoc-plugin</artifactId>
@@ -69,14 +80,58 @@ or com.sun.javadoc.RootDoc. Processing the document is now a nice recursive prob
 suited for Clojure. Let's start with a function that outputs our markdown format for this 
 RootDoc node.
 
-{% gist 6005125 %}
+{% prism clojure %}
+(defn generate-doc
+  "Given a JavaDoc ClassDoc object, generate the RestDoc output based on the defined
+   information."
+  [doc-filename content]
+  (let [doc-header (str "Rest API" new-line "======================" new-line "Document Version: " (get-version 'restdoc))
+        generated-on (str "Document Generated: " (time/format-local-time (time/local-now) :date))
+        full-doc (str doc-header new-line generated-on section-break content)]
+    (spit doc-filename full-doc))
+    true)
+{% endprism %}
 
 A full document is composed of the document header, when the document was generated and 
 the contents. After breaking down the problem into smaller chunks we can turn our attention 
 to what the contents should look like. Again, we can build a function that detect when a 
 method is annotated with the correct @restdoc tags and generates our output.
 
-{% gist 6005129 %}
+{% prism clojure %}
+(defn restdoc-comment?
+  "Determine if this method comment block meets the criteria for inclusion in the
+   output document. To be included, it must have a method defined and an enpoint.
+   Parameters are optional."
+  [method-doc]
+  (let [tags (.tags method-doc)
+      method-match-fn (fn [tag] (= (.name tag) "@restdoc.endpoint.method"))
+      endpoint-match-fn (fn [tag] (= (.name tag) "@restdoc.endpoint"))
+      method-tags (filter-restdoc-tags tags method-match-fn)
+      endpoint-tags (filter-restdoc-tags tags endpoint-match-fn)]
+    (and (seq endpoint-tags) (seq method-tags))))
+ 
+ 
+(defn format-method-doc
+  "Given a MethodDoc object, return a formatted string with the REST API document 
+   elements. If the MethodDoc object is related to a comment block that doesn't
+   contain the minimum number of document elements it will result in an empty string."
+  [method-doc]
+  (if (restdoc-comment? method-doc)
+    (let [method-match-fn (fn [tag] (= (.name tag) "@restdoc.endpoint.method"))
+        endpoint-match-fn (fn [tag] (= (.name tag) "@restdoc.endpoint"))
+        param-match-fn (fn [tag] (= (.name tag) "@restdoc.endpoint.param"))
+        tags (.tags method-doc)
+        method-tag (first (filter-restdoc-tags tags method-match-fn))
+        endpoint-tag (first (filter-restdoc-tags tags endpoint-match-fn))
+        param-tags (filter-restdoc-tags tags param-match-fn)
+        heading-text (format-section-heading method-tag endpoint-tag)
+        comment-text (.commentText method-doc)
+        parameter-text (format-parameter-list param-tags)]
+      (str heading-text new-line
+         comment-text new-line
+         parameter-text new-line))
+      ""))
+{% endprism %}
 
 The nice part of using Clojure was that the problem continues to break down from a 
 very large task, generating the entire document, into smaller and more manageable pieces 

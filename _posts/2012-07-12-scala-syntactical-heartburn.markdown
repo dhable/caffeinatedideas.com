@@ -15,7 +15,7 @@ operation across all items in a list using foldLeft().
 
 We start with the syntactical sugar version first:
 
-{% prism scala %}
+{% prism java %}
 val list = List(1, 2, 3)
 val sum = (0 /: list) { (sum, i) => sum + i }
 {% endprism %}
@@ -23,7 +23,7 @@ val sum = (0 /: list) { (sum, i) => sum + i }
 The /: operator is just a shorthand notation for the function foldLeft and could be 
 written out in long form as
 
-{% prism scala %}
+{% prism java %}
 val list = List(1, 2, 3)
 val sum = list.foldLeft(0)((sum, i) => sum + i)
 {% endprism %}
@@ -42,7 +42,7 @@ just doesn't feel clean to me.
 
 Playing around on my own, I fixed my two objections by combining parts from the two
 
-{% prism scala %}
+{% prism java %}
 val list = List(1, 2, 3)
 val sum = list.foldLeft(0) { (sum, i) => sum + i }
 {% endprism %}
