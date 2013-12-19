@@ -1,9 +1,134 @@
 ---
 layout: default
 ---
-<div id="quad-view">
-    This is would be the visual view
+<style>
+.hidden {display: none;}
+#radar-details {
+    padding: 0;
+    width: 20em;
+    height: 300px;
+    overflow: scroll; }
+#radar-details h2 { margin: 0; }
+#radar-nav { 
+    border: 1px solid Black;
+    padding: 0.25em; 
+    margin-bottom: 0.25em; }
+#radar-nav:empty { display: none; }
+#radar-nav .control { 
+    font-size: 0.5em; 
+    vertical-align: text-top; }
+</style>
+
+<div class="grid grid-pad">
+    <div class="col-10-11">
+        <div id="radar-nav"></div>
+        <div id="radar"></div>
+    </div>
+
+    <div id="radar-details" class="col-4-11" style="border: 1px solid Black;">
+        <h2 class="title">&nbsp;</h2>
+        <div class="summary"></div>
+    </div>
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 <script src="/js/radar.js"></script>
+
+<script id="radarNavTemplate" type="text/x-underscore-template">
+    <span class="text">
+        <%= name %>
+    </span>
+    <span class="control">
+        <a href="javascript: void(0);" onclick="radar.returnToOverview()">[close]</a>
+    </span>
+</script>
+
+<script id="dataPointTemplate" type="text/x-underscore-template">
+    <div class="desc">
+        <h4>Description</h4>
+        <div class="content">
+            <% if(desc) { %>
+                <%= desc %>
+            <% } else { %>
+                No Description Available
+            <% } %>
+        </div>
+    </div>
+
+    <% if(typeof analysis !== 'undefined' && analysis.trim().length > 0) { %>
+        <div class="analysis">
+            <h4>Analysis</h4>
+            <div class="content">
+                <%= analysis %>
+            </div>
+        </div>
+    <% } %>
+</script>
+
+<script>
+    var sectionOpened = false,
+        pointOpened = false,
+        radarNavTemplate = _.template($("#radarNavTemplate").html()),
+        dataPointTemplate = _.template($("#dataPointTemplate").html());
+
+    function displaySection(name, desc, color) {
+        $("#radar-details .title").css("background-color", color).html(name);
+        $("#radar-details .summary").html(desc);
+    }
+
+    function clearSection() {
+        if(!openSection) {
+            $("#radar-details .title").css("background-color", "").html("&nbsp;");
+            $("#radar-details .summary").html("");
+        }
+    }
+
+    function openSection(name, color) {    
+        openSection = true;    
+        $("#radar-nav").html(radarNavTemplate({name: name}));
+        $("#radar-details .title").css("background-color", color);
+    }
+
+    function closeSection() {
+        openSection = false;
+        $("#radar-nav").html("");
+        $("#radar-details .title").css("background-color", "");
+    }
+
+    function displayDataPoint(name, desc) {
+        if(!pointOpened) {
+            $("#radar-details .title").html(name);
+            $("#radar-details .summary").html(dataPointTemplate({desc: desc}));
+        }
+    }
+
+    function clearDataPoint() {
+        if(!pointOpened) {
+            $("#radar-details .title").html("&nbsp;");
+            $("#radar-details .summary").html("");
+        }
+    }
+
+    function closeDataPoint() {
+        pointOpened = false;
+        clearDataPoint();
+    }
+
+    function openDataPoint(name, desc, analysis) {
+        pointOpened = true;
+        $("#radar-details .title").html(name);
+        $("#radar-details .summary").html(dataPointTemplate({desc: desc, analysis: analysis}));
+    }
+
+    var radar = d3Radar("#radar", "/radardata/current.json", {controlSize: 300})
+                    .on("section:display", displaySection)
+                    .on("section:clear", clearSection)
+                    .on("section:open", openSection)
+                    .on("section:close", closeSection)
+                    .on("entry:display", displayDataPoint)
+                    .on("entry:clear", clearDataPoint)
+                    .on("entry:open", openDataPoint)
+                    .on("entry:close", closeDataPoint)
+                    .render();
+</script>
