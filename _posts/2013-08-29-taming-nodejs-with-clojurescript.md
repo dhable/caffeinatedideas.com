@@ -10,7 +10,7 @@ comments: true
 In my [previous post][prev-post], I outlined a new, lighter weight approach 
 to building web applications using Clojurescript and node.js as the 
 runtime environment for the backend. The nice part of Clojurescript is that 
-it doesn't try to abstract away the host environment so all those useful 
+it doesn\'t try to abstract away the host environment so all those useful 
 node.js packages can be reused without the need to wait for someone to rewrite 
 them in Clojurescript. 
 
@@ -20,8 +20,8 @@ To start, we need to pick a framework for our web development. My personal
 preference is [restify][restify-web] since it comes out of the box with support 
 for API versioning, a static file server and handles a fair number of ReST conventions
 without any configuration. The only thing that it lacks is built in support for
-a page templating library, but this isn't important for our application. All of
-the pages in our app will be static HTML files and we'll use client side 
+a page templating library, but this isn\'t important for our application. All of
+the pages in our app will be static HTML files and we\'ll use client side 
 Clojurescript to load data and respond to the user actions.
 
 Now that we have a runtime selected, we can generate a very simple server that
@@ -62,16 +62,16 @@ the src/node/example directory.
 (set! *main-cli-fn* main)
 {% endprism %}
 
-This small block of code isn't that many lines but performs a fair about of work
+This small block of code isn\'t that many lines but performs a fair about of work
 in that limited space. The first three lines setup a namespace for our code to
 live in. They also import two very important packages from the Clojurescript - 
-the core package and the node.js specific package. We'll use those later on in
+the core package and the node.js specific package. We\'ll use those later on in
 the code.
 
 On line 5, we define an atom that contains a dictionary of users and the number
-of times they've been greeted before. By design, the Clojure language treats all
+of times they\'ve been greeted before. By design, the Clojure language treats all
 variables as immutable unless we wrap the variable in an [atom][atoms]. If we 
-wouldn't have wrapped the dictionary in an atom, the application would never 
+wouldn\'t have wrapped the dictionary in an atom, the application would never 
 change any of the values and appear broken.
 
 On line 7, we define a function that can act as a restify request handler. This
@@ -84,16 +84,16 @@ Line 17 is the function that actually creates an instance of the restify server 
 binds all the paths to their handlers. All of the global functions and variables
 in node.js are part of the cljs.nodejs module, which we imported at the top. After
 bringing in the restify module, you use the same function names that you would if
-it was Javascript. In my case, I've setup the path /greeting/:name to bind to the
+it was Javascript. In my case, I\'ve setup the path /greeting/:name to bind to the
 say-hello function. I also bind a static file server as the last handler to match
-any path that hasn't been matched. This is how I'm able to handle requests for the
+any path that hasn\'t been matched. This is how I\'m able to handle requests for the
 HTML pages with a single line of code.
 
 Finally, a main function is defined to create a restify server and start listening
 to port 3000 followed by a special Clojurescript directive that tells the compiler
 that the function named main is truly the main entry point. This does differ from
 node.js, where code at the global method of the first script is executed just like
-it's a main function. Clojurescript, unlike plain JavaScript, is keeping the house
+it\'s a main function. Clojurescript, unlike plain JavaScript, is keeping the house
 in order and places all the code in a namespace into a Google Closure namespace.
 Without telling Clojurescript where to execute on startup, the node.js application
 will create all the functions but never execute any of them.
@@ -101,10 +101,10 @@ will create all the functions but never execute any of them.
 Typing lein compile from the project root will generate a directory target/app that
 contains all of the resources from our project and a file called server.js. This is
 the Javascript that was generated from all the Clojurescript source files. It can
-be read by a human, but I wouldn't recommend it. 
+be read by a human, but I wouldn\'t recommend it. 
 
 Running the compiled output still requires some manual steps. Recall that we wrote 
-our application against restify but didn't download anything. If you were writing
+our application against restify but didn\'t download anything. If you were writing
 an app in straight node.js with Javascript, you would have created a NPM project
 file and used npm install to pull in this third party library. Well, we can do the
 same thing here. Add the following package.json file to target/app.
@@ -129,12 +129,12 @@ Now run npm install and then npm start to launch the server. The manual manageme
 of this file is a bit painful. Ideally, we would like to describe the node.js
 dependencies alongside our Leinengen project file and have a plugin generate the
 package.json definition for us. A bonus effort would also let us execute start and
-stop targets all from Leinengen. I'm thinking that this sounds like a good rainy
+stop targets all from Leinengen. I\'m thinking that this sounds like a good rainy
 day project whenever I have the time.
 
-As a comparison to Clojurescript, I've also provided the same application 
+As a comparison to Clojurescript, I\'ve also provided the same application 
 written in JavaScript to compare. In both cases, I could have used more terse
-syntax to shorten up the code but opted to leave them expanded so it's easier to
+syntax to shorten up the code but opted to leave them expanded so it\'s easier to
 compare the two.
 
 {% prism javascript %}
@@ -168,7 +168,7 @@ var web_server = create_server();
 web_server.listen(3000);
 {% endprism %}
 
-As you can see, they're not that different from each other. This begs the question, 
+As you can see, they\'re not that different from each other. This begs the question, 
 did we really gain anything by switching from JavaScript to Clojurescript? For starters,
 Clojurescript ensures that the core functions and modules [behave with the semantics][js-wat] 
 that we expect. Sure, we could leverage thrird party libraries to help in this regard but 
@@ -178,8 +178,8 @@ approach.
 The more exciting gains from Clojurescript come in the form of [core.async][core-async-web] 
 and [core.typed][core-typed-web] modules from the Clojure community. Without the need to change 
 the runtime environment or the compiler, the community is bring asynchronous, type safe 
-development to node.js. It's very compelling to be freed from nested callbacks and also have 
-the option to enforce some type correctness in my code. The best part is that it's not a hard 
+development to node.js. It\'s very compelling to be freed from nested callbacks and also have 
+the option to enforce some type correctness in my code. The best part is that it\'s not a hard 
 requirement so I can still prototype without defining types until I have a better understanding 
 of the problem domain.
 

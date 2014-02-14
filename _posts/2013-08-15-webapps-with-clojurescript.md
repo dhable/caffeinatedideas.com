@@ -27,7 +27,7 @@ compelling language for expressing what a web application involves.
 The only downside to Clojure for web applications becomes the JVM. Operationally,
 the JVM is overkill for running simple web applications that focus more on reading
 and writing data for the user. The JVM does even less when we start putting rendering
-and formatting logic into the user's browsers via Javascript in most applications.
+and formatting logic into the user\'s browsers via Javascript in most applications.
 Fortunately, node.js provides a very light weight server side solution that is tuned
 for modern web development paradigms. The setup is light weight and applications
 execute quickly thanks to the V8 Javascript engine.
@@ -47,8 +47,8 @@ engine. With automation, this process leads to a demand that can quickly ebb and
 flow with application demand - the on demand computing future.
 
 Getting started with a complete Clojurescript stack is fairly painless if you use
-the Leinengen build tool. I won't cover how to setup Leinengen since it's already
-throughly documented on its' Github page. With Leinengen installed, you'll need a
+the Leinengen build tool. I won\'t cover how to setup Leinengen since it\'s already
+throughly documented on its' Github page. With Leinengen installed, you\'ll need a
 simple project file to start with.
 
 {% prism clojure %}
@@ -72,7 +72,7 @@ simple project file to start with.
   :hooks [leiningen.cljsbuild leiningen.resource])
 {% endprism %}
 
-There looks like a lot here, but it's fairly straight forward. On lines 3 and 4,
+There looks like a lot here, but it\'s fairly straight forward. On lines 3 and 4,
 the project file brings in a few Leinengen plug-ins - one for copying resource
 files from a source location to the destination and cljsbuild to make it easier
 to integrate Clojurescript into Leinengen.
@@ -82,9 +82,9 @@ of the resource file were replaced with the name of the file. Not super helpful
 but I do know that 0.3.1 fixed this problem.
 
 Lines 6 and 7 are used to declare where the Clojurescript sources are kept relative
-to the project. You can omit these lines but I've found a few occurances where
-I'll get a failure while generating Javascript from Clojurescript that was fixed on
-the main line but the lein-cljsbuild plugin won't pick up the new version for some
+to the project. You can omit these lines but I\'ve found a few occurances where
+I\'ll get a failure while generating Javascript from Clojurescript that was fixed on
+the main line but the lein-cljsbuild plugin won\'t pick up the new version for some
 time. By putting the source in your own project, you can always pull down or patch
 the Clojurescript compiler as you need to.
 
@@ -93,8 +93,8 @@ we define two builds - one for the client side and one for the server side. When
 you compile Clojurescript into Javascript, the native output is a single file that
 contains all the cooresponding Javascript. Keeping the client side and server side
 separate will make each file smaller and prevent clients from downloading tons of
-code that won't ever be executed. There also currently seems to be a problem with
-the node.js code generation and anything but simple optimizations. YMMV, but I've
+code that won\'t ever be executed. There also currently seems to be a problem with
+the node.js code generation and anything but simple optimizations. YMMV, but I\'ve
 found simple as a sufficent optimization level for myself at this point.
 
 Lines 16 and 17 copy over all the static resources to the output bundle directory
@@ -102,12 +102,12 @@ so we can serve them up as the user browses our site. Finally, line 18 ties all
 of the lein-cljsbuild tasks into the standard Leinengen build targets. This allows
 you to specify lein build instead of lein cljsbuild compile.
 
-With the project file defined, let's clone the Clojurescript repository into /comp.
+With the project file defined, let\'s clone the Clojurescript repository into /comp.
 Remember, you can skip this step if you remove the source-path decleration from the
-project file if you're willing to live with the standard Clojurescript version used
-by lein-cljsbuild. For now, it's just easier to manage the source yourself while
+project file if you\'re willing to live with the standard Clojurescript version used
+by lein-cljsbuild. For now, it\'s just easier to manage the source yourself while
 development on Clojurescript is fairly active.
 
-This is the basis for our new Clojurescript webapp. In the next part, I'll review 
+This is the basis for our new Clojurescript webapp. In the next part, I\'ll review 
 how to build out the backend server using the node.js framework restify.
 

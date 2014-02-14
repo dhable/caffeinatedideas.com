@@ -2,12 +2,12 @@
 layout: default
 ---
 <div class="content">
-    <h2>Full Archive</h2>
+    <h2>All Posts</h2>
     <table>
     {% for post in site.posts %}
         <tr>
             <td>{{ post.date || date_to_string }}</td>
-            <td>&raquo; <a href="{{ post.url }}">{{ post.title }}</a></td>
+            <td><a href="{{ post.url }}">{{ post.title }}</a></td>
         </tr>
     {% endfor %}
     </table>

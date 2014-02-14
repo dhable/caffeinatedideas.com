@@ -1,8 +1,9 @@
-name: caffeinatedideas.com
+name: Caffeinated Ideas
 description: Sleep deprived thoughts of a Seattle software engineer
 url: http://caffeinatedideas.com
 
 timezone: America/Los_Angeles
 future: false
 lsi: false
+encoding: "UTF-8"
 excerpt_separator: <!--EndExcerpt-->

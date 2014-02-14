@@ -13,17 +13,17 @@ More accurately, I hate the abstraction the industry has settled on for trying
 to do work in parallel. When the computer scientists sat down and created the 
 first threading API, they damned all future computer scientists to the wonderful 
 joy of debugging shared memory states and complex issues revolving around an 
-API that you can't help but shoot yourself in the foot with. For instance, most 
+API that you can\'t help but shoot yourself in the foot with. For instance, most 
 systems let you start a thread but then leave actually halting a thread to be this 
 complex, tangled mess of state signaling, join methods (which might not actually 
 join in the end) and a boat load of blocking issues.
 
 <!--EndExcerpt-->
 
-As an example, we're currently working on some Python code where our controlling 
-process, we'll call it the Manager, creates a separate thread used to execute a 
-sync action, which we'll call the SyncEngine. So it's fairly easy to make SyncEngine 
-a thread, we'll use use inheritance like so:
+As an example, we\'re currently working on some Python code where our controlling 
+process, we\'ll call it the Manager, creates a separate thread used to execute a 
+sync action, which we\'ll call the SyncEngine. So it\'s fairly easy to make SyncEngine 
+a thread, we\'ll use use inheritance like so:
 
 {% prism python %}
 from threading import Thread
@@ -44,7 +44,7 @@ engine.start() # And we're off!
 So starting this new resource which is going to consume CPU cycles and get work done 
 was quite simple. How do we stop it? Well, reading the [API docs for the Python 
 threads][python-3-thread-api], we need to implement this in the SyncEngine run method. 
-Let's return to our SyncEngine definition then and add the necessary code to 
+Let\'s return to our SyncEngine definition then and add the necessary code to 
 shut it down.
 
 {% prism python %}
@@ -66,14 +66,14 @@ class SyncEngine(Thread):
 
 This works for very simple cases but the SyncEngine ends up calling into various 
 other modules with a huge amount of code. What if that code decides to block 
-on some I/O that's taking a long time. The only way to shut down the SyncEngine 
+on some I/O that\'s taking a long time. The only way to shut down the SyncEngine 
 is to set running to False and wait on the join call from the Thread API. Furthermore, 
-what if I wanted to introduce another sync thread? I'd have to rework the design, 
+what if I wanted to introduce another sync thread? I\'d have to rework the design, 
 lock shared objects and get into all the details from the SyncEngine object down 
 to make sure my new algorithm is actually designed for two threads. Then we find 
 out three threads would be ideal.
 
-In all, the Thread abstraction has created a mess. It doesn't protect my code from 
+In all, the Thread abstraction has created a mess. It doesn\'t protect my code from 
 any changes that might happen with the number of running threads and forces me to 
 think about all the bad things that can happen when multiple threads start competing 
 for resources. The solution to this might be for platform developers to stop making 
@@ -135,6 +135,6 @@ interactive UI application.
 
 As long as devices, operating systems and frameworks keep the cost of creating 
 threads cheap, developers will be doomed to troubleshoot the same set of concurrency 
-issues over and over again. It's time to start looking for alternatives.
+issues over and over again. It\'s time to start looking for alternatives.
 
 [python-3-thread-api]: http://docs.python.org/py3k/library/threading.html#thread-objects
