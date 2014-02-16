@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL - Culture Matters
+title: TIL Culture Matters
 tags: TIL
 status: publish
 type: post

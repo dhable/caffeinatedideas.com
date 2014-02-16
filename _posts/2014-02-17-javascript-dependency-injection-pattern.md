@@ -4,7 +4,7 @@ title: JavaScript Dependency Injection Pattern
 tags: js
 status: publish
 type: post
-published: false
+published: true
 comments: true
 ---
 Over the course of the last month, I\'ve been working on rebuilding a JavaScript SDK 
@@ -22,7 +22,7 @@ In a nutshell, dependency injection flips a block of code from explicitly pullin
 dependencies in to rather the dependencies being pushed in from outside the block of
 code. In code:
 
-{% prism %}
+{% prism javascript linenos %}
 // This block pulls in its dependencies
 var Set = function() {
   var data = [];
@@ -98,7 +98,7 @@ apply ths to node.js and browserify. Instead of using the require function at th
 module to bring in libraries, let's export a single function that binds the dependencies into the
 current scope.
 
-{% prism %}
+{% prism javascript linenos %}
 module.exports = function(_, fs) {
   // Private function definitions
 
@@ -117,7 +117,7 @@ the return statement.
 
 Using the code simply requires an additional function invocation.
 
-{% prism %}
+{% prism javascript linenos %}
 var _ = require("underscore),
     fs = require("fs"),
     myModule = require("./myModule.js")(_, fs);

@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-<div class="content">    
-    <h3>{{ page.title }}</h3>
-    <h4>Posted on {{ page.date | date_to_string }}</h4>
-    {{ content }}
-</div>
+<h2>{{ page.title }}</h2>
+<p>
+    Posted on {{ page.date | date_to_string }}<br/>
+</p>
+<p>{{ content }}</p>
+<br/>
 
 {% if page.comments %}
     <div id="disqus_thread"></div>
