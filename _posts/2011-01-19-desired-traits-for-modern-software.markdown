@@ -12,7 +12,7 @@ to determine if the software our dev teams produce is actually high quality
 software and this requires us to determine what traits we want the code to have. 
 When asked, most people will probably include something about scalability, whereby 
 they want the most efficient memory footprint or to maximize the concurrent number 
-of jobs in process at any given time. This is a noble goal to have but let\'s be 
+of jobs in process at any given time. This is a noble goal to have but let\'s be 
 real - most of the software we write won\'t suffer from the scale issues of eBay, 
 Google or Facebook. Even in that list, scalability as we\'ve defined it wasn\'t an 
 issue at first so it\'s probably not a good quality to include up front.

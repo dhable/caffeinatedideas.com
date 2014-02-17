@@ -15,7 +15,7 @@ Zawinski jumped out at me.
 > 
 > __Zawinski__: In some ways, yeah. Programming is obviously much more rigid. But as far as 
 > the overall ability to express a thought, they\'re very similar. Not rambling, having 
-> an idea in your head of what you&#8217;re trying to say, and then being concise about 
+> an idea in your head of what you\'re trying to say, and then being concise about 
 > it. I think that kind of thinking is the overlap between programming and writing prose.
 
 When I started writing this blog, I knew it wasn\'t because I had some divine 
