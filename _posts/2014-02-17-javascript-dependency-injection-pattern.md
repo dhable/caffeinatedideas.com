@@ -18,7 +18,7 @@ hooks to mock or stub out functionality in a fairly straight forward manner.
 
 ### Dependency Injection ###
 
-In a nutshell, dependency injection favors accepting external classes and module 
+In a nutshell, [dependency injection][DI] favors accepting external classes and module 
 references as parameters. In code:
 
 {% prism javascript linenos %}
@@ -93,9 +93,9 @@ will prevent you from shipping stupid mistakes and wasting time hunting down pro
 ### Dependency Injection Pattern ###
 
 The code above showcases the basic idea behind dependency injection in plain JavaScript. Now let\'s 
-apply the to node.js and browserify. Instead of using the require function at the top of the 
-module to bring in libraries, let\'s export a single function that binds the dependencies into the
-current scope.
+apply the to node.js and [browserify][browserify-js]. Instead of using the require function at the 
+top of the module to bring in libraries, let\'s export a single function that binds the dependencies 
+into the current scope.
 
 {% prism javascript linenos %}
 module.exports = function(_, fs) {
@@ -107,10 +107,10 @@ module.exports = function(_, fs) {
 };
 {% endprism %}
 
-Here, the module looks like it takes underscore.js and the node.js file system modules as 
-dependencies. With the dependencies captured in a closure, you can now implement everything
-that would depend on underscore and fs. Remember, returning a named function in the object
-literal is the same as exporting it from the current scope. Private functions can still
+Here, the module looks like it takes [underscore.js][underscore-js] and the node.js file system 
+modules as dependencies. With the dependencies captured in a closure, you can now implement 
+everythingthat would depend on underscore and fs. Remember, returning a named function in the 
+object literal is the same as exporting it from the current scope. Private functions can still
 access the injected dependencies but need to be declared within the outer function but before
 the return statement.
 
@@ -125,7 +125,13 @@ var _ = require("underscore),
 
 ### This Looks Familiar... ###
 
-Yup, it should if you\'ve done any amount of work with require.js. In fact, require.js goes one
-step further and performs the injection step for you. Unfortunately, require.js isn\'t available
-in every JavaScript environment. In those cases, you can use the above convention to still leverage
-dependency injection and write testable code.
+Yup, it should if you\'ve done any amount of work with [require.js][require-js]. In fact, 
+[require.js][require-js] goes one step further and performs the injection step for you. 
+Unfortunately, [require.js][require-js]  isn\'t available in every JavaScript environment. 
+In those cases, you can use the above convention to still leverage dependency injection and 
+write testable code.
+
+[DI]: http://en.wikipedia.org/wiki/Dependency_injection
+[underscore-js]: http://underscorejs.org/
+[browserify-js]: http://browserify.org/
+[require-js]: http://requirejs.org/
