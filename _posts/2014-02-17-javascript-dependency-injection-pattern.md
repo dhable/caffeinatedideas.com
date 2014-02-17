@@ -11,16 +11,15 @@ Over the course of the last month, I\'ve been working on rebuilding a JavaScript
 for my employer. Once of the requirements was that all of the code needs to ship with
 an automated test suite that capable of testing a majority of the basic functionality.
 Throughout the process, I\'ve relied a lot on dependency injection in order to provide
-hooks to mock or stub out functionality in a fairly straight foward manner. 
+hooks to mock or stub out functionality in a fairly straight forward manner. 
 
 <!--EndExcerpt-->
 
 
-## Dependency Injection ##
+### Dependency Injection ###
 
-In a nutshell, dependency injection flips a block of code from explicitly pulling its
-dependencies in to rather the dependencies being pushed in from outside the block of
-code. In code:
+In a nutshell, dependency injection favors accepting external classes and module 
+references as parameters. In code:
 
 {% prism javascript linenos %}
 // This block pulls in its dependencies
@@ -43,7 +42,7 @@ var Set = function() {
 };
 
 // This block's dependencies are pushed in
-var DISet = function(data) {
+var Set2 = function(data) {
   return {
     contains: function(element) {
       for(var i = 0; i < data.length; i++) {
@@ -59,43 +58,43 @@ var DISet = function(data) {
     }
   };
 };
-{% endprisim %}
+{% endprism %}
 
 Here we have two different classes that will form the basis for Set data structures that
-back their data with an array. The first object, Set, is probably code that you've written
+back their data with an array. The first object, Set, is probably code that you\'ve written
 plenty of times before. The Set will eventually need to store the data and thus generates
-an array as part of the constructor. The second object, DISet, will also eventually need to
+an array as part of the constructor. The second object, Set2, will also eventually need to
 store the data but instead of allocating the array, the constructor requires that the array
 would be provided.
 
 
-## Why Write DI Code? ##
+### Why Write DI Code? ###
 
-Both sets perform tne same basic functions, add and contains, and both have the same runtime
+Both sets perform the same basic functions, add and contains, and both have the same runtime
 behaviors. So why should you prefer to write your objects using the second version? There are
 really two major advantages to using dependency injection in JavaScript:
 
   1. Without a ton of work, I can now write a unit test that also has access to the
      injected property. This means that after running add() or before running contains(),
      I can manipulate the data to setup pre-conditions. I can also inspect the post conditions
-     of the code because I can see what happened to the data structue after the test is done.
+     of the code because I can see what happened to the data structure after the test is done.
      
   2. JavaScript is dynamically typed so nothing says that data has to be of type Array. I
      could inject any object that implements the same fit, form and function of array and
-     now my SetDI class can use a new backing data structure. This doesn't work so well for
+     now my SetDI class can use a new backing data structure. This doesn\'t work so well for
      the array but think about all the DOM objects that could be replaced with other
      parts in various browsers without having to change your algorithm.
      
 For me, the ability to test the code easily without the need to fiddle with 10th level JS
 ninja tricks is huge. In a dynamic environment, all those tests that run against every change
-will prevent you from shipping stupid mistakes ar wasting time hunting down production issues.
+will prevent you from shipping stupid mistakes and wasting time hunting down production issues.
 
 
-## Dependency Injection Pattern ##
+### Dependency Injection Pattern ###
 
-The code above showcases the basic idea behind depdency injection in plain JavaScript. Now let's 
-apply ths to node.js and browserify. Instead of using the require function at the top of the 
-module to bring in libraries, let's export a single function that binds the dependencies into the
+The code above showcases the basic idea behind dependency injection in plain JavaScript. Now let\'s 
+apply the to node.js and browserify. Instead of using the require function at the top of the 
+module to bring in libraries, let\'s export a single function that binds the dependencies into the
 current scope.
 
 {% prism javascript linenos %}
@@ -108,7 +107,7 @@ module.exports = function(_, fs) {
 };
 {% endprism %}
 
-Here, the module looks like it takes underscore.js and the node.js filesystem modules as 
+Here, the module looks like it takes underscore.js and the node.js file system modules as 
 dependencies. With the dependencies captured in a closure, you can now implement everything
 that would depend on underscore and fs. Remember, returning a named function in the object
 literal is the same as exporting it from the current scope. Private functions can still
@@ -124,7 +123,9 @@ var _ = require("underscore),
 {% endprism %}
 
 
-## This Looks Familar... ##
+### This Looks Familiar... ###
 
-Yup, it should if you've done any amount of work with require.js. In fact, require.js goes one
-step further and performs the injection step for you.
+Yup, it should if you\'ve done any amount of work with require.js. In fact, require.js goes one
+step further and performs the injection step for you. Unfortunately, require.js isn\'t available
+in every JavaScript environment. In those cases, you can use the above convention to still leverage
+dependency injection and write testable code.
