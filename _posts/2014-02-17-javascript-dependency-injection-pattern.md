@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript Dependency Injection Pattern
-tags: js
+tags: javascript
 status: publish
 type: post
 published: true
