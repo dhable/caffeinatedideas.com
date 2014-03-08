@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Structuring and Naming Unit Tests
-tags: development
+tags: java
 status: publish
 type: post
 published: true
