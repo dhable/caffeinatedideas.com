@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Webapps with Clojurescript
-tags: programming
+tags: clojurescript
 status: publish
 type: post
 published: true
