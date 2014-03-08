@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Smarter Architectures with NoSQL
-tags: architecture
+tags: architecture, brainstorm
 status: publish
 type: post
 published: true
