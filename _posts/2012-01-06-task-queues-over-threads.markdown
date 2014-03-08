@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Task Queues Over Threads
-tags: architecture, development
+tags: architecture, python
 status: publish
 type: post
 published: true
