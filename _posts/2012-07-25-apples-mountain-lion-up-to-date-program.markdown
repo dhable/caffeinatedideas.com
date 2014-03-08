@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Apple's Mountain Lion Up-to-Date Program
-tags: general, ux
+tags: review, design
 status: publish
 type: post
 published: true
