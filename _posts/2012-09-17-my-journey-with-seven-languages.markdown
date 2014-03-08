@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My Journey with Seven Languages
-tags: career, development, languages
+tags: education, review
 status: publish
 type: post
 published: true
