@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TIL Culture Matters
-tags: TIL
+tags: startup
 status: publish
 type: post
 published: true
