@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why Blog?
-tags: career, general
+tags: education 
 status: publish
 type: post
 published: true
