@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Autowiring Akka Actors with Spring
-tags: development, languages
+tags: java
 status: publish
 type: post
 published: true
