@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rumination on Social Forces
-tags: social, ux
+tags: brainstorm
 status: publish
 type: post
 published: true
