@@ -21,10 +21,10 @@ have made a change to an existing system and then passed the change on to a test
 Depending on your company, these testers probably looked at the change you made 
 and verified that it fulfilled the functional requirements, that is, given a set 
 of inputs by a user of the software, the software does expected and desirable 
-effects. These expected andÂ desirableÂ effects are documented and discussed to 
+effects. These expected and desirable effects are documented and discussed to 
 death by the requirements team with the input of the customers. If this doesn\'t 
 describe the norm for your company, you are one of the lucky individuals working 
-at a more throughÂ forwardÂ company.
+at a more through forward company.
 
 Now as the developers approach the agile development process where we only design 
 the code up front, we can see that there is a possibility for two very different 
@@ -40,15 +40,15 @@ might be ok if we never have to touch the system again, that\'s probably not the
 We\'re going to need a follow up release with additional features, fixes because some 
 requirements weren\'t correct and so forth. This is the state of most systems and it\'s 
 after the pain grows so much that we end up with the inevitable project of the re-write. 
-We try to start the re-write but often the projects looseÂ momentumÂ and traction and users 
-willÂ undoubtedlyÂ leave. Perl 6, the next major version of Perl that was intended as a 
-re-write of Perl, is a classic example. After years ofÂ uncertaintyÂ and slow progress,Â 
-developersÂ (including myself) left for other languages that had a cleaner future and some 
+We try to start the re-write but often the projects loose momentum and traction and users 
+will undoubtedly leave. Perl 6, the next major version of Perl that was intended as a 
+re-write of Perl, is a classic example. After years of uncertainty and slow progress, 
+developers (including myself) left for other languages that had a cleaner future and some 
 even kept the Perl 5 fork alive.
 
 This is why when we talk about the quality of our software, we\'re really talking about 
-something that\'sÂ fundamentallyÂ flawed. Instead we need to expand our definition of quality 
-to include not only correctness from an end user\'sÂ perspectiveÂ but also:
+something that\'s fundamentally flawed. Instead we need to expand our definition of quality 
+to include not only correctness from an end user\'s perspective but also:
 
 * within our bounds for performance
 * easy to adapt to new features
@@ -66,8 +66,8 @@ important -ilities that it should possess for the next couple releases?"
 
 After you formulate an answer, this question isn\'t going to go away. It needs to be revisited 
 every so often. While Twitter favored the extensibility aspect of their system early on, they 
-eventually needed to change gears and focus onÂ scalabilityÂ - the key was holding off until 
-they needed to withoutÂ upsettingÂ their users. Even now they\'re not done as they\'ve recently 
-switched one more time and started to look atÂ usability (e.g. site redesign) and security 
+eventually needed to change gears and focus on scalability - the key was holding off until 
+they needed to without upsetting their users. Even now they\'re not done as they\'ve recently 
+switched one more time and started to look at usability (e.g. site redesign) and security 
 (e.g. OAuth for APIs). It\'s a never ending question that should guide your agile project 
 efforts on a macro level.
