@@ -26,7 +26,7 @@ to BlackBerries.
 Just like electrical forces in nature, social forces seem to belong to two different camps - weak 
 social forces and strong social forces. A weak social force is one where the entire social 
 value for the user is based on people they want to interact with also using the software, 
-product or system. Communication and collaboration products fit into this camp. A strong social 
+product or system. Communication and collaboration products fit into this camp. A strong social 
 force is one where the social value doesn\'t come from who you interact with but instead the 
 activity is better when you interact with someone else. Games and gaming are a strong example 
 here - I don\'t care who I play on XBox Live but the games seem more fun when I\'m playing 
