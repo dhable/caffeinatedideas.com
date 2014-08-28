@@ -9,8 +9,8 @@ comments: true
 ---
 Unit testing and automated unit testing is part of all conversations around 
 software development these days. It\'s used by the agile groups to point out how 
-software gets developed without huge, monolithic testing ground and by quality 
-groups to prove that early testing reduces the overall cost on an organization. 
+software gets developed without huge, monolithic testing ground and by quality 
+groups to prove that early testing reduces the overall cost on an organization. 
 Despite the topic being so wildly discussed and required in modern development, 
 we don\'t really talk a lot about the nuts and bolts of development, specifically 
 how to structure and name the test code that we write.
@@ -101,17 +101,17 @@ package bigsys.purchase.PurchaseOrder;
 
 public class AddItemTests
 {
-    @Test
-    public void testAddNullItem() { 
+    @Test
+    public void testAddNullItem() { 
         // ....
     }
 
-    @Test
-    public void testAddSingleItem() { 
+    @Test
+    public void testAddSingleItem() { 
         // ....
     }
 
-    // ... more tests to follow ...
+    // ... more tests to follow ...
 }
 {% endprism %}
 
@@ -122,24 +122,24 @@ package bigsys.purchase.PurchaseOrder;
 
 public class CreateTests
 {
-    @Test
-    public void testCreatePurchaseOrder() { 
+    @Test
+    public void testCreatePurchaseOrder() { 
         // ....
     }
 }
 {% endprism %}
 
 Breaking up the tests in this way provides a couple of different benefits. 
-First, each of these test groups will be smaller. Second, we now know without 
+First, each of these test groups will be smaller. Second, we now know without 
 hunting through the test run report which functionality might be broken. More 
-often than not, developers should be committing code based around behavioral 
-boundaries so it becomes easier to figure out if the unit test failure in 
+often than not, developers should be committing code based around behavioral 
+boundaries so it becomes easier to figure out if the unit test failure in 
 question might be caused by a recent commit you may have made.
 
 The last bit of refactoring we should consider would be to change the name of 
 the classes and methods to become more human friendly. Years ago a peer suggested 
-naming the unit test classes after the pattern "WhenYaddaYaddaYadda" and the 
-methods after the pattern "ShouldBlahBlahBlah". This way, a new developer could 
+naming the unit test classes after the pattern \"WhenYaddaYaddaYadda\" and the 
+methods after the pattern \"ShouldBlahBlahBlah\". This way, a new developer could 
 read through the classes in the test package and see under what conditions the 
 object is designed to be used (the when) and what should happen given various 
 states (the should). This now serves as usage documentation for the code that 
@@ -183,12 +183,12 @@ public class WhenCreatingPurchaseOrder
 }
 {% endprism %}
 
-As you can see, the new names contain a bit more information about what the 
-expectations are and what we\'re really checking in the test. Older versions of xUnit 
+As you can see, the new names contain a bit more information about what the 
+expectations are and what we\'re really checking in the test. Older versions of xUnit 
 frameworks may not be able to take advantage of the newer naming convention since they 
 relied on the names of methods and classes to know which classes and methods to look 
 for in the build path. Today, most frameworks and build scripts should have the 
 capability to give you greater freedom in naming and structuring your tests.
 
-I\'ve used these techniques to structure my tests for some time and I find that the 
-overall maintenance and clarity of my tests is now on par with the production code.
+I\'ve used these techniques to structure my tests for some time and I find that the 
+overall maintenance and clarity of my tests is now on par with the production code.
