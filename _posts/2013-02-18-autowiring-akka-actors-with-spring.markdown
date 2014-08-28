@@ -99,17 +99,17 @@ public class XmlDataFeedActor extends UntypedActor
 Finally, let\'s update our spring XML definitions with a bean for the actor and a 
 bean  for the builder that can create this new actor.
 
-{% prism xml %}
-   &lt;!--  ItemDao bean is defined in a base XML conf file imported --&gt;
-   &lt;bean id="actorSystem" class="akka.actor.ActorSystem" factory-method="create" scope="singleton"&gt;
-      &lt;constructor-arg value="myapp"/&gt;
-   &lt;/bean&gt;
+{% prism markup %}
+<!--  ItemDao bean is defined in a base XML conf file imported -->
+<bean id="actorSystem" class="akka.actor.ActorSystem" factory-method="create" scope="singleton">
+   <constructor-arg value="myapp"/>
+</bean>
 
-   &lt;bean id="xmlFeedActorBuilder" class="ActorBuilder" scope="singleton"&gt;
-      &lt;constructor-arg value="xmlFeedActor"/&gt;
-   &lt;/bean&gt;
+<bean id="xmlFeedActorBuilder" class="ActorBuilder" scope="singleton">
+   <constructor-arg value="xmlFeedActor"/>
+</bean>
 
-   &lt;bean id="xmlFeedActor" class="XmlDataFeedActor" scope="prototype"/&gt;
+<bean id="xmlFeedActor" class="XmlDataFeedActor" scope="prototype"/>
 {% endprism %}
 
 It\'s important to note that the bean definition for the actor needs to be scoped as 
