@@ -7,8 +7,8 @@ type: post
 published: true
 comments: true
 ---
-This morning I was working through the Scala chapter from "Seven Languages in 
-Seven Weeks" by Bruce Tate and discovered there are three ways to apply a cumulative 
+This morning I was working through the Scala chapter from \"Seven Languages in 
+Seven Weeks\" by Bruce Tate and discovered there are three ways to apply a cumulative 
 operation across all items in a list using foldLeft().
 
 <!--EndExcerpt-->
