@@ -18,7 +18,7 @@ concerns. The largest is, how do we communicate our API to those using the API?
 <!--EndExcerpt-->
 
 When I started researching how people document their ReST APIs, I found a lot of 
-posts simply playing the "it should be self documenting" card. As a developer for 
+posts simply playing the \"it should be self documenting\" card. As a developer for 
 the last 12 years, I knew that was the same misguided line that people have been 
 saying in this industry forever - think [XML][xml-myths]. Frankly, there\'s a lot of 
 information to convey and sometimes I need more than a verb and a URL.
@@ -31,7 +31,7 @@ look something like:
 
 {% prism java %}
 /**
- * Retrieves a user\'s profile information from the server. This operation resets 
+ * Retrieves a user's profile information from the server. This operation resets 
  * the inactive user timeout.
  *
  * @returns Output stream with the REST contents
