@@ -21,7 +21,7 @@ Zawinski jumped out at me.
 When I started writing this blog, I knew it wasn\'t because I had some divine 
 insight to share with the world. My main goal was self improvement by forcing 
 myself to sit down and construct a well defined block of text. From here, I 
-would gain practice into writing so my emails, code reviews, wiki pages, comments 
+would gain practice into writing so my emails, code reviews, wiki pages, comments 
 would be clearer. I never once gave any thought to the idea that writing could 
 also help with my development until now.
 
