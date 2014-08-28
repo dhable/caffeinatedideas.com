@@ -12,7 +12,7 @@ obfuscation process that our builds will now go through before deployment (we
 can save the rants about obfuscating code for some other time). Per the norm 
 for this activity, the test group ran into issues in a section of code and needed 
 help investigating. As I dug into the issue, I turned to the log files and found 
-that they were absolutely worthless. While we suspected that the obfuscation 
+that they were absolutely worthless. While we suspected that the obfuscation 
 processor renamed or removed a class, we couldn\'t find the telltale signs of 
 such an activity - no exceptions at all. 
 
@@ -28,7 +28,7 @@ try
 }
 catch( Exception e )
 {
-    jobDone( 567, &quot;bad request&quot; )
+    jobDone( 567, "bad request" );
 }
 {% endprism %}
 
@@ -44,9 +44,9 @@ and then rerun the test. We eventually saw the error (turns out the bean definit
 no longer matched the byte code), but this highlighted some very real problems 
 with logging in server side application development.
 
-After years of trying to work with applications there seem to be some consistent 
+After years of trying to work with applications there seem to be some consistent
 problems that always occur. Here\'s a quick a dirty laundry list that I\'ve seen 
-over the years and I\'m sure that I\'ve contributed to this list more that I\'d like 
+over the years and I\'m sure that I\'ve contributed to this list more that I\'d like 
 to admit.
 
 * Never Contains What You Need
@@ -78,19 +78,19 @@ to admit.
 * Coarse Grained Controls
 
 	To help cope with the problems of too much data, we assign some coarse grained log 
-	levels to each message in the hope that we can suppress some things we want to see 
+	levels to each message in the hope that we can suppress some things we want to see 
 	on low volume systems but not on high volume production boxes. To me, this doesn\'t 
 	make sense. The additional information about state is a debug level message because 
 	when I\'m debugging an error I\'d like to see it. So do I log this at error level or 
 	at debug level? And if I\'m logging at error level, what about the debug messages 
-	that occurred before? Were they generated on the way to getting into an error state 
+	that occurred before? Were they generated on the way to getting into an error state 
 	or for some other request? Simple levels like debug, info and error aren\'t expressive 
 	enough to help.
 
 * Still Prone To Human Mistakes
 
 	Finally, the whole process is still very human driven. Each framework requires a 
-	developer to come up with the log message, provide the relevant information and 
+	developer to come up with the log message, provide the relevant information and 
 	then invoke the logging process when it\'s necessary. If the developer forgets or 
 	some additional logging is needed to troubleshoot a problem? You\'re out of luck 
 	and you\'ll need to change the code and go through another deployment.
@@ -100,6 +100,6 @@ data access solutions and large volume data processing but we haven\'t moved ver
 of helping ourselves with better logging. What we need is a logging framework that provides 
 a rich declarative structure for defining some more complex logging rules and isn\'t dependent 
 on developers to remember to invoke it throughout their code. Stay tuned for some random 
-thoughts on what I think that might look like in practice.
+thoughts on what I think that might look like in practice.
 
 [hadoop]: http://hadoop.apache.org/
