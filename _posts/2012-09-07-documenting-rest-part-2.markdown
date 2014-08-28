@@ -28,7 +28,7 @@ called gen-class that would enable me to define exactly that.
   :name restdoc.core.RestDoclet
     :extends com.sun.javadoc.Doclet
     :prefix RestDoclet-
-    :methods [\#^{:static true}[start [com.sun.javadoc.RootDoc] boolean]])
+    :methods [#^{:static true}[start [com.sun.javadoc.RootDoc] boolean]])
  
 (defn RestDoclet-start
     [root]
