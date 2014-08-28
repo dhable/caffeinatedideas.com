@@ -58,7 +58,7 @@ When the flyway bean is created, the migrate method will be run and your schema 
 will be applied. To apply the changes, just setup a faux dependency on the session factory 
 bean.
 
-{% prism xml %}
+{% prism markup %}
 <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" depends-on="flyway">
 <!-- rest of session factory definition -->
 </bean>
