@@ -10,8 +10,8 @@ comments: true
 I was having a conversation with a co-worker last week about various bad scrum 
 practices that seem to creep into acceptance (often times called scrum-but). We 
 started to think about why we\'ve seen scrum teams with these problems and what 
-the solution is. That\'s when I asked, "how come the Navy SEALs don\'t seem to have 
-as many problems even though they face great uncertainty and challenges?"" After 
+the solution is. That\'s when I asked, \"how come the Navy SEALs don\'t seem to have 
+as many problems even though they face great uncertainty and challenges?\" After 
 thinking about it, I came up with three key lessons that we could learn from the 
 SEALs.
 
