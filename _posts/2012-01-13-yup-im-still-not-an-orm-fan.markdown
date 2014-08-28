@@ -25,7 +25,7 @@ I\'ve tried hard to like a variety of ORM tools over the last 7 years. It starte
 I introduced Hibernate into a Java web application to replace a home-grown DAO setup. 
 I didn\'t like the idea of maintaining not only the objects in Java, but also making 
 sure that those matched the XML configuration file. Add to this the fact I had to learn 
-a whole new query language to get items and it took what was a fairly simple façade 
+a whole new query language to get items and it took what was a fairly simple facade 
 around JDBC and increased the expertise required to support this piece of code. I then 
 revisited the ORM concept when I was working on a Rails application. In this case, we 
 we\'re given a partial DB schema to work with. We spent more time trying to fit the tool 
