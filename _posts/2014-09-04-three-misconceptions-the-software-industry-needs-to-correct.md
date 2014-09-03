@@ -20,13 +20,19 @@ then there is still a small level of uncertianly that I won\'t and the outcome o
 is no industry that understand that nothing in life is certian like the medical profession. Ask any doctor to comment about a prognosis and
 they will ___never___ discount the very slim possibilities in life.
 
-
-
+Believing the life if certian doesn\'t just affect estimates, it also lulls developers into ignoring the edge cases in their code. The cloud
+is a chaotic environment where you can never be certian that resources, APIs or data is ever where you left it. Good, mature software is code
+that has seen the real world for a long enough period of time that the development team has added enough code around uncertian cases. That does
+not mean that the code or the problem domain is certian and free of risk. Instead of expecting that software is perfect and free of uncertainty,
+try to think of software as a patient in a hospital - even when low risk is involved, the uncertain can happen.
 
 ## Life Is Not Synchronous
 
 
+
 ## Nothing Is Ever Done
+
+
 
 
 [NoEstimates]: http://noestimates.org/blog/
