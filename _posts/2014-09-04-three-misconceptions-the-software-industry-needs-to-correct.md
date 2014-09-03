@@ -28,7 +28,23 @@ try to think of software as a patient in a hospital - even when low risk is invo
 
 ## Life Is Not Synchronous
 
+Next time you go to a store, take a look around at how business is being conducted. In most stores, you\'ll notice a fair amount of interactions
+happening asychrnously. Each person involved does not simply wait for the first task to finish before starting another task. In fact, we very
+rarely perform tasks in a synchrnoous way. In [Programming Erlang][erlang-book], Joe Armstrong opens right away acknowlding the world as an
+asynchrnous place.
 
+	Let’s forget about computers for a moment; I’m going to look out of my window
+	and tell you what I see.
+	
+	I see a woman taking a dog for a walk. I see a car trying to find a parking
+	space. I see a plane flying overhead and a boat sailing by. All these things
+	happen in parallel.
+
+The synchnous mindset isn\'t just limited to the code we write. We also need to remember that our processes and people can also waste a lot
+of time if they communicate synchronously. While agile favors personal communication over process, calling a meeting forces everyone on the
+team into a synchronous mode where we loose velocity. Just like a mutex lock, a meeting is something that should only be called when you\'re
+in the critical section of the work flow and you need to make sure everyone is on the same page. The cost to obtaining that mutex is much
+higher than you think.
 
 ## Nothing Is Ever Done
 
@@ -36,3 +52,4 @@ try to think of software as a patient in a hospital - even when low risk is invo
 
 
 [NoEstimates]: http://noestimates.org/blog/
+[erlang-book]: https://pragprog.com/book/jaerlang2/programming-erlang
