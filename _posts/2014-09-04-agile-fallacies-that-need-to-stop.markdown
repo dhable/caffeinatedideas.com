@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Agile Fallacies That Need To Stop
+title: Software Engineering Fallacies That Need To Stop
 status: publish
 type: post
 published: true
@@ -8,23 +8,25 @@ comments: true
 ---
 The other morning I was discussing my recent discovery of [#NoEstimates][NoEstimates] with our company\'s agile champion. 
 \"The business needs certaintly about their software projects\" is a key themes that he\'s heard repeated as a counter to avoiding 
-estimates. This got me thinking about the top three falacies of agile development that I keep seeing propagated.
+estimates. We ended up coming up with a list of our favorite software engineering fallacies that we seem to just keep propogating.
 
 <!--EndExcerpt-->
 
-## There Is No Certinanty In Life
+## Life Is Uncertain 
 
 At some point in our lives, we\'re given this misconception that with effort we can have some level of certianty about the future. On a small 
 enough scale with very fixed boundries, I suppose that\'s true - it\'s probably pretty certian that I\'ll take another breathe of air. Even
-then there is still a small level of uncertianly that I won\'t and the outcome of that action will make for a pretty wild day. In fact, there
-is no industry that understand that nothing in life is certian like the medical profession. Ask any doctor to comment about a prognosis and
-they will ___never___ discount the very slim possibilities in life.
+then there is still a small level of uncertianly that I won\'t and the outcome of that action will make for a pretty wild day. The harsh reality
+is that nothing in life is certian.
+
+There's no profession that truely understands the uncertaninty of life like the medical profession. Ask any doctor to comment about a prognosis 
+and they will __never__ speak in definiative terms. 
 
 Believing the life if certian doesn\'t just affect estimates, it also lulls developers into ignoring the edge cases in their code. The cloud
-is a chaotic environment where you can never be certian that resources, APIs or data is ever where you left it. Good, mature software is code
-that has seen the real world for a long enough period of time that the development team has added enough code around uncertian cases. That does
-not mean that the code or the problem domain is certian and free of risk. Instead of expecting that software is perfect and free of uncertainty,
-try to think of software as a patient in a hospital - even when low risk is involved, the uncertain can happen.
+is a chaotic environment where you can never be certian that resources, APIs or services are available. Mature software is code that has been used
+in the real world long enough that the development team has accounted for enough uncertain cases. It does not mean that a chunk of code has no
+more risk of breaking. There is no way to know whether we\'ve covered all the corner cases. The sooner we embrase the chaos instead of punishing
+teams for their failures to forsee the uncertainty, the sooner we can get back to deliverying real value.
 
 ## Life Is Not Synchronous
 
