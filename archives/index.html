@@ -2,13 +2,22 @@
 layout: default
 ---
 <div class="content">
-    <h2>All Posts</h2>
-    <table>
     {% for post in site.posts %}
-        <tr>
-            <td>{{ post.date || date_to_string }}</td>
-            <td><a href="{{ post.url }}">{{ post.title }}</a></td>
-        </tr>
+        {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        {% capture prev_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+
+        {% if forloop.first %}
+            <h3>{{ this_year }}</h3>
+            <ul>
+        {% endif %}
+
+        <li>{{ post.date || date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></li>
+
+        {% if this_year != prev_year %}
+            </ul>
+            <h3>{{ prev_year }}</h3>
+            <ul>
+        {% endif %}
     {% endfor %}
-    </table>
+
 </div>
