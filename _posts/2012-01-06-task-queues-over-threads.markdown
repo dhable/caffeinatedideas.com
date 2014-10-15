@@ -78,8 +78,8 @@ any changes that might happen with the number of running threads and forces me t
 think about all the bad things that can happen when multiple threads start competing 
 for resources. The solution to this might be for platform developers to stop making 
 us think that we need to worry and design our programs in terms of Threads. Instead, 
-we could think about each little "task" we need to perform and then add them to the
-"plan", which can be as simple as a list of tasks to execute.
+we could think about each little \"task\" we need to perform and then add them to the
+\"plan\", which can be as simple as a list of tasks to execute.
 
 Python makes this implementation easy since everything is an object. If I define a 
 function, I can pass around the reference to that function and then call it  later on:
