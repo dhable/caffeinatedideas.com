@@ -3,13 +3,25 @@ layout: default
 ---
 <h2>{{ page.title }}</h2>
 <h3>Posted on {{ page.date | date_to_string }}</h3>
-<p>{{ content }}</p>
-<p>
-    Tags: 
+<h4>
+{% if page.tags.size > 0 %}
+    tagged in 
     {% for tag in page.tags %}
         {{ tag }}
+        {% if forloop.last == false %}
+            {% if forloop.rindex0 == 1 %}
+                &amp;
+            {% else %}
+                , 
+            {% endif %}
+        {% endif %}
     {% endfor %}
-</p>
+{% endif %}
+</h4>
+
+<div class="post-content">
+    {{ content }}
+</div>
 
 {% if page.comments %}
     <div id="disqus_thread"></div>
