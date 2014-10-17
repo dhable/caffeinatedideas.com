@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'State of the Union: Application Logging'
-tags: architecture, brainstorm
+tags: architecture idea logging
 status: publish
 type: post
 published: true

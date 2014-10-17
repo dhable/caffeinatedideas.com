@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rumination on Social Forces
-tags: brainstorm
+tags: idea commentary
 status: publish
 type: post
 published: true

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Breaking Statically Typed Languages
+tags: programming rants
 status: publish
 type: post
 published: true

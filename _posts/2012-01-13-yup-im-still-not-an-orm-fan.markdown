@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yup, I'm Still Not An ORM Fan
-tags: database, architecture
+tags: database architecture rant
 status: publish
 type: post
 published: true

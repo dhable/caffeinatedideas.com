@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How Certain Are You?
+tags: agile process
 status: publish
 type: post
 published: true

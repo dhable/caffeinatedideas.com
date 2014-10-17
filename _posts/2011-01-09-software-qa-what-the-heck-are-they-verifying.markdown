@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Software QA: What the heck are they verifying?'
-tags: qa
+tags: testing process
 status: publish
 type: post
 published: true

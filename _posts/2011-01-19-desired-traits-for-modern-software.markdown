@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Desired Traits for Modern Software
-tags: development
+tags: idea
 status: publish
 type: post
 published: true

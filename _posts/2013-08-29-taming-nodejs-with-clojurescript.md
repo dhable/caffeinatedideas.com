@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Taming node.js with Clojurescript
-tags: clojurescript, node.js
+tags: clojurescript node.js
 status: publish
 type: post
 published: true

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stone Age Project Teams?
-tags: brainstorm
+tags: idea agile process
 status: publish
 type: post
 published: true

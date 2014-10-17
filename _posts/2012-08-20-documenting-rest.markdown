@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Documenting ReST
-tags: clojure
+tags: process agile
 status: publish
 type: post
 published: true

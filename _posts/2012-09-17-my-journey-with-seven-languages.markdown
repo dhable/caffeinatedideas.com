@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My Journey with Seven Languages
-tags: education, review
+tags: education book-review
 status: publish
 type: post
 published: true

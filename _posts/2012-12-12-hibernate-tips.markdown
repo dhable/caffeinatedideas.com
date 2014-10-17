@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hibernate Tips
-tags: java, database
+tags: java database
 status: publish
 type: post
 published: true

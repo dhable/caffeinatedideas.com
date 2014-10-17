@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ORM Rant, Continued
-tags: database, architecture
+tags: database architecture rant
 status: publish
 type: post
 published: true

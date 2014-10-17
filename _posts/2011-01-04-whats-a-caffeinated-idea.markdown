@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What's a Caffeinated Idea?
+tags: commentary idea
 status: publish
 type: post
 published: true

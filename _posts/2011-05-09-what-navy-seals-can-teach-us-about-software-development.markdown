@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What Navy SEALs Can Teach Us About Software Development
-tags: brainstorm
+tags: idea agile process
 status: publish
 type: post
 published: true
