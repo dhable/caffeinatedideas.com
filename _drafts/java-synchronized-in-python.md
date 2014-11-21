@@ -17,7 +17,7 @@ using some python magic.
 
 <!--EndExcerpt-->
 
-### Java-like synchronized Construct
+### Java-like \'synchronized\' Construct
 
 After clarifying the requirements, we decided to replicate the synchronized keyword
 in the Java language. If you aren\'t familar with Java, every object instance has a
@@ -165,4 +165,126 @@ hooks into the instance creation process.
 
 ### Metaclasses
 
+Python provides the meteclass mechanics if you need more control over the creation of
+classes or want to perform a bit more \"magic\" in your code. There are plenty of 
+resources that explain meteclasses in python far better that I could and I would suggest
+taking a look at them before continuing.
 
+The first order of business is to create ```_auto_lock``` automatically on self. The
+only action that our user needs to take is to declare that their class definition uses
+our metaclass.
+
+{% prism python %}
+from threading import Lock
+
+def wrap_init_with_lock(orig_init):
+    """
+    """
+    def new_wrapped_init(self, *args, **kwargs):
+        orig_init(self, *args, **kwargs)
+        self._auto_lock = Lock()
+    return new_wrapped_init
+
+class Synchronized(type):
+    """
+    """
+    def __init__(cls, names, bases, namespace):
+        cls.__init__ = wrap_init_with_lock(cls.__init__)
+
+
+class LinkedList:
+    __metaclass__ = Synchronized
+
+    def insert(self, data):
+        pass
+{% endprism %}
+
+
+The first thing to notice is that the metaclass ```__init__``` method doesn\'t get passed
+a reference to self (instance of ```Synchronized```) but instead is passed an instance of 
+the object that is mixing in the behaviors of Synchronized (instance of ```LinkedList```).
+Also interesting is that since our code is being called as part of the object instance
+creation process, we\'re in a thread-safe block of code. This solves the problem our decorator
+solution had in terms of limiting the impact to users to a single line and does not require
+a global lock.
+
+Now we want to provide a synchronized version of our methods. Since we want to limit our 
+change to a single line, we need a new way to determine if a method should be synchronized.
+We\'ll do this by naming convention - if the method name starts with ```synchronized_``` then
+we\'ll wrap exeuction of the method to use the lock just added to self. Using the ```cls```
+reference, we can use dir to find the methods with the matching names and then monkey
+patch them with a decorator-like function.
+
+{% prism python %}
+from threading import Lock
+
+def wrap_init_with_lock(orig_init):
+    """
+    """
+    def new_wrapped_init(self, *args, **kwargs):
+        orig_init(self, *args, **kwargs)
+        self._auto_lock = Lock()
+    return new_wrapped_init
+
+def wrap_method_with_sync(method):
+    def new_synchronized_method(self, *args, **kwargs):
+        with self._auto_lock:
+            return method(self, *args, **kwargs)
+    return new_synchronized_method
+
+class Synchronized(type):
+    """
+    """
+    def __init__(cls, names, bases, namespace):
+        cls.__init__ = wrap_init_with_lock(cls.__init__)
+        for methodname in dir(cls):
+            if methodname.startswith("synchronized_"):
+                orig_method = getattr(self, methodname)
+                setattr(self, methodname, wrap_method_with_sync(orig_method))
+
+
+class LinkedList:
+    __metaclass__ = Synchronized
+
+    def synchronized_insert(self, data):
+        pass
+{% endprism %}
+
+Now we have Java-like synchronized semantics based purely on the name of the method. It
+also forces us to declare the synchronized functionality in the method name, serving as
+good documentation for our code base. The metaclass is also a separate block of code that
+can be unit tested and reused across the entire system.
+
+
+### What\'s The Point?
+
+Writing the code without any of these syncrhonzied constructs can be boiled down to:
+
+{% prism python %}
+from threading import Lock
+
+class LinkedList:
+    def __init__(self):
+        self._lock = Lock()
+
+    def insert(self, data):
+        with self._lock:
+            # do insert logic
+            pass
+{% endprism %}
+
+Much of the problems with the lock is already encapsulated in the ```with``` keyword. If
+we leverage ```with```, we no longer need to worry about releasing the lock on exceptions
+or before returns. It also serves as a visual reminder that the block of code is special
+since it required enough time for the author to setup a Lock and use it. In this instance,
+the number of keystrokes saved by metaprogramming or decorating the method do not offset
+the number of keystrokes that will be used to document the magical behavior that we just
+introduced.
+
+The usefulness of these solutions is in the process of trying to bend and morph python 
+into a new and interesting shape through the various extension mechanisms that are provided
+to us. Decorators are easier to understand but lack all of the extension points for a 
+problem as complex as our synchronized structure. Metaprogramming requires thinking about
+the problem on a different plane, is difficult to wrap our mind around but also provides
+us with a lot of ways we can change classes after the code has been written. As a kata,
+the Java synchronized keyword has proven to be a nice sized problem.
