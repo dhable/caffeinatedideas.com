@@ -48,7 +48,7 @@ flow with application demand - the on demand computing future.
 
 Getting started with a complete Clojurescript stack is fairly painless if you use
 the Leinengen build tool. I won\'t cover how to setup Leinengen since it\'s already
-throughly documented on its' Github page. With Leinengen installed, you\'ll need a
+throughly documented on its\' Github page. With Leinengen installed, you\'ll need a
 simple project file to start with.
 
 {% prism clojure %}
