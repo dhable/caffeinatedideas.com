@@ -1,10 +1,11 @@
 active:
     - name: Simple Brew Tool
-      thumbnail: sbt.png
+      thumbnail: projects/sbt.png
       url: http://simplebrewtool.com
       tags: 
-        - Homebrew
-        - Website
+        - clojure
+        - react.js
+        - homebrew
       license: Closed (proprietary)
       description: There are a lot of log programs and recipie formulation programs that exist. Most 
         contain features that are beyond what I need as a weekend homebrewer or lack features 
@@ -12,21 +13,27 @@ active:
         way. I'm writing the whole system in ClojureScript using the Om framework.
 
     - name: grunt-simple-license
-      thumbnail: grunt.png
+      thumbnail: projects/grunt.png
       url: https://github.com/dhable/grunt-simple-license
       tags:
-        - JavaScript
-        - Tool
+        - javascript
+        - grunt.js
+        - tooling
       license: BSD
-      description: A very simple module license plugin for grunt
+      description: Every large company goes through an exercise to inspect all the open source dependencies
+        and ensure that the license is agreeable to their lawyers. This plugin was started to fulfill just
+        that need after we failed to get existing plugins to work. grunt-simple-license will read the npm
+        or bower license metadata field and produce a report. You can also set a default in your project's
+        grunt file if the authors of the package didn't add the license field (tisk, tisk).
 
 inactive:
     - name: grunt-waitfor
-      thumbnail: grunt.png
+      thumbnail: projects/grunt.png
       url: https://github.com/dhable/grunt-waitfor
       tags:
-        - JavaScript
-        - Tool
+        - javascript
+        - grunt.js
+        - tooling
       license: MIT
       description: When I started automating a series of intergration tests using Vagrant as the virtual
         container, I discovered that there wasn't a good way to pause my grunt script until Vagrant was
@@ -34,12 +41,16 @@ inactive:
         command (I used curl) completes successfully. The plugin was written for grunt 0.4.x.
 
     - name: Tk/Wizard
-      thumbnail: perl.png
+      thumbnail: projects/perl.png
       url: https://metacpan.org/pod/Tk::Wizard
       tags:
-        - UI
-        - Perl
-        - Perl/Tk
+        - perl
+        - perl/tk
       license: Same as Perl
-      owner: Lee Goddard
-      description:
+      owners: 
+        - Lee Goddard
+      description: After fighting with MFC and VB DLL dependencies, I created a solution that used
+        Perl, Perl/Tk and ActiveState Perl Tools to create a static, light weight utility program to automate
+        various source control tasks. The wizard UI framework was extracted into a separate module so additional 
+        utilities could follow the same pattern. After the project was done, the source code was open sourced 
+        and published on the Internet and Lee Goddard volunteered to provide long term support for the module.

@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<section>
 <h1>Current Projects</h1>
 <p>
     This is a brief list of projects that I'm currently working on in the limited
@@ -31,9 +32,10 @@ layout: default
     </div>
 </div>
 {% endfor %}
+</section>
 
 
-
+<section>
 <h1>Past Projects</h1>
 <p>
     These are projects that I've actively stopped working on. If you are interested
@@ -60,7 +62,20 @@ layout: default
                 <i class="fa fa-fw fa-legal"></i>&nbsp;{{ project.license }}
             </div>
         </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <i class="fa fa-fw fa-users"></i>&nbsp;
+                {% if project.owners %}
+                    {% for owner in project.owners %}
+                        <span class="label">{{ owner }}</span>
+                    {% endfor %}
+                {% else %}
+                    <span class="label">No Owner</span>
+                {% endif %}
+            </div>
+        </div>
         <p>{{ project.description }}</p>
     </div>
 </div>
 {% endfor %}
+</section>
