@@ -26,8 +26,6 @@ together with Spring. Reusing these POJOs was a must to ensure that additional d
 changes would be picked up in all components without repeating ourselves and causing 
 duplicate work. Even with these constrains, I considered Akka a solid direction.
 
-<!--EndExcerpt-->
-
 For those not familiar with Akka, actors are instances of objects that can run as separate 
 threads and communicate by sending messages to each other. This gives you a lot of power to 
 build modular actors that perform a single action and then assemble those actors into work 

@@ -20,8 +20,6 @@ that works the same hours and is preferably co-located. In today\'s world of glo
 disperse teams, it seems wrong to sell people on the need to adopt a coding practice 
 that requires a team from the 20th century.
 
-<!--EndExcerpt-->
-
 I have a lot of friends that work as engineers of various types for manufacturing 
 companies and they seem to provide a good roadmap for business as a whole. First, 
 they faced the increased labor costs by sending out the tedious piece work to other 

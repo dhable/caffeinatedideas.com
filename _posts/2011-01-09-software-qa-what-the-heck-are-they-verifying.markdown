@@ -14,8 +14,6 @@ any and it all revolves around the fact that we haven\'t defined what quality
 is. It\'s a very interesting question to pose and one that I\'m not sure has a 
 straight forward answer.
 
-<!--EndExcerpt-->
-
 If you\'ve been working in software industry for any amount of time, you probably 
 have made a change to an existing system and then passed the change on to a tester. 
 Depending on your company, these testers probably looked at the change you made 

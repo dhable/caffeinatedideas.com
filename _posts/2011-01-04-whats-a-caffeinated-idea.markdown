@@ -14,8 +14,6 @@ that there was no way I could fail in this venture because, let\'s face it, I
 was the best developer in Milwaukee. I spent hours at night tinkering with python, 
 MySQL and JavaScript in an insane attempt to create the next Google.
 
-<!--EndExcerpt-->
-
 Fast forward to 2011 and let\'s just say that the company never took off. Instead, 
 I ended up moving to Seattle and working for Research In Motion (they make those 
 BlackBerry phones). Now, my caffeinated ideas are less focused on a creating a 

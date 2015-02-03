@@ -11,8 +11,6 @@ This morning I was working through the Scala chapter from \"Seven Languages in
 Seven Weeks\" by Bruce Tate and discovered there are three ways to apply a cumulative 
 operation across all items in a list using foldLeft().
 
-<!--EndExcerpt-->
-
 We start with the syntactical sugar version first:
 
 {% prism java %}

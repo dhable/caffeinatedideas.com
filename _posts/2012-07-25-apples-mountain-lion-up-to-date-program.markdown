@@ -15,8 +15,6 @@ The added bonus was a free copy of Mountain Lion when it was released. I\'m stil
 waiting on my download code from [Apple\'s up-to-date][apple-uptodate] program and 
 that\'s a bit surprising.
 
-<!--EndExcerpt-->
-
 If you haven\'t experienced the up-to-date program, it\'s really baffling why Apple 
 didn\'t spend a few more days to make the whole experience better. The forms start 
 off by asking for some very basic information - name, address, date of purchase 

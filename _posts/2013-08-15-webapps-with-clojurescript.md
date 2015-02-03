@@ -22,8 +22,6 @@ have since started to appreciate the minimal syntax rules and the elegance of
 immutable state. Add in the dynamic nature of the language and you have a very
 compelling language for expressing what a web application involves.
 
-<!--EndExcerpt-->
-
 The only downside to Clojure for web applications becomes the JVM. Operationally,
 the JVM is overkill for running simple web applications that focus more on reading
 and writing data for the user. The JVM does even less when we start putting rendering

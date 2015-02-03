@@ -13,8 +13,6 @@ the process. This is the first post in my TIL (things I learned) series, focusin
 on things that engineers don\'t think about while working at a startup company. The 
 first lesson is that culture really does matter.
 
-<!--EndExcerpt-->
-
 If you\'re an engineer at heart and you spend your time building things, you are 
 probably inclined to zone out when people start talking about mission statements,
 values, review process and org charts - the culture. In fact, one of the appealing 

@@ -15,8 +15,6 @@ as many problems even though they face great uncertainty and challenges?\" After
 thinking about it, I came up with three key lessons that we could learn from the 
 SEALs.
 
-<!--EndExcerpt-->
-
 First, I had to look at  the size of the teams or squads that seem to exist in 
 larger companies. Since most larger companies try to convert their existing silo-ed 
 models into scrum teams the typical teams end up with a lot of members in very 

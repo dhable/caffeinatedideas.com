@@ -19,8 +19,6 @@ standards. This doesn\'t mean that we should then write off NoSQL databases. In 
 to handling higher loads, many NoSQL databases already implement a lot of functionality 
 modern apps use.
 
-<!--EndExcerpt-->
-
 For example, let\'s build a mobile application for managing your shopping list. For the 
 first iteration we\'ll use Java/Spring/MySQL stack for the service that the mobile 
 application will call. 

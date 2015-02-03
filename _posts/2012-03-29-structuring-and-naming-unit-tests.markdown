@@ -15,8 +15,6 @@ Despite the topic being so wildly discussed and required in modern development,
 we don\'t really talk a lot about the nuts and bolts of development, specifically 
 how to structure and name the test code that we write.
 
-<!--EndExcerpt-->
-
 I, like many people, started out with a test directory and set of classes that mirrored 
 the source code. For the sake of this article, I\'m going to stub out an object that 
 could be part of any business system - a purchase order record.

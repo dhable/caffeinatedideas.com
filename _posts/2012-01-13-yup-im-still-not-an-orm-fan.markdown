@@ -19,8 +19,6 @@ incorporate an ORM framework:
 * lack of a standardized grammar or API
 * difficulties integrating with existing schemas
 
-<!--EndExcerpt-->
-
 I\'ve tried hard to like a variety of ORM tools over the last 7 years. It started when 
 I introduced Hibernate into a Java web application to replace a home-grown DAO setup. 
 I didn\'t like the idea of maintaining not only the objects in Java, but also making 

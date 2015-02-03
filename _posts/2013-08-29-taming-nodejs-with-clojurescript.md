@@ -14,8 +14,6 @@ it doesn\'t try to abstract away the host environment so all those useful
 node.js packages can be reused without the need to wait for someone to rewrite 
 them in Clojurescript. 
 
-<!--EndExcerpt-->
-
 To start, we need to pick a framework for our web development. My personal 
 preference is [restify][restify-web] since it comes out of the box with support 
 for API versioning, a static file server and handles a fair number of ReST conventions

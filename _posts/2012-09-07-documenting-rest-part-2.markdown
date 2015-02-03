@@ -15,8 +15,6 @@ with Clojure. It\'s a language I\'ve been meaning to play with for awhile and th
 seemed like a small enough task with some interesting meaty bits, such as exposing 
 Java classes to other tools.
 
-<!--EndExcerpt-->
-
 The first task was to build the entry point from the JavaDoc tool. To do this, I 
 simply need to create a new class that extends the com.sun.javadoc.Doclet class. 
 This was my first challenge with Clojure. How was I going to create a class in 

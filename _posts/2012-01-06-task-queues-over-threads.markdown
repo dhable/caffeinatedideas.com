@@ -18,8 +18,6 @@ systems let you start a thread but then leave actually halting a thread to be th
 complex, tangled mess of state signaling, join methods (which might not actually 
 join in the end) and a boat load of blocking issues.
 
-<!--EndExcerpt-->
-
 As an example, we\'re currently working on some Python code where our controlling 
 process, we\'ll call it the Manager, creates a separate thread used to execute a 
 sync action, which we\'ll call the SyncEngine. So it\'s fairly easy to make SyncEngine 

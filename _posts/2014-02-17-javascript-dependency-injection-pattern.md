@@ -13,10 +13,7 @@ an automated test suite that capable of testing a majority of the basic function
 Throughout the process, I\'ve relied a lot on dependency injection in order to provide
 hooks to mock or stub out functionality in a fairly straight forward manner. 
 
-<!--EndExcerpt-->
-
-
-### Dependency Injection ###
+## Dependency Injection
 
 In a nutshell, [dependency injection][DI] favors accepting external classes and module 
 references as parameters. In code:
@@ -68,7 +65,7 @@ store the data but instead of allocating the array, the constructor requires tha
 would be provided.
 
 
-### Why Write DI Code? ###
+## Why Write DI Code?
 
 Both sets perform the same basic functions, add and contains, and both have the same runtime
 behaviors. So why should you prefer to write your objects using the second version? There are
@@ -90,7 +87,7 @@ ninja tricks is huge. In a dynamic environment, all those tests that run against
 will prevent you from shipping stupid mistakes and wasting time hunting down production issues.
 
 
-### Dependency Injection Pattern ###
+## Dependency Injection Pattern
 
 The code above showcases the basic idea behind dependency injection in plain JavaScript. Now let\'s 
 apply the to node.js and [browserify][browserify-js]. Instead of using the require function at the 
@@ -123,7 +120,7 @@ var _ = require("underscore),
 {% endprism %}
 
 
-### This Looks Familiar... ###
+## This Looks Familiar...
 
 Yup, it should if you\'ve done any amount of work with [require.js][require-js]. In fact, 
 [require.js][require-js] goes one step further and performs the injection step for you. 

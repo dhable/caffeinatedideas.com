@@ -15,8 +15,6 @@ to loose control of the cloud platform. This has lead to a silo between our back
 service developers and the new outsourced group and some interesting communication 
 concerns. The largest is, how do we communicate our API to those using the API?
 
-<!--EndExcerpt-->
-
 When I started researching how people document their ReST APIs, I found a lot of 
 posts simply playing the \"it should be self documenting\" card. As a developer for 
 the last 12 years, I knew that was the same misguided line that people have been 

@@ -16,8 +16,6 @@ that they were absolutely worthless. While we suspected that the obfuscation
 processor renamed or removed a class, we couldn\'t find the telltale signs of 
 such an activity - no exceptions at all. 
 
-<!--EndExcerpt-->
-
 After an hour tracing the source code, I found what seems to be a common pattern 
 in the code:
 

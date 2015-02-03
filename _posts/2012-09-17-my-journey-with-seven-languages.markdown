@@ -13,8 +13,6 @@ mind expanding exercise. At first I was a little disappointed that I\'ve already
 worked with most of the languages back from my days in the CS program at UWM. Even 
 so, I decided to keep my mind open and I\'m glad that I did.
 
-<!--EndExcerpt-->
-
 Bruce starts out with Ruby, a language that feels very familiar for anyone who\'s 
 programmed in Perl, Python, Java, C# or VB. It was a nice warm up to the style of 
 the book and let me figure out what I wanted to take away from all the work. The 

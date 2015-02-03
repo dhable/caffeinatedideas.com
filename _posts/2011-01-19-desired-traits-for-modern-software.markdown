@@ -17,8 +17,6 @@ real - most of the software we write won\'t suffer from the scale issues of eBay
 Google or Facebook. Even in that list, scalability as we\'ve defined it wasn\'t an 
 issue at first so it\'s probably not a good quality to include up front.
 
-<!--EndExcerpt-->
-
 If technical scalability isn\'t the most important trait, then what is? I believe 
 that there are three major axes of quality in a large majority of code bases out 
 there:

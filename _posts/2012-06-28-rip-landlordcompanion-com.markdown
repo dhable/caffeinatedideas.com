@@ -14,8 +14,6 @@ which failed to launch after many years of trying. Instead of yet another blog
 posting about a success story, I figured I would write about my failure. 
 Hopefully someone else can learn from my mistakes. 
 
-<!--EndExcerpt-->
-
 In 2005, I was in the search for a new place to rent with my girlfriend. We 
 wanted something a little bit more like a house and turned to Craigslist to find 
 rentals. The competition was pretty heavy, often with us sitting in the kitchen 
