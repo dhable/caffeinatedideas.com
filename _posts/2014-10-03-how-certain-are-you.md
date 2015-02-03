@@ -6,6 +6,7 @@ status: publish
 type: post
 published: true
 comments: true
+summary: This is some random "text" about.
 ---
 At some point in our lives, we\'re given this misconception that with effort and training we can have 
 some level of certainty about the future.  On a small enough scale with very fixed boundaries, I suppose 
