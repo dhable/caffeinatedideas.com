@@ -1,27 +1,27 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<h3>Posted on {{ page.date | date_to_string }}</h3>
-<h4>
-{% if page.tags.size > 0 %}
-    tagged in 
-    {% for tag in page.tags %}
-        {{ tag }}
-        {% if forloop.last == false %}
-            {% if forloop.rindex0 == 1 %}
-                &amp;
-            {% else %}
-                , 
-            {% endif %}
+<header>
+    <h1>{{ page.title }}</h1>
+    <span class="right-padded">
+        <i class="fa fa-fw fa-calendar"></i>&nbsp;{{ page.date | date_to_long_string }}
+    </span>
+    <span class="right-padded">
+        <i class="fa fa-fw fa-tags"></i>&nbsp;
+        {% if page.tags.size > 0 %}
+            {% for tag in page.tags %}
+                <span class="label">{{ tag }}</span>
+            {% endfor %}
+        {% else %}
+            <span class="label">unclassified</span>
         {% endif %}
-    {% endfor %}
-{% endif %}
-</h4>
+    </span>
+    <hr/>
+</header>
 
-<div class="post-content">
+<section class="post-content">
     {{ content }}
-</div>
+</section>
 
 {% if page.comments %}
     <div id="disqus_thread"></div>
@@ -39,6 +39,3 @@ layout: default
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>    
 {% endif %}
-
-<script src="/js/prism.js"></script>
-<script src="/js/prism.clojure.js"></script>

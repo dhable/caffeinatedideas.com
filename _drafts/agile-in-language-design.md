@@ -7,37 +7,66 @@ type: post
 published: true
 comments: true
 ---
-For months, I had a number of early morning discussions with [Kyle Rowland][kyle-rowland-blog] about the craftmanship of software 
-development and the merits of functional programming vs object oriented programming. While we agreed to disagree on FP vs. OOP, we both
-saw the need to release software faster and gather feedback. As we would list off good examples of agile software, we never once listed
-a programming language. This thought started to surface again while revisiting the Python 2 vs. 3 conundrum and this time, I started to
-wonder why we didn\'t see more languages releasing new features in smaller chunks and still maintaining the stability of their compilers
-and runtime environments. The answer lies in macros.
-<!--EndExcerpt-->
+Every so often, you work with that engineer that challenges the way you think about a problem. For me, it was working with
+[Kyle Rowland][kyle-rowland-blog]. Kyle had identified some serious antipatterns in the development process and was looking
+for help in correcting the problem. This led to many conversations about software craftmanship and how the agile practice
+were intended to work. While we disagreed on many things, we both agreed that software needs to be delivered faster and with
+a feedback loop. As we discussed these points, I started to pay attention to a forgotten area of computer science that hasn\'t
+acted very agile in the past - programming languages.
+
+<!-- EndExcerpt-->
+
+The idea of using agile in programming language development wasn\'t obivous at first. I had been exploring new languages that
+have gotten a lot of attention for the past year. Almost all of the new languages contained a few traits in commmon - they were
+dynamically typed, with optional type checking libraries and they all had some support for macros. One can argue that both features
+make writing correct programs more difficult, it has the opposite effect on the programming langauge developers. No longer do
+they need to worry about maintaining strong backwards compatability or touching internal parts of the compiler to add new features.
+I\'ll  leave the static vs. dynamic argument for another post. Instead I want to focus on [macros][macro-def] and why embracing 
+them doesn\'t imply your code will be unreadable.
+
 
 ### Enter Macros
 
-Language designers have the tool they need in order to make the development of languages more agile - [macros][macro-def]. The simplest
-macros simply produce a new output structure that replaces the macro usage in the resulting source file. Some of the earliest forms of
-macros appeared in C and were used to inline common code snippets.
+In the early days of computing, the hardware ran slow. So slow that jumping from the current code flow to another function
+took a measurable amount of overhead for frequently used instructions. To get around these problems, language designers came
+up with a way to inline a function, or copy the implementaton to every used location. This would make the compiled code larger
+but at runtime, the hardware wouldn\'t need to jump to a new location in memory for a simple funciton. The C language introduced
+this optimization with macros.
+
+The simplest macros from C performed nothing more than simple text replacement in the source file, very much like the early
+web templating libraries.  Without access to the AST in the compiler or details of the surrounding context that the macro was
+being evalulated in, the macro processor has to rely on the developer to know how the macro was going to expand. In this C example,
+the ```MIN``` macro simply expands to a tetrary operator that the compiler can understand.
 
 {% prism c++ %}
 #define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
 
-int a = 5;
-int b = 12;
-int c = MIN(a,b); //=> ((a) < (b) ? (a) : (b))
+int c = MIN(5, 12); //=> expands to 'int c = ((5) < (12) ? (5) : (12))'
 printf("value of c = %d", c); //=> value of c = 5
 {% endprism %}
 
-The macro system in C is a very primative - it simply subsitutes the definition pattern in ever location is sees the definition pattern.
-In our example above, the compiler never knows that the value to assign to ```c``` is a macro. Instead the tetrary conditional operation
-is substituted in its place and that is what the compile will evaluate. This simple macro language allowed the developers to encapsulate
-boilerplate code in a reusable form and also inlined the definition throughout the code base. On slower platforms, the inline versions
-would avoid the cost of a function call for a simple operation.
+The compiler never knows that the value to assign to ```c``` orginiated as a macro. Instead the tetrary conditional operation
+is substituted in its place and that is what the compile will evaluate. Now if we misudnerstand the use of this macro and pass in
+(and hopefully you wouldn\'t make this mistake) strings, the compiler would be given some nonsense.
 
+{% prism c++ %}
+int c = MIN("5", "12"); //=> expands to 'int c = (("5") < ("12") ? ("5") : ("12"))'
+printf("value of c = %d", c); //=> value of c = 5
+{% endprism %}
 
-### The Problem With Early Macros
+Hopefully our code now fails to compile because we can\'t cast a string to an int. The downside is that most C compilers will attempt
+an implicit cast to make something meaningful out of the nonsense. This causes our code to compile and very strange runtime behaviors.
+Even if the compiler caught the string to int cast, using floating point numbers will work and cause a loss in precision. We might catch
+the problem if we looked through the warnings or ran the code through a lint tool. This hidden behavior and lack of compiler checking
+caused a backlash from developers who got burned.
+
+While macros had their problems, careful use enabled the earliest form of DSLs. This was a technique largely taken in the graphical
+user interface libraries, most notiably Microsoft\'s MFC framework and the Qt framework. In each framework, you would sprinkle very
+specific macros that looked like keywords throughout the code. These marcos then took on the overhead of building out patterns, such
+as Qt\'s slots and signals event handling pattern. 
+
+# Needs work from here on out #
+
 
 The C/C++ macro system was far from perfect and contained a number of hidden landmines for developers. Many of these early macro systems
 relied on a pre-processor program to scan the source code prior to compliation and generate an intermediate format after evaluating the

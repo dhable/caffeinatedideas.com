@@ -1,34 +1,66 @@
 ---
 layout: default
 ---
-<h2>Current Projects</h2>
-<ul id="project-list">
-    <li class="project">
-        <h3>
-            <!--<img class="icon" src="/assets/projects/jetway.io/logo.png"/>-->
-            <span class="name"><a href="http://jetway.io">Jetway.io</a></span>
-        </h3>
-        <p>
-        Jetway is a startup project that I'm currently building with <a href="http://bmackerman.com/">Brian Ackerman</a>
-        and Mark Franklin. We're currently keeping things quiet but busy building out our mobile solution using 
-        <a href="http://ionicframework.com/">Ionic</a> for the mobile clients, <a href="https://angularjs.org/">Angular</a> 
-        for the desktop clients and <a href="http://nodejs.org/">node.js</a> with a slew of modules for the backend service.
-        In addition to cranking out code, I've been defining the business plan and working through the legal formation issues
-        associated with a new startup.
-        </p>
-        </li>
+<h1>Current Projects</h1>
+<p>
+    This is a brief list of projects that I'm currently working on in the limited
+    amount of free time that I have. A large portion is technical in nature but 
+    every so often an unrelated project sneaks in.
+</p>
 
-    <li>
-        <h3>
-            <!--<img class="icon" src="/assets/projects/simple-brew-tool.png"/>-->
-            <span class="name">Simple Brew Tool</span>
-        </h3>
-        <p>
-        There are a lot of log programs and recipie formulation programs that exist. Most contain features that are beyond 
-        what I need as a weekend homebrewer or lack features that I'm looking for. Simple Brew Tool is designed to address
-        those issues in a flexible way. I'm writing the whole system in 
-        <a href="https://github.com/clojure/clojurescript">ClojureScript</a> using the 
-        <a href="https://github.com/swannodette/om">Om</a> framework.
-        </p>
-    </li>
-</ul>
+{% for project in site.data.projects.active %}
+<div class="row">
+    <div class="small-2 columns">
+        <a class="th" href="{{ project.url }}">
+            <img src="/assets/{{ project.thumbnail }}"></a>
+    </div>
+    <div class="small-10 columns">
+        <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+        <div class="row">
+            <div class="small-6 columns">
+                <i class="fa fa-fw fa-tags"></i>&nbsp;
+                {% for tag in project.tags %}
+                    <span class="label">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            <div class="small-6 columns">
+                <i class="fa fa-fw fa-legal"></i>&nbsp;{{ project.license }}
+            </div>
+        </div>
+        <p>{{ project.description }}</p>
+    </div>
+</div>
+{% endfor %}
+
+
+
+<h1>Past Projects</h1>
+<p>
+    These are projects that I've actively stopped working on. If you are interested
+    in reviving any of these projects, drop me a note at 
+    <a href="mailto: dan@danhable.com">dan@danhable.com</a> and let's chat.
+</p>
+
+{% for project in site.data.projects.inactive %}
+<div class="row">
+    <div class="small-2 columns">
+        <a class="th" href="{{ project.url }}">
+            <img src="/assets/{{ project.thumbnail }}"></a>
+    </div>
+    <div class="small-10 columns">
+        <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+        <div class="row">
+            <div class="small-6 columns">
+                <i class="fa fa-fw fa-tags"></i>&nbsp;
+                {% for tag in project.tags %}
+                    <span class="label">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            <div class="small-6 columns">
+                <i class="fa fa-fw fa-legal"></i>&nbsp;{{ project.license }}
+            </div>
+        </div>
+        <p>{{ project.description }}</p>
+    </div>
+</div>
+{% endfor %}

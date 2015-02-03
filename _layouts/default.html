@@ -1,78 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %} {{ page.title }} - {% endif %}{{ site.name }}</title>
-    <link href="/css/normalize.css" type="text/css" rel="stylesheet">
-    <link href="/css/foundation.min.css" type="text/css" rel="stylesheet">
-    <link href="/css/prism.css" rel="stylesheet" type="text/css">
-    <link href="/css/caffeinatedideas.css" type="text/css" rel="stylesheet">
+    <head>
+        <title>{% if page.title %} {{ page.title }} - {% endif %}{{ site.name }}</title>
+        <link href="/css/normalize.css" type="text/css" rel="stylesheet">
+        <link href="/css/foundation.min.css" type="text/css" rel="stylesheet">
+        <link href="/css/prism.css" rel="stylesheet">
+        <link href="/css/caffeinatedideas.css" type="text/css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
 
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  </head>
+    <body>
+        <aside class="left col">
+            <h1>{{ site.name }}</h1>
+            <h2>{{ site.description }}</h2>
 
-  <body>
-    <div class="row">
-      <div class="large-3 columns">
-        <h1>
-          <img src="/img/coffee_cup.png" />
-        </h1>
-      </div>
-      <div class="large-9 columns">
-        <h1>{{ site.name }}</h1>
-        <p>{{ site.description }}</p>
-        <br/>
-      </div>
-    </div>
-    
-    <div class="row">        
-      <div class="large-9 push-3 columns">        
-        {{content}}
-      </div>
+            <nav>
+                <ul class="side-nav">
+                    <li>
+                        <a href="/">
+                            <i class="fa fa-fw fa-home"></i>&nbsp;Home</a>
+                    </li>
 
-      <div class="large-3 pull-9 columns">
-        <ul class="side-nav">
-          <li><a href="{{ site.url }}">Home</a></li>
-          <li><a href="/archives">All Posts</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <!--<li><a href="/radar.html">My Tech Radar</a></li>-->
-          <li><a href="/bio">About Dan</a></li>
-        </ul>
+                    <li>
+                        <a href="{{ site.posts.first.url }}">
+                            <i class="fa fa-fw fa-bullhorn"></i>&nbsp;Latest Post</a>
+                    <li>
+                        <a href="/archives">
+                            <i class="fa fa-fw fa-archive"></i>&nbsp;Post Archives</a>
+                    </li>
+
+                    <li>
+                        <a href="/projects">
+                            <i class="fa fa-fw fa-code-fork"></i>&nbsp;Project List</a>
+                    </li>
+
+                    <li>
+                        <a href="/feed.xml">
+                            <i class="fa fa-fw fa-rss"></i>&nbsp;RSS Feed</a>
+                    </li>
+
+                    <li>
+                        <a href="http://danhable.com">
+                            <i class="fa fa-fw fa-user"></i>&nbsp;About Dan Hable</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section id="page-content" class="right col scroll-y">
+            {{ content }}
         
-      </div>    
-    </div>
-  
-    <footer class="row">
-      <div class="large-12 columns">
-        <hr />
-        <div class="row">
-          <div class="large-6 columns">
-            <p>
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
-              <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/>
-              </a>
-              <br/>
-              This work by 
-              <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com" property="cc:attributionName" rel="cc:attributionURL">
-              Daniel T. Hable
-              </a> 
-              is licensed under a 
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
-              Creative Commons Attribution-ShareAlike 3.0 Unported License
-              </a>.
-            </p>
-          </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><a href="https://twitter.com/dhable"><img src="/img/twitter.png"/></a></li>
-              <li><a href="http://www.linkedin.com/in/dhable/"><img src="/img/linkedin.png"/></a></li>
-              <li><a href="http://stackoverflow.com/users/67927/dan"><img src="/img/stackoverflow.png"/></a></li>
-              <li><a href="https://github.com/dhable"><img src="/img/github.png"/></a></li>
-              <li><a href="/feed.xml"><img src="/img/rss.png"/></a></li>
-            </ul>
-          </div>
-        </div>
-      </div> 
-    </footer>
-   
-  </body>
+            <footer class="text-center">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                    <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/></a>
+                <br/>
+                This work by 
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com" 
+                    property="cc:attributionName" rel="cc:attributionURL">Daniel T. Hable</a> 
+                is licensed under a 
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                    Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+            </footer>
+        </section>
+
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="/js/prism.js"></script>
+        <script src="/js/prism.clojure.js"></script>
+    </body>
 </html>

@@ -1,0 +1,45 @@
+active:
+    - name: Simple Brew Tool
+      thumbnail: sbt.png
+      url: http://simplebrewtool.com
+      tags: 
+        - Homebrew
+        - Website
+      license: Closed (proprietary)
+      description: There are a lot of log programs and recipie formulation programs that exist. Most 
+        contain features that are beyond what I need as a weekend homebrewer or lack features 
+        that I'm looking for. Simple Brew Tool is designed to address those issues in a flexible 
+        way. I'm writing the whole system in ClojureScript using the Om framework.
+
+    - name: grunt-simple-license
+      thumbnail: grunt.png
+      url: https://github.com/dhable/grunt-simple-license
+      tags:
+        - JavaScript
+        - Tool
+      license: BSD
+      description: A very simple module license plugin for grunt
+
+inactive:
+    - name: grunt-waitfor
+      thumbnail: grunt.png
+      url: https://github.com/dhable/grunt-waitfor
+      tags:
+        - JavaScript
+        - Tool
+      license: MIT
+      description: When I started automating a series of intergration tests using Vagrant as the virtual
+        container, I discovered that there wasn't a good way to pause my grunt script until Vagrant was
+        finished. The grunt-waitfor plugin solves this problem by blocking the grunt execution until a shell
+        command (I used curl) completes successfully. The plugin was written for grunt 0.4.x.
+
+    - name: Tk/Wizard
+      thumbnail: perl.png
+      url: https://metacpan.org/pod/Tk::Wizard
+      tags:
+        - UI
+        - Perl
+        - Perl/Tk
+      license: Same as Perl
+      owner: Lee Goddard
+      description:
