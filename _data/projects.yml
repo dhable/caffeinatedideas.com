@@ -40,7 +40,7 @@ inactive:
         finished. The grunt-waitfor plugin solves this problem by blocking the grunt execution until a shell
         command (I used curl) completes successfully. The plugin was written for grunt 0.4.x.
 
-    - name: Tk/Wizard
+    - name: Tk::Wizard
       thumbnail: projects/perl.png
       url: https://metacpan.org/pod/Tk::Wizard
       tags:
