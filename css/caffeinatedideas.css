@@ -46,11 +46,6 @@ section { margin-bottom: 2em; }
 
 aside {
     padding: 1.5em .5em;
-    background-color: Black;
-}
-
-aside>* {
-    color: White;
 }
 
 aside>h1 {
@@ -61,12 +56,8 @@ aside>h2 {
     font-size: 1em;
 }
 
-nav>.side-nav li a:not(.button) {
-    color: White;
-}
-
 #page-content { padding: .5em 1em; max-width: 720px; }
-#page-content>header { margin: 1em 0; }
+#page-content>header { margin-bottom: 1em; }
 #page-content>header h1 { margin: 0; padding: 0; }
 #page-content>footer { padding-top: 2em; font-size: 0.75em; }
 

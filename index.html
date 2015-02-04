@@ -1,11 +1,9 @@
 ---
 layout: default
 ---
+
 {% for post in site.posts %}
-    {% if forloop.first %}
-        first - {{ post.title }}
-    {% else %}
-        {% if forloop.index0 < 6 %}
+    {% if forloop.index0 < 5 %}
         <section>
             <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
             <div class="row">
@@ -25,7 +23,7 @@ layout: default
             </div>
             <div class="row">
                 <div class="medium-12 columns">
-                    {{ post.summary }}
+                    {{ post.teaser}}
                 </div>
             </div>
             <div class="row">
@@ -37,8 +35,6 @@ layout: default
                 </div>
             </div>
         </section>
-        {% endif %}
-
     {% endif %}
 
     {% if forloop.index0 == 11 %}
