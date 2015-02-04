@@ -2,11 +2,11 @@
 layout: post
 title: How Certain Are You?
 tags: agile process
-status: publish
-type: post
-published: true
 comments: true
-summary: This is some random "text" about.
+teaser:
+    A pre-coffee morning conversation at the Seattle HERE office turns into a fairly opinionated
+    post touching on why trying to estmate hours in a software project is a loosing battle. Best
+    supporting role goes to the #NoEstimate movement on Twitter.
 ---
 At some point in our lives, we\'re given this misconception that with effort and training we can have 
 some level of certainty about the future.  On a small enough scale with very fixed boundaries, I suppose 

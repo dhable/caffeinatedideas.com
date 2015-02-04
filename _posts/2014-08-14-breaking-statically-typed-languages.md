@@ -2,10 +2,11 @@
 layout: post
 title: Breaking Statically Typed Languages
 tags: programming rants
-status: publish
-type: post
-published: true
 comments: true
+teaser:
+    Another Java developer touts the type system as the biggest reason they would never
+    consider a dynamically typed language. After reviewing some of their code, I have to
+    wonder what the type system is really buying them.
 ---
 Every time I tell my fellow Java developers that I enjoy writing code in python or node.js or clojure, 
 I\'m very often dismissed with a set of reasons but the one I always enjoy is: 

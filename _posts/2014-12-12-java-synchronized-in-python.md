@@ -2,10 +2,11 @@
 layout: post
 title: Java 'synchronized' in Python
 tags: python kata
-status: publish
-type: post
-published: true
 comments: true
+teaser: 
+    One of my students from the Code Fellows python dev accelerator asks if there's a way to
+    automatically use a threading.Lock object in code that's easier than the with statement.
+    It seems like a good time to talk about DSL support in Python.
 ---
 A recent student posed the question, \"Is there a way to lock execution of an entire
 method in Python using Lock instead of writing out a with-block?\" My answer

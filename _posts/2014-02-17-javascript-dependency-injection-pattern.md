@@ -2,10 +2,11 @@
 layout: post
 title: JavaScript Dependency Injection Pattern
 tags: javascript patterns
-status: publish
-type: post
-published: true
 comments: true
+teaser:
+    I've been doing a lot of test driven development in vanilla JavaScript over
+    the past month and came up with a lightweight pattern of dependency injection
+    that made the code easier to test.
 ---
 Over the course of the last month, I\'ve been working on rebuilding a JavaScript SDK 
 for my employer. Once of the requirements was that all of the code needs to ship with

@@ -2,10 +2,11 @@
 layout: post
 title: TIL Culture Matters
 tags: startup
-status: publish
-type: post
-published: true
 comments: true
+teaser:
+    In a retrospective moment, I spend some time talking about why the lack
+    of a good culture at QThru was one of the reasons (but not the only reason)
+    we failed as a company.
 ---
 For me, 2013 was a year of many lessons learned out of the unfortunate bankruptcy
 of QThru. It just seemed right to document all of the things I\'ve learned through
