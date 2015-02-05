@@ -11,7 +11,7 @@ layout: default
 
 {% for project in site.data.projects.active %}
 <div class="row">
-    <div class="small-2 columns">
+    <div class="small-2 columns hide-for-small">
         <a class="th" href="{{ project.url }}">
             <img src="/assets/{{ project.thumbnail }}"></a>
     </div>
@@ -45,7 +45,7 @@ layout: default
 
 {% for project in site.data.projects.inactive %}
 <div class="row">
-    <div class="small-2 columns">
+    <div class="small-2 columns hide-for-small">
         <a class="th" href="{{ project.url }}">
             <img src="/assets/{{ project.thumbnail }}"></a>
     </div>
