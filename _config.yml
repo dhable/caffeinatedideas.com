@@ -6,4 +6,3 @@ timezone: America/Los_Angeles
 future: false
 lsi: false
 encoding: "UTF-8"
-excerpt_separator: <!--EndExcerpt-->
