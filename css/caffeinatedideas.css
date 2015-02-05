@@ -34,10 +34,9 @@ section { margin-bottom: 2em; }
 header { margin-bottom: 1em; }
 footer { padding-top: 2em; font-size: 0.75em; }
 
-
-/* layout logic for the site template */
-#page-content { padding: .5em 1em; max-width: 720px; }
-
+.large-screen-nav {
+    padding: 1em;
+}
 
 .archive-year { margin: 2em 0 0 0; }
 .archive-year span {
