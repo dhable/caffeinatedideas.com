@@ -1,19 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic);
 
-/* reset default stylings */
 * {
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+
 /* 
  * prevent prism.js from inserting those stupid scrolling boxes that don't
- * have a visual clue that there's more code not displayed.
+ * have a visual hint that there's more code not displayed.
  */
-pre[class*='language-'] > code[data-language] {
-    max-height: none;
-}
+pre[class*='language-'] > code[data-language] { max-height: none; }
+
 
 /*
  * wrestle some formatting control from foundation so prism.js will display
@@ -26,52 +25,27 @@ code {
 }
 
 
+/* Reset some font sizes, colors, margins and paddings to my liking */
 h1, h2, h3 { padding: 0; margin: 0; }
 h1 { font-size: 2em; }
 h2 { font-size: 1.5em; }
 h3 { font-size: 1em; text-decoration: underline; }
 section { margin-bottom: 2em; }
+header { margin-bottom: 1em; }
+footer { padding-top: 2em; font-size: 0.75em; }
 
-
-
-.right-padded { padding-right: 1.5em; }
 
 /* layout logic for the site template */
-.col { overflow: hidden; position: absolute; top: 0; bottom: 0; }
-.left.col { width: 240px; }
-.right.col { left: 240px; right: 0; }
-.scroll-x { overflow-x; auto; }
-.scroll-y { overflow-y: auto; }
-
-
-aside {
-    padding: 1.5em .5em;
-}
-
-aside>h1 {
-    font-size: 1.5em;
-}
-
-aside>h2 {
-    font-size: 1em;
-}
-
 #page-content { padding: .5em 1em; max-width: 720px; }
-#page-content>header { margin-bottom: 1em; }
-#page-content>header h1 { margin: 0; padding: 0; }
-#page-content>footer { padding-top: 2em; font-size: 0.75em; }
 
-.archive-year {
-    margin: 2em 0 0 0;
-}
 
+.archive-year { margin: 2em 0 0 0; }
 .archive-year span {
     color: White;
     background-color: #333;
     padding: 1em 0.5em;
     border-radius: 50%;
 }
-
 .archive-year hr {
     position: relative;
     top: -1.5em;

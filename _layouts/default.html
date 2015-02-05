@@ -7,61 +7,92 @@
         <link href="/css/prism.css" rel="stylesheet">
         <link href="/css/caffeinatedideas.css" type="text/css" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="/js/vendor/modernizr.js"></script>
     </head>
 
     <body>
-        <aside class="left col">
-            <h1>{{ site.name }}</h1>
-            <h2>{{ site.description }}</h2>
+        <!-- for small screens -->
+        <div class="show-for-small off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <nav class="tab-bar">
+                    <section class="left-small">
+                        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+                    </section>
+                    <section class="middle tab-bar-section">
+                        <h1 class="title">{{ site.name }}</h1>
+                    </section>
+                </nav>
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li><a href="/"><i class="fa fa-fw fa-home"></i>&nbsp;Home</a></li>
+                        <li><a href="/archives"><i class="fa fa-fw fa-archive"></i>&nbsp;Post Archives</a></li>
+                        <li><a href="/projects"><i class="fa fa-fw fa-code-fork"></i>&nbsp;Project List</a></li>
+                        <li><a href="/feed.xml"><i class="fa fa-fw fa-rss"></i>&nbsp;RSS Feed</a></li>
+                        <li><a href="/bio"><i class="fa fa-fw fa-user"></i>&nbsp;About Dan Hable</a></li>
+                    </ul>
+                </aside>
+                <section class="main-section">
+                    {{ content }}
+                     <footer class="text-center">
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                            <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/></a>
+                        <br/>
+                        This work by 
+                        <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com" 
+                            property="cc:attributionName" rel="cc:attributionURL">Daniel T. Hable</a> 
+                        is licensed under a 
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                            Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                    </footer>
+                </section>
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
 
-            <nav>
-                <ul class="side-nav">
-                    <li>
-                        <a href="/">
-                            <i class="fa fa-fw fa-home"></i>&nbsp;Home</a>
-                    </li>
+        <!-- for large screens -->
+        <div class="row hide-for-small">
+            <div class="large-3 medium-4 columns">
+                <div class="hide-for-small">
+                    <div class="sidebar left">
+                        <h1>{{ site.name }}</h1>
+                        <nav>
+                            <ul class="side-nav left">
+                                <li><a href="/"><i class="fa fa-fw fa-home"></i>&nbsp;Home</a></li>
+                                <li><a href="/archives"><i class="fa fa-fw fa-archive"></i>&nbsp;Post Archives</a></li>
+                                <li><a href="/projects"><i class="fa fa-fw fa-code-fork"></i>&nbsp;Project List</a></li>
+                                <li><a href="/feed.xml"><i class="fa fa-fw fa-rss"></i>&nbsp;RSS Feed</a></li>
+                                <li><a href="http://danhable.com"><i class="fa fa-fw fa-user"></i>&nbsp;About Dan Hable</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
 
-                    <li>
-                        <a href="/archives">
-                            <i class="fa fa-fw fa-archive"></i>&nbsp;Post Archives</a>
-                    </li>
-
-                    <li>
-                        <a href="/projects">
-                            <i class="fa fa-fw fa-code-fork"></i>&nbsp;Project List</a>
-                    </li>
-
-                    <li>
-                        <a href="/feed.xml">
-                            <i class="fa fa-fw fa-rss"></i>&nbsp;RSS Feed</a>
-                    </li>
-
-                    <li>
-                        <a href="http://danhable.com">
-                            <i class="fa fa-fw fa-user"></i>&nbsp;About Dan Hable</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <section id="page-content" class="right col scroll-y">
-            {{ content }}
+            <div class="large-9 medium-8 columns">
+                {{ content }}
         
-            <footer class="text-center">
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
-                    <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/></a>
-                <br/>
-                This work by 
-                <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com" 
-                    property="cc:attributionName" rel="cc:attributionURL">Daniel T. Hable</a> 
-                is licensed under a 
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
-                    Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
-            </footer>
-        </section>
+                <footer class="text-center">
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                        <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/></a>
+                    <br/>
+                    This work by 
+                    <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com" 
+                        property="cc:attributionName" rel="cc:attributionURL">Daniel T. Hable</a> 
+                    is licensed under a 
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                        Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                </footer>
+            </div>
+        </div>
 
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="/js/prism.js"></script>
         <script src="/js/prism.clojure.js"></script>
+        <script src="/js/vendor/jquery.js"></script>
+        <script src="/js/vendor/fastclick.js"></script>
+        <script src="/js/foundation/foundation.js"></script>
+        <script src="/js/foundation/foundation.offcanvas.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
     </body>
 </html>

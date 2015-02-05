@@ -3,19 +3,22 @@ layout: default
 ---
 <header>
     <h1>{{ page.title }}</h1>
-    <span class="right-padded">
-        <i class="fa fa-fw fa-calendar"></i>&nbsp;{{ page.date | date_to_long_string }}
-    </span>
-    <span class="right-padded">
-        <i class="fa fa-fw fa-tags"></i>&nbsp;
-        {% if page.tags.size > 0 %}
-            {% for tag in page.tags %}
-                <span class="label">{{ tag }}</span>
-            {% endfor %}
-        {% else %}
-            <span class="label">unclassified</span>
-        {% endif %}
-    </span>
+    <div class="row">
+        <div class="medium-4 columns">
+            <i class="fa fa-fw fa-calendar"></i>&nbsp;{{ page.date | date_to_long_string }}
+        </div>
+        <div class="medium-4 columns">
+            <i class="fa fa-fw fa-tags"></i>&nbsp;
+            {% if page.tags.size > 0 %}
+                {% for tag in page.tags %}
+                    <span class="label">{{ tag }}</span>
+                {% endfor %}
+            {% else %}
+                <span class="label">unclassified</span>
+            {% endif %}
+        </div>
+        <div class="medium-4 columns"></div>
+    </div>
     <hr/>
 </header>
 
