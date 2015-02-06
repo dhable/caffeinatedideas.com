@@ -107,7 +107,7 @@ module.exports = function(_, fs) {
 
 Here, the module looks like it takes [underscore.js][underscore-js] and the node.js file system 
 modules as dependencies. With the dependencies captured in a closure, you can now implement 
-everythingthat would depend on underscore and fs. Remember, returning a named function in the 
+everything that would depend on underscore and fs. Remember, returning a named function in the 
 object literal is the same as exporting it from the current scope. Private functions can still
 access the injected dependencies but need to be declared within the outer function but before
 the return statement.

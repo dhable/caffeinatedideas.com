@@ -30,7 +30,7 @@ public User(String org, String email, String phone, String status) {
 {% endprism %}
 
 Seems reasonable, right? I think we\'ve all done this because it\'s fast, it doesn\'t require us to pause 
-and build a huge class hierarchy, it\'s flexable to change over time, etc. Looks a bit like the python version:
+and build a huge class hierarchy, it\'s flexible to change over time, etc. Looks a bit like the python version:
 
 {% prism python linenos %}
 def __init__(self, org, email, phone, status):
@@ -46,12 +46,12 @@ you\'d have to replicate that everywhere you accept or pass around an email addr
 that the value passed through one of those verified path. This is one of the pitfalls with dynamic typing - you 
 need to write tests around all the permutations of the values every time you accept a value as an input.
 
-Now we could build a strongly typed EmailAddr object and that\'s probbaly the right way to tackle this problem. 
+Now we could build a strongly typed EmailAddr object and that\'s probably the right way to tackle this problem. 
 With common type, like email address, we could use an open source solution. Sadly, most developers won\'t because 
 the object either has odd dependencies, isn\'t straight forward to use or is lacking some major functionality 
 that can\'t be mixed in. Look at all the Java libraries that use a string for a URL when java.net.URL has been part 
 of the platform forever.
 
 I\'m not advocating that we should drop everything and pick up tools with static typing. There are points that 
-dynamic typing is a fantasic option and there are points that static typing is great. Just please stop using type 
+dynamic typing is a fantastic option and there are points that static typing is great. Just please stop using type 
 checking and compilers as reasons your language is better when most of the code you write doesn\'t leverage them. 

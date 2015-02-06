@@ -169,7 +169,7 @@ web_server.listen(3000);
 As you can see, they\'re not that different from each other. This begs the question, 
 did we really gain anything by switching from JavaScript to Clojurescript? For starters,
 Clojurescript ensures that the core functions and modules [behave with the semantics][js-wat] 
-that we expect. Sure, we could leverage thrird party libraries to help in this regard but 
+that we expect. Sure, we could leverage third party libraries to help in this regard but 
 with the language enforcing the constrains, we know that the code base will have a consistent 
 approach.
 

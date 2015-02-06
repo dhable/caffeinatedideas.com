@@ -23,7 +23,7 @@ For example, let\'s build a mobile application for managing your shopping list. 
 first iteration we\'ll use Java/Spring/MySQL stack for the service that the mobile 
 application will call. 
 
-![Spring Web Architecutre](/assets/springmvc.png)
+![Spring Web Architecture](/assets/springmvc.png)
 
 So where\'s the problem with this very common architecture? The dev team needs to write 
 all the code to handle something as mundane as reading and writing information to a 

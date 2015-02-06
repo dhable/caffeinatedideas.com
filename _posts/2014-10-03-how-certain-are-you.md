@@ -5,7 +5,7 @@ tags: agile process
 comments: true
 teaser:
     A pre-coffee morning conversation at the Seattle HERE office turns into a fairly opinionated
-    post touching on why trying to estmate hours in a software project is a loosing battle. Best
+    post touching on why trying to estimate hours in a software project is a losing battle. Best
     supporting role goes to the #NoEstimate movement on Twitter.
 ---
 At some point in our lives, we\'re given this misconception that with effort and training we can have 
