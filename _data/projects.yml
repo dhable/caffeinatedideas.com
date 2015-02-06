@@ -7,8 +7,8 @@ active:
         - react.js
         - homebrew
       license: Closed (proprietary)
-      description: There are a lot of log programs and recipie formulation programs that exist. Most 
-        contain features that are beyond what I need as a weekend homebrewer or lack features 
+      description: There are a lot of log programs and recipe formulation programs that exist. Most 
+        contain features that are beyond what I need as a weekend home brewer or lack features 
         that I'm looking for. Simple Brew Tool is designed to address those issues in a flexible 
         way. I'm writing the whole system in ClojureScript using the Om framework.
 
@@ -35,10 +35,24 @@ inactive:
         - grunt.js
         - tooling
       license: MIT
-      description: When I started automating a series of intergration tests using Vagrant as the virtual
+      description: When I started automating a series of integration tests using Vagrant as the virtual
         container, I discovered that there wasn't a good way to pause my grunt script until Vagrant was
         finished. The grunt-waitfor plugin solves this problem by blocking the grunt execution until a shell
         command (I used curl) completes successfully. The plugin was written for grunt 0.4.x.
+
+    - name: ModBox Website
+      thumbnail: projects/modbox.png
+      url: https://www.facebook.com/modboxme
+      tags:
+        - node.js
+        - startup
+        - ecommerce
+      license: Closed (proprietary)
+      description: Matt Gamboa approached me in August 2013 to help build out a simple e-commerce
+        portal for his new clothing startup, ModBox. To facilitate the business, we launched a website 
+        in three weeks that signs users up for the service, let's them develop a fit and interest profile 
+        and securely captures their billing information to charge purchases to. The site was built Using 
+        node.js (express, jade, mongoose), MongoDB, and Stripe.
 
     - name: Tk::Wizard
       thumbnail: projects/perl.png
