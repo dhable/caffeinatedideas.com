@@ -48,6 +48,8 @@ inactive:
         - startup
         - ecommerce
       license: Closed (proprietary)
+      owners:
+        - Matt Gamboa
       description: Matt Gamboa approached me in August 2013 to help build out a simple e-commerce
         portal for his new clothing startup, ModBox. To facilitate the business, we launched a website 
         in three weeks that signs users up for the service, let's them develop a fit and interest profile 
