@@ -2,10 +2,11 @@
 layout: post
 title: Agile in Language Design
 tags: agile
-status: publish
-type: post
-published: true
 comments: true
+teaser:
+    An interesting conversation about agile development practices one morning with Kyle Rowland 
+    leads to some deep reflection on how language development can be more agile. Turns out that
+    macros, as long as they're not in C, can make language design agile.
 ---
 Every so often, you work with that engineer that challenges the way you think about a problem. For me, it was working with
 [Kyle Rowland][kyle-rowland-blog]. Kyle had identified some serious antipatterns in the development process and was looking
@@ -13,8 +14,6 @@ for help in correcting the problem. This led to many conversations about softwar
 were intended to work. While we disagreed on many things, we both agreed that software needs to be delivered faster and with
 a feedback loop. As we discussed these points, I started to pay attention to a forgotten area of computer science that hasn\'t
 acted very agile in the past - programming languages.
-
-<!-- EndExcerpt-->
 
 The idea of using agile in programming language development wasn\'t obivous at first. I had been exploring new languages that
 have gotten a lot of attention for the past year. Almost all of the new languages contained a few traits in commmon - they were
