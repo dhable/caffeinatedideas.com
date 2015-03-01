@@ -3,15 +3,16 @@ active:
       thumbnail: projects/sbt.png
       url: http://simplebrewtool.com
       tags: 
-        - clojure
+        - clojurescript
         - react.js
-        - homebrew
+        - elixir
       license: Closed (proprietary)
       description: There are a lot of log programs and recipe formulation programs that exist. Most 
         contain features that are beyond what I need as a weekend home brewer or lack features 
         that I'm looking for. Simple Brew Tool is designed to address those issues in a flexible 
         way. I'm writing the whole system in ClojureScript using the Om framework.
 
+inactive:
     - name: grunt-simple-license
       thumbnail: projects/grunt.png
       url: https://github.com/dhable/grunt-simple-license
@@ -26,7 +27,6 @@ active:
         or bower license metadata field and produce a report. You can also set a default in your project's
         grunt file if the authors of the package didn't add the license field (tisk, tisk).
 
-inactive:
     - name: grunt-waitfor
       thumbnail: projects/grunt.png
       url: https://github.com/dhable/grunt-waitfor
