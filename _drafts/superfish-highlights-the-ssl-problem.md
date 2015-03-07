@@ -8,19 +8,19 @@ teaser:
     how much of the security on the Internet is based on trusting the client
     configuration. What can be done to salvage SSL and trust on the Internet?
 ---
-It's only been two weeks since the [news of Lenovo bundling Superfish on their laptops][superfish-headline] 
-was brought to the public's attention and while the focus has been on who at Lenovo knew about the bundle,
+It's only been two weeks since [news of Lenovo bundling Superfish on their laptops][superfish-headline] 
+was brought to the public's attention. While the focus has been on who at Lenovo knew about the bundle,
 few people are really talking about what it means to the security of the Internet. Developers used to just
-enable SSL on their services to check off the security requirement. Post Superfish, developers need to think
-more about security and should probably pay attention to the research underway.
+enable SSL on their services to check off their security requirements. Developers now need to think
+more about security and should pay attention to the new research underway.
 
 
 ## What Is Superfish?
 
-Superfish was basically a program that listened to the HTTP responses from the web browser, specifically
-the HTML content. Superfish would then add new HTML code to the stream before the web browser got it that
-would display ads not placed on the site by the site author or would replace existing ads with Superfish
-ads. The end goal was to increase the impressions for Superfish ads over traditional ad networks. 
+Superfish was basically a program that listened to the HTTP responses heading to the web browser, specifically
+the HTML content. Superfish would then add new HTML code to the stream before the web browser received the response
+with ads not placed on the site by the site author or would replace existing ads with Superfish ads. The end goal was 
+to increase the impressions for Superfish ads over traditional ad networks. 
 
 > __Side Note__:
 > Performing this kind of injection for non-SSL sites doesn't break security, although it's unethical. We
@@ -28,20 +28,20 @@ ads. The end goal was to increase the impressions for Superfish ads over traditi
 > replacing it with another set basically takes money out of the site's pocket to line Lenovo's pocket.
 
 Since more sites are running SSL, Superfish also contained a "feature" by which it would unwrap the SSL
-connection from the site, then reestablish the connection to the browser. In order to prevent the browser
+connection from the site, then reestablish a SSL connection to the browser. In order to prevent the browser
 from warning the user that the SSL connection was tampered with, Superfish would generate a SSL cert with
 the site's domain and would sign this cert with a Superfish CA certificate. Since the browser trusts all
-CA certificates installed locally, the browser would naturally trust this spoofed SSL certificate. Now 
-Superfish could read the HTML code and inject ads into pages being requested via SSL.
+CA certificates installed locally, the browser would naturally trust this spoofed SSL certificate signed by
+Superfish. Now Superfish could read the HTML code and inject ads into pages being transferred via SSL.
 
 
 ## The Problem
 
-The more formal name for the technique used by Superfish is called a [Man in the Middle attack][man-in-the-middle].
+The more formal name for the technique used by Superfish is called the [man-in-the-middle attack][man-in-the-middle].
 Instead of just being a clever way to inject ads into pages, Superfish demonstrated on a global level how easy
 it is to circumvent the SSL certificate warnings placed into browsers.
 
-At the basic level, the certificate system is all based on having another intermediate organization use their 
+Basically, the certificate system is all based on having another intermediate organization use their 
 certificate to create a certificate for your site. These intermediate organizations have certificates also signed
 by other intermediate organizations, building the certificate chain. The certificate chain ends with a certificate
 that is trusted implicitly by the browser, known as the root certificate. The only reason these root certificates
@@ -51,27 +51,27 @@ Let's take a look at an example with google.com. Here's the certificate chain fo
 
 ![google.com Certificate Chain](/assets/superfish/google_cert.png)
 
-Following the chain, my browser trusts that google.com and all subdomains are trusted by Google Internet
-Authority G2. Likewise, Google Internet Authority G2 can be trusted because it's trusted by GeoTrust Global CA
-and the only reason that GeoTrust Global CA is trusted is because it was installed locally as part of my Mac OS X
-installation. 
+Following the chain, my browser trusts that google.com and all subdomains are trusted because they are also trusted
+by Google Internet Authority G2. Likewise, Google Internet Authority G2 can be trusted because it's trusted by 
+GeoTrust Global CA and the only reason that GeoTrust Global CA is trusted is because it was installed locally as part 
+of my Mac OS X installation. 
 
 > __Side Note__: The decision on which certificates get bundled with browsers and operating systems is a
-> very interesting and very political shadow world. Just like network pairing agreements, it's often based
-> on personal relationships and buying people off.
+> very interesting and very political. Just like network pairing agreements, it's often based  on personal relationships 
+> and boatloads of money being transferred between companies.
 
 So what happens if we swapped out GeoTrust Global CA as the top level certificate and replaced it with 
 VeriSign Class 3 Public Primary Certification Authority - G5? Well, that would fail because when the browser attempts
-to validate Google Internet Authority G2, the certificates wouldn't match. 
+to validate Google Internet Authority G2, the certificate signatures wouldn't match. 
 
 ![Swap Top Level Cert](/assets/superfish/ca_cert_swap.png)
 
 Now, I could generate a new certificate for Google Internet Authority G2 based off the VeriSign certificate. Now 
-the top two certificates would validate leaving the final certificate, google.com, as the last failing certificate. 
+the top two certificate signatures would match leaving the final certificate, google.com, as the last failing certificate. 
 
 ![Swap Intermediate Cert](/assets/superfish/l2_cert_swap.png)
 
-When I replace the final goole.com certificate, I would then have a certificate chain that's cryptographically valid 
+When I replace the final google.com certificate, I would then have a certificate chain that's cryptographically valid 
 and worse yet, the browser has no way to know that all of the certificates have been spoofed.
 
 ![Swap All Certs](/assets/superfish/all_cert_swap.png)
