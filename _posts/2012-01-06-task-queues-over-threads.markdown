@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Task Queues Over Threads
-tags: architecture python concurrency
+tags: python concurrency
 status: publish
 type: post
 published: true

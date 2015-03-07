@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Scala Syntactical Heartburn
-tags: scala
+tags: scala rants
 status: publish
 type: post
 published: true

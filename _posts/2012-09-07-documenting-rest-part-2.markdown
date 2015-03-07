@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Documenting ReST - Part 2
-tags: process agile clojure
+tags: tools clojure
 status: publish
 type: post
 published: true

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why Blog?
-tags: education commentary
+tags: education idea
 status: publish
 type: post
 published: true

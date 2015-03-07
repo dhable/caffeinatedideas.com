@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Breaking Statically Typed Languages
-tags: programming rants
+tags: rants
 comments: true
 teaser:
     Another Java developer touts the type system as the biggest reason they would never
