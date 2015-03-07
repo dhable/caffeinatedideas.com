@@ -62,11 +62,19 @@ installation.
 
 So what happens if we swapped out GeoTrust Global CA as the top level certificate and replaced it with 
 VeriSign Class 3 Public Primary Certification Authority - G5? Well, that would fail because when the browser attempts
-to validate Google Internet Authority G2, the certificates wouldn't match. Now, I could generate a new certificate
-for Google Internet Authority G2 based off the VeriSign certificate. Now the top two certificates would validate
-leaving the final certificate, google.com, as the last failing certificate. When I replace that certificate, I
-would then have a certificate chain that's valid and worse yet, the browser has no way to know that all of the
-certificates have been spoofed.
+to validate Google Internet Authority G2, the certificates wouldn't match. 
+
+![Swap Top Level Cert](/assets/superfish/ca_cert_swap.png)
+
+Now, I could generate a new certificate for Google Internet Authority G2 based off the VeriSign certificate. Now 
+the top two certificates would validate leaving the final certificate, google.com, as the last failing certificate. 
+
+![Swap Intermediate Cert](/assets/superfish/l2_cert_swap.png)
+
+When I replace the final goole.com certificate, I would then have a certificate chain that's cryptographically valid 
+and worse yet, the browser has no way to know that all of the certificates have been spoofed.
+
+![Swap All Certs](/assets/superfish/all_cert_swap.png)
 
 Notice, none of this required sophisticated knowledge of cryptography or super computing clusters to brute force
 attack any algorithms. This type of attack is simple if you have access to the certificate store of the end user's
