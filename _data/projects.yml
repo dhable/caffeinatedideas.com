@@ -2,15 +2,18 @@ active:
     - name: Simple Brew Tool
       thumbnail: projects/sbt.png
       url: http://simplebrewtool.com
-      tags: 
+      tags:
+        - clojure
         - clojurescript
         - react.js
-        - elixir
+        - cassandra
       license: Closed (proprietary)
-      description: There are a lot of log programs and recipe formulation programs that exist. Most 
-        contain features that are beyond what I need as a weekend home brewer or lack features 
-        that I'm looking for. Simple Brew Tool is designed to address those issues in a flexible 
-        way. I'm writing the whole system in ClojureScript using the Om framework.
+      description: There are a lot of log programs and recipe formulation programs that exist. Most
+        contain features that are beyond what I need as a weekend home brewer or lack features
+        that I'm looking for. Simple Brew Tool is designed to address those issues in a flexible
+        way. The idea is to use this project to prototype new ways of building web applications.
+        The front end will be designed to feel like a native app from the beginning, using streaming
+        protocols instead of stateless ReST protocols, and assembled from a series of microservices.
 
 inactive:
     - name: grunt-simple-license
@@ -51,9 +54,9 @@ inactive:
       owners:
         - Matt Gamboa
       description: Matt Gamboa approached me in August 2013 to help build out a simple e-commerce
-        portal for his new clothing startup, ModBox. To facilitate the business, we launched a website 
-        in three weeks that signs users up for the service, let's them develop a fit and interest profile 
-        and securely captures their billing information to charge purchases to. The site was built Using 
+        portal for his new clothing startup, ModBox. To facilitate the business, we launched a website
+        in three weeks that signs users up for the service, let's them develop a fit and interest profile
+        and securely captures their billing information to charge purchases to. The site was built Using
         node.js (express, jade, mongoose), MongoDB, and Stripe.
 
     - name: Tk::Wizard
@@ -63,10 +66,10 @@ inactive:
         - perl
         - perl/tk
       license: Same as Perl
-      owners: 
+      owners:
         - Lee Goddard
       description: After fighting with MFC and VB DLL dependencies, I created a solution that used
         Perl, Perl/Tk and ActiveState Perl Tools to create a static, light weight utility program to automate
-        various source control tasks. The wizard UI framework was extracted into a separate module so additional 
-        utilities could follow the same pattern. After the project was done, the source code was open sourced 
+        various source control tasks. The wizard UI framework was extracted into a separate module so additional
+        utilities could follow the same pattern. After the project was done, the source code was open sourced
         and published on the Internet and Lee Goddard volunteered to provide long term support for the module.
