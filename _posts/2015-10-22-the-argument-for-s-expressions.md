@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The argument for s-expressions
+title: Another argument for s-expressions
 tags: opinion PLT s-expressions
 published: true
 comments: true
@@ -9,6 +9,11 @@ teaser:
   a s-expression language wouldn't have encountered. With a simple example, I'll
   show how syntax can cause an unnecessary cognitive load on developers.
 ---
+
+> 27 Dec 2015: I updated the title of this post to better reflect the fact that
+> in addition to enabling macros, s-expressions also make the syntax rules
+> easy for the humans.
+
 I found myself back in our Python code base today working with a set of nested
 dictionary objects. As I set out to look for the equivalent of Clojure's
 ```get-in``` function, I ended up at a [nifty solution using reduce][1]. Inspired,
