@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#full-area {
+  position: relative;
+}
+
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left 200px;
+  overflow:scroll;
+}
