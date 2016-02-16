@@ -1,23 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   {% style "css/app.css" %}
 </head>
 
 <body>
-  <div id="banner">
-    {{title}}
-  </div>
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/">{{title}}&nbsp;&raquo;</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a href="{{home-uri}}" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{archives-uri}}" class="nav-link">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{rss-uri}}" class="nav-link">RSS</a>
+        </li>
+      </ul>
+    </nav>
 
-  <div id="full-area">
-    <div id="navbar">
-      Nav
+    <div class="container">
+      {% block content %}{% endblock %}
     </div>
 
-    <div id="content">
-      Content
-    </div>
-  </div>
+    <footer class="container">
+      <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+          <span class="cc-image">
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+              <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/>
+            </a>
+          </span>
+          <span class="cc-text">
+            This work by
+            <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com"
+               property="cc:attributionName" rel="cc:attributionURL">Daniel T. Hable</a>
+            is licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+              Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+          </span>
+        </div>
+        <div class="col-xs-4"></div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 </body>
 </html>
