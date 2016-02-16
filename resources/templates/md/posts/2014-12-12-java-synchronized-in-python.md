@@ -89,9 +89,9 @@ class ```__init__``` method or we introduce a new Lock somewhere else in the
 process.
 
 Solving the problem in ```__init__``` can take multiple forms. The simplest solution
-is just require the user of the synchronized decorator to declare a member called
-```_auto_lock``` and raise an exception if the lock is missing. Then our decorator
-would look like:
+is just require the user of the synchronized decorator to declare a member
+called ```_auto_lock``` and raise an exception if the lock is missing. Then our
+decorator would look like:
 
 ```python
 from threading import Lock
@@ -174,7 +174,7 @@ hooks into the instance creation process.
 ## Metaclasses
 
 Python provides the metaclass mechanics if you need more control over the creation of
-classes or want to perform a bit more \"magic\" in your code. There are plenty of
+classes or want to perform a bit more "magic" in your code. There are plenty of
 resources that explain [metaclasses in python][python-metaprogramming] far better that
 I could and I would suggest taking a look at them before continuing.
 
@@ -215,7 +215,6 @@ class LinkedList:
         # ...
         pass
 ```
-
 
 The first thing to notice is that the metaclass ```__init__``` method doesn't get passed
 a reference to self (instance of ```Synchronized```) but instead is passed an instance of
