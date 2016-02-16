@@ -2,19 +2,19 @@
  :layout :post
  :tags ["ux" "rants"]}
 
-This year I made the decision to buy a new laptop. My MacBook Core Duo just was 
+This year I made the decision to buy a new laptop. My MacBook Core Duo just was
 struggling to keep up with all the programs that I use on a daily basis for
-development. Running VMs with Linux and Windows didn\'t help so I jumped on board
-the new 15\" MacBook with Retina display because I could get 16GB of RAM in it.
-The added bonus was a free copy of Mountain Lion when it was released. I\'m still
-waiting on my download code from [Apple\'s up-to-date][apple-uptodate] program and
-that\'s a bit surprising.
+development. Running VMs with Linux and Windows didn't help so I jumped on board
+the new 15" MacBook with Retina display because I could get 16GB of RAM in it.
+The added bonus was a free copy of Mountain Lion when it was released. I'm still
+waiting on my download code from [Apple's up-to-date][apple-uptodate] program and
+that's a bit surprising.
 
-If you haven\'t experienced the up-to-date program, it\'s really baffling why Apple
-didn\'t spend a few more days to make the whole experience better. The forms start
+If you haven't experienced the up-to-date program, it's really baffling why Apple
+didn't spend a few more days to make the whole experience better. The forms start
 off by asking for some very basic information - name, address, date of purchase
 and email. From there, they then ask you to enter the serial number for the qualifying
-hardware that you purchased. When it\'s all said and done, you get a request
+hardware that you purchased. When it's all said and done, you get a request
 confirmation code and the note that a promo code for the AppStore will be emailed
 to you.
 
@@ -22,12 +22,12 @@ This seems backwards. First, Apple obviously tracks the purchase order for every
 piece of hardware and ties the serial number to the purchase order. ERP systems
 like SAP and Oracle have been doing this for years so simply knowing the serial
 number would enable them to know when and who purchased the machine. This would tell
-them which machines qualify for free upgrades to Mountain Lion and which don\'t. I\'m
-not sure what\'s taking so long to verify my purchase but given the speed of database
-queries, I\'m guessing they dropped the ball or implemented some process where every
+them which machines qualify for free upgrades to Mountain Lion and which don't. I'm
+not sure what's taking so long to verify my purchase but given the speed of database
+queries, I'm guessing they dropped the ball or implemented some process where every
 request needs to be manually confirmed.
 
-Second, the AppStore should make this whole web request process obsolete. The machine\'s
+Second, the AppStore should make this whole web request process obsolete. The machine's
 serial number that I input on the up-to-date form came from the System Info utility.
 The AppStore program should have done the same lookup on my machine, send a query to
 the backend to determine if I qualify for the upgrade and then tie the upgrade to my

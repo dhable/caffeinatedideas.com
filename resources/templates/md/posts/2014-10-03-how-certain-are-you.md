@@ -2,10 +2,10 @@
  :layout :post
  :tags ["agile" "process"]}
 
-At some point in our lives, we\'re given this misconception that with effort and training we can have 
+At some point in our lives, we're given this misconception that with effort and training we can have
 some level of certainty about the future.  On a small enough scale with very fixed boundaries, I suppose
-that\'s true - it\'s probably pretty certain that I\'ll take another breathe of air.  Even then there is
-still a small level of uncertainty that I won\'t and the outcome of that action will make for a pretty
+that's true - it's probably pretty certain that I'll take another breathe of air.  Even then there is
+still a small level of uncertainty that I won't and the outcome of that action will make for a pretty
 wild day. The harsh reality is that nothing in life is certain.
 
 Developers have started to acknowledge that our modern app-centric solutions are really distributed systems
@@ -16,7 +16,7 @@ a 25 second network glitch trying to log into the MySQL database hosted in AWS. 
 when we launch our app that the developers have thought enough about these issues. Organizations like Netflix
 have gone as far as building Chaos Monkey to constantly introduce the small edge cases.
 
-Just like there\'s a lack of certainty in a distributed system, we also need to acknowledge that there\'s a
+Just like there's a lack of certainty in a distributed system, we also need to acknowledge that there's a
 lack of certainty in project management. While we may try techniques to manage the uncertainty, we need to
 accept the fallacies of project management:
 
@@ -28,7 +28,7 @@ accept the fallacies of project management:
 6. The bug rate with TDD will be zero.
 7. Every team is homogeneous.
 
-This list shouldn\'t come as a surprise to anyone who\'s recently participated on a scrum team. Unfortunately,
+This list shouldn't come as a surprise to anyone who's recently participated on a scrum team. Unfortunately,
 may scrum practitioners have worked to establish a process that sets one or more of these fallacies in stone.
 The effects of ignoring the fallacies is most often seen in the simple act of estimating. Instead of trying to
 acknowledge all of the uncertainty in a project, we end up subjecting teams to games of
@@ -37,8 +37,8 @@ answer that we like better. Why not simply accept the uncertainty and [avoid spe
 something we simply do not understand.
 
 Lack of estimates and embracing the uncertainty is likely to leave many project managers feeling a bit uncomfortable.
-One of the key bullet points in their job description is to help the business predict when it\'s going to ship
-product. Doesn\'t that require estimates? It does only if you also believe that you need to set a date for calling
+One of the key bullet points in their job description is to help the business predict when it's going to ship
+product. Doesn't that require estimates? It does only if you also believe that you need to set a date for calling
 something done. Instead, try shipping code continuously to production and stop worrying about trying to estimate
 the uncertain.
 

@@ -14,7 +14,7 @@ such an activity - no exceptions at all.
 After an hour tracing the source code, I found what seems to be a common pattern
 in the code:
 
-{% prism java %}
+```java
 try
 {
     // do something potentially dangerous
@@ -23,7 +23,7 @@ catch( Exception e )
 {
     jobDone( 567, "bad request" );
 }
-{% endprism %}
+```
 
 What's wrong here? The code does prevent an exception from killing the long
 running server process and it does fulfill the component API by returning an
