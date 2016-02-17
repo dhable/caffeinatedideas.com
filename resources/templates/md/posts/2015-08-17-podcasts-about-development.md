@@ -8,7 +8,7 @@ trends as well as wake up my brain before getting to the office. This is a list
 of a few of my favorite podcasts that have withstood the test of time. Let's jump
 right into the list.
 
-##### [The Cognicast][cognicast]
+##### [The Cognicast](http://blog.cognitect.com/cognicast/)
 
 Primarily focused on Clojure and ClojureScript development, this podcast always
 seems to come up with interesting topics to talk about. Previous shows have
@@ -16,7 +16,7 @@ included deep dives into Om, property based testing, writing code without a
 type system, data structures, dyslexia and more. It's roughly an hour long, has
 a consistent release schedule and a wide range of guests.
 
-##### [JavaScript Jabber][js-jabber]
+##### [JavaScript Jabber](http://devchat.tv/js-jabber/)
 
 This was one of the first podcasts that I really started listening to back when
 QThru was introducing node.js as a supported technology. While I've moved on from
@@ -26,7 +26,7 @@ that ensures they loop back around and explain topics that people may not be
 familiar with. At times it they can get hung up on the JS framework of the week
 but overall a solid mix.
 
-##### [Hanselminutes][hanselminutes]
+##### [Hanselminutes](http://hanselminutes.com/)
 
 Not specifically about development, Scott Hanselman is an excellent podcaster.
 The podcast is consistently 30 minutes long and the range of topics is incredible.
@@ -34,7 +34,7 @@ Everything related to technology, from 3D printers to home routers not being
 updated, are discussed. The show does tend to favor the .Net platform but often
 does so in a way that topics can be borrowed by other platforms.
 
-##### [Functional Geekery][fn-geekery]
+##### [Functional Geekery](http://www.functionalgeekery.com/)
 
 This is by far the podcast that pushes my functional programming limits but the
 pace of shows seems to have ground to a halt. This show is all about the functional
@@ -46,8 +46,3 @@ to learn more about advanced functional programming.
 
 Do you have a favorite development podcast that's updated on a regular basis?
 Link to it in the comments and let the world know about it.
-
-[cognicast]: http://blog.cognitect.com/cognicast/
-[js-jabber]: http://devchat.tv/js-jabber/
-[hanselminutes]: http://hanselminutes.com/
-[fn-geekery]: http://www.functionalgeekery.com/

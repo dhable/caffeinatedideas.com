@@ -131,7 +131,8 @@ as the Java synchronized block.
 The other solution is to introduce a Lock to prevent assigning ```_auto_lock```
 multiple times. The downside with this approach is the performance hit we need to
 take when the synchronized method is called the first time on new object instances.
-To try to make this process somewhat tolerable, we use the [check-lock-check][double-check-pattern]
+To try to make this process somewhat tolerable, we use the
+[check-lock-check](http://en.wikipedia.org/wiki/Double-checked_locking)
 pattern, where most long lived objects should skip the lock step for most cases. The code now
 looks like:
 
@@ -175,8 +176,9 @@ hooks into the instance creation process.
 
 Python provides the metaclass mechanics if you need more control over the creation of
 classes or want to perform a bit more "magic" in your code. There are plenty of
-resources that explain [metaclasses in python][python-metaprogramming] far better that
-I could and I would suggest taking a look at them before continuing.
+resources that explain
+[metaclasses in python](http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Metaprogramming.html)
+far better that I could and I would suggest taking a look at them before continuing.
 
 The first order of business is to create ```_auto_lock``` automatically on self. The
 only action that our user needs to take is to declare that their class definition uses
@@ -227,7 +229,7 @@ of the behavior as simple as possible, we need a new way to determine if a metho
 We'll do this by naming convention - if the method name starts with ```synchronized_``` then
 we'll wrap execution of the method to use ```_auto_lock```. Using the ```cls```
 reference, we can use ```dir``` to find the methods with the matching names and then
-[monkey patch][monkey-patch] them with a decorator-like function.
+[monkey patch](http://en.wikipedia.org/wiki/Monkey_patch) them with a decorator-like function.
 
 ```python
 from threading import Lock
@@ -293,7 +295,3 @@ problem as complex as our synchronized structure. Metaprogramming requires think
 the problem on a different plane, is difficult to wrap our mind around but also provides
 us with a lot of ways we can change classes after the code has been written. As a kata,
 the Java synchronized keyword has proven to be a nice sized problem.
-
-[double-check-pattern]: http://en.wikipedia.org/wiki/Double-checked_locking
-[python-metaprogramming]: http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Metaprogramming.html
-[monkey-patch]: http://en.wikipedia.org/wiki/Monkey_patch

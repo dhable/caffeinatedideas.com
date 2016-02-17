@@ -2,7 +2,8 @@
  :layout :post
  :tags ["security"]}
 
-It's only been two weeks since [news of Lenovo bundling Superfish on their laptops][superfish-headline] 
+It's only been two weeks since
+[news of Lenovo bundling Superfish on their laptops](http://arstechnica.com/security/2015/02/lenovo-pcs-ship-with-man-in-the-middle-adware-that-breaks-https-connections/))
 was brought to the public's attention. While the focus has been on who at Lenovo knew about the bundle,
 few people are really talking about what it means to the security of the Internet. Developers used to just
 enable SSL on their services to check off their security requirements. Developers now need to think
@@ -31,7 +32,8 @@ Superfish. Now Superfish could read the HTML code and inject ads into pages bein
 
 ## The Problem
 
-The more formal name for the technique used by Superfish is called the [man-in-the-middle attack][man-in-the-middle].
+The more formal name for the technique used by Superfish is called the
+[man-in-the-middle attack](https://www.owasp.org/index.php/Man-in-the-middle_attack).
 Instead of just being a clever way to inject ads into pages, Superfish demonstrated on a global level how easy
 it is to circumvent the SSL certificate warnings placed into browsers.
 
@@ -82,10 +84,12 @@ This type of attack isn't just something to worry about locally. Think about the
 connect your iPhone or Android phone to an open wi-fi point. Do you trust that wi-fi provider? Each access point
 sits in the middle and assuming they have obtained a certificate authority's private key, they could capture TBs upon
 TBs of private data without setting off any alarms or warnings. This type of attack isn't just limited to the NSA
-or MI-5 either. There are plenty of known [security breaches at certificate authorities][ca-breach-search] and
+or MI-5 either. There are plenty of known
+[security breaches at certificate authorities](https://www.google.com/?gws_rd=ssl#q=certificate+authority+breach) and
 probably more we're not aware of.
 
-The largest known recent report came from the Dutch certificate authority [DigiNotar][ditinotar]. With the widely
+The largest known recent report came from the Dutch certificate authority
+[DigiNotar](http://en.wikipedia.org/wiki/DigiNotar). With the widely
 trusted DigiNotar certificates in hand, the attackers then started setting up man-in-the-middle attacks on gmail.com
 users. By generating gmail.com certificates on the fly using a different, but valid, certificate chain, user data
 was compromised without warning to the user. More disturbing was the fact that Google was unable to revoke the
@@ -103,13 +107,14 @@ Having SSL is simply not enough anymore.
 
 The good news is that a lot of effort is going into researching how to prevent these type of attacks in the future
 and the solution is inspired by the BitCoin block chain. In the August 2014 issue of Communications of the ACM,
-an article entitled, "[Certificate Transparency][acm-article]" outlined how researchers at Google were augmenting the
+an article entitled, "[Certificate Transparency](http://dl.acm.org/citation.cfm?id=2668154)" outlined how researchers
+at Google were augmenting the
 SSL validation process so the end site being fetched has a role in validating whether or not to trust the certificate
 chain that the browser fetched. Using such a technique would prevent such man-in-the-middle attacks used for nefarious
 purposes or simply to inject ads by an unethical vendor.
 
-Better still, the [certificate transparency process][cert-transparency] has been presented to the internet engineering
-committee (IETF) and hopefully will become a standard protocol for everyone on the Internet.
+Better still, the [certificate transparency process](http://dl.acm.org/citation.cfm?id=2668154) has been presented
+to the internet engineering committee (IETF) and hopefully will become a standard protocol for everyone on the Internet.
 
 
 ## How Can I Help?
@@ -122,14 +127,7 @@ Macbook.
 
 IT professionals should still continue to use SSL certificates from reputable certificate authorities. While the
 protection it offers has problems, we still need to make an attempt to keep user data safe. Beyond that, read up
-on the [certificate transparency process][cert-transparency] and prepare to upgrade your servers when the protocol
+on the [certificate transparency process](http://www.certificate-transparency.org/) and prepare to upgrade your
+servers when the protocol
 has been tested and ready for production. If you're responsible for end user machines, make sure the browser and OS
 patches are applied quickly.
-
-
-[superfish-headline]: http://arstechnica.com/security/2015/02/lenovo-pcs-ship-with-man-in-the-middle-adware-that-breaks-https-connections/
-[man-in-the-middle]: https://www.owasp.org/index.php/Man-in-the-middle_attack
-[ca-breach-search]: https://www.google.com/?gws_rd=ssl#q=certificate+authority+breach
-[diginotar]: http://en.wikipedia.org/wiki/DigiNotar
-[acm-article]: http://dl.acm.org/citation.cfm?id=2668154
-[cert-transparency]: http://www.certificate-transparency.org/

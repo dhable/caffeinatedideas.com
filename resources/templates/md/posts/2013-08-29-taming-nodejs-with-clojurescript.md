@@ -2,7 +2,7 @@
  :layout :post
  :tags ["clojurescript" "node.js"]}
 
-In my [previous post][prev-post], I outlined a new, lighter weight approach
+In my previous post, I outlined a new, lighter weight approach
 to building web applications using Clojurescript and node.js as the
 runtime environment for the backend. The nice part of Clojurescript is that
 it doesn't try to abstract away the host environment so all those useful
@@ -10,7 +10,8 @@ node.js packages can be reused without the need to wait for someone to rewrite
 them in Clojurescript.
 
 To start, we need to pick a framework for our web development. My personal
-preference is [restify][restify-web] since it comes out of the box with support
+preference is [restify](http://mcavage.me/node-restify/) since it comes out of
+the box with support
 for API versioning, a static file server and handles a fair number of ReST conventions
 without any configuration. The only thing that it lacks is built in support for
 a page templating library, but this isn't important for our application. All of
@@ -63,7 +64,8 @@ the code.
 
 On line 5, we define an atom that contains a dictionary of users and the number
 of times they've been greeted before. By design, the Clojure language treats all
-variables as immutable unless we wrap the variable in an [atom][atoms]. If we
+variables as immutable unless we wrap the variable in an [atom](http://clojure.org/atoms).
+If we
 wouldn't have wrapped the dictionary in an atom, the application would never
 change any of the values and appear broken.
 
@@ -163,22 +165,18 @@ web_server.listen(3000);
 
 As you can see, they're not that different from each other. This begs the question,
 did we really gain anything by switching from JavaScript to Clojurescript? For starters,
-Clojurescript ensures that the core functions and modules [behave with the semantics][js-wat]
+Clojurescript ensures that the core functions and modules
+[behave with the semantics](https://www.destroyallsoftware.com/talks/wat)
 that we expect. Sure, we could leverage third party libraries to help in this regard but
 with the language enforcing the constrains, we know that the code base will have a consistent
 approach.
 
-The more exciting gains from Clojurescript come in the form of [core.async][core-async-web]
-and [core.typed][core-typed-web] modules from the Clojure community. Without the need to change
+The more exciting gains from Clojurescript come in the form of
+[core.async](http://www.infoq.com/news/2013/07/core-async)
+and [core.typed](https://github.com/clojure/core.typed) modules from the Clojure community.
+Without the need to change
 the runtime environment or the compiler, the community is bring asynchronous, type safe
 development to node.js. It's very compelling to be freed from nested callbacks and also have
 the option to enforce some type correctness in my code. The best part is that it's not a hard
 requirement so I can still prototype without defining types until I have a better understanding
 of the problem domain.
-
-[prev-post]: {% post_url 2013-08-15-webapps-with-clojurescript %}
-[restify-web]: http://mcavage.me/node-restify/
-[atoms]: http://clojure.org/atoms
-[js-wat]: https://www.destroyallsoftware.com/talks/wat
-[core-async-web]: http://www.infoq.com/news/2013/07/core-async
-[core-typed-web]: https://github.com/clojure/core.typed

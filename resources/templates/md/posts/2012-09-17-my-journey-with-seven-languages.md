@@ -3,10 +3,12 @@
  :tags ["education" "book review"]}
 
 Being nearly a year behind on my reading list, I finally broke out my copy of
-[Bruce Tate's Seven Languages in Seven Weeks][seven-lang-book] book for a little
+[Bruce Tate's Seven Languages in Seven Weeks][1] book for a little
 mind expanding exercise. At first I was a little disappointed that I've already
 worked with most of the languages back from my days in the CS program at UWM. Even
 so, I decided to keep my mind open and I'm glad that I did.
+
+[1]: http://www.amazon.com/Seven-Languages-Weeks-Programming-Programmers/dp/193435659X/ref=sr_1_1?ie=UTF8&qid=1348097921&sr=8-1&keywords=seven+languages+in+seven+weeks
 
 Bruce starts out with Ruby, a language that feels very familiar for anyone who's
 programmed in Perl, Python, Java, C# or VB. It was a nice warm up to the style of
@@ -84,5 +86,3 @@ This book is great for giving you a bit of a guided overview of a number of lang
 they're new or old to you. Even if you've worked with one in the past, it's best to keep an open
 mind and see if you can appreciate what each language has to offer. Who knows, you might find
 yourself becoming an advocate for one in the future.
-
-[seven-lang-book]: http://www.amazon.com/Seven-Languages-Weeks-Programming-Programmers/dp/193435659X/ref=sr_1_1?ie=UTF8&qid=1348097921&sr=8-1&keywords=seven+languages+in+seven+weeks

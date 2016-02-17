@@ -7,8 +7,8 @@ struggling to keep up with all the programs that I use on a daily basis for
 development. Running VMs with Linux and Windows didn't help so I jumped on board
 the new 15" MacBook with Retina display because I could get 16GB of RAM in it.
 The added bonus was a free copy of Mountain Lion when it was released. I'm still
-waiting on my download code from [Apple's up-to-date][apple-uptodate] program and
-that's a bit surprising.
+waiting on my download code from [Apple's up-to-date](http://www.apple.com/osx/uptodate/)
+program and that's a bit surprising.
 
 If you haven't experienced the up-to-date program, it's really baffling why Apple
 didn't spend a few more days to make the whole experience better. The forms start
@@ -45,5 +45,3 @@ to you. The password comes in a second PDF document and then you need to open Ap
 and redeem it. For a company that enables checkout with smartphones in their brick and
 mortar stores, this seems very backwards and way to complicated. Hopefully the AppStore
 team is already streamlining this process for the next Mac OS release.
-
-[apple-uptodate]: http://www.apple.com/osx/uptodate/

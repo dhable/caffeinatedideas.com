@@ -35,8 +35,9 @@ engine.start() # And we're off!
 ```
 
 So starting this new resource which is going to consume CPU cycles and get work done
-was quite simple. How do we stop it? Well, reading the [API docs for the Python
-threads][python-3-thread-api], we need to implement this in the SyncEngine run method.
+was quite simple. How do we stop it? Well, reading the
+[API docs for the Python threads](http://docs.python.org/py3k/library/threading.html#thread-objects),
+we need to implement this in the SyncEngine run method.
 Let's return to our SyncEngine definition then and add the necessary code to
 shut it down.
 
@@ -129,5 +130,3 @@ interactive UI application.
 As long as devices, operating systems and frameworks keep the cost of creating
 threads cheap, developers will be doomed to troubleshoot the same set of concurrency
 issues over and over again. It's time to start looking for alternatives.
-
-[python-3-thread-api]: http://docs.python.org/py3k/library/threading.html#thread-objects

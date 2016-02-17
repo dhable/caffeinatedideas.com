@@ -2,7 +2,8 @@
  :layout :post
  :tags ["startup"]}
 
-I ran across [this article][techcrunch-rentobo] about [Rentobo][rentobo] while
+I ran across [this article](http://techcrunch.com/2012/06/25/rentobo/) about
+[Rentobo](http://www.rentobo.com/) while
 glancing through TechCrunch the other day. This sounds a lot like the idea I
 had for a site I was working on from 2005-2010 called LandlordCompanion.com,
 which failed to launch after many years of trying. Instead of yet another blog
@@ -86,8 +87,5 @@ LandlordCompanion.com has taught me some very important life lessons:
 * If you loose passion for the idea, quit! You won't create greatness unless you really
   believe in your product.
 
-I hope [Rentobo][rentobo] finds success and brings my vision to life. The world sure
+I hope [Rentobo](http://www.rentobo.com/) finds success and brings my vision to life. The world sure
 could use help making renting easier.
-
-[techcrunch-rentobo]: http://techcrunch.com/2012/06/25/rentobo/
-[rentobo]: http://www.rentobo.com/

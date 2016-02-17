@@ -10,8 +10,9 @@ wild day. The harsh reality is that nothing in life is certain.
 
 Developers have started to acknowledge that our modern app-centric solutions are really distributed systems
 that suffer from all of the uncertainty expressed so nicely in the
-[fallacies of distributed systems][dist-sys-fallacies]. We have come to understand and accept the the fact
-that our spiffy Ember.js front end might fail when it calls our Flask API server that currently experienced
+[fallacies of distributed systems](http://en.wikipedia.org/wiki/Fallacies_of_distributed_computing). We have
+come to understand and accept the the fact that our spiffy Ember.js front end might fail when it calls our
+Flask API server that currently experienced
 a 25 second network glitch trying to log into the MySQL database hosted in AWS. The business expects that
 when we launch our app that the developers have thought enough about these issues. Organizations like Netflix
 have gone as far as building Chaos Monkey to constantly introduce the small edge cases.
@@ -32,8 +33,9 @@ This list shouldn't come as a surprise to anyone who's recently participated on 
 may scrum practitioners have worked to establish a process that sets one or more of these fallacies in stone.
 The effects of ignoring the fallacies is most often seen in the simple act of estimating. Instead of trying to
 acknowledge all of the uncertainty in a project, we end up subjecting teams to games of
-[planning poker][planning-poker] or apply [mathematically operations][velocity] to numbers until we get an
-answer that we like better. Why not simply accept the uncertainty and [avoid spending time estimating][NoEstimates]
+[planning poker](http://www.planningpoker.com/) or apply
+[mathematically operations](http://en.wikipedia.org/wiki/Velocity_(software_development) to numbers until we get an
+answer that we like better. Why not simply accept the uncertainty and [avoid spending time estimating](http://noestimates.org/blog/)
 something we simply do not understand.
 
 Lack of estimates and embracing the uncertainty is likely to leave many project managers feeling a bit uncomfortable.
@@ -42,10 +44,4 @@ product. Doesn't that require estimates? It does only if you also believe that y
 something done. Instead, try shipping code continuously to production and stop worrying about trying to estimate
 the uncertain.
 
-Viva [#NoEstimates][NoEstimates-Hashtag]!
-
-[NoEstimates]: http://noestimates.org/blog/
-[NoEstimates-Hashtag]: https://twitter.com/search?q=%23NoEstimates
-[dist-sys-fallacies]: http://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
-[planning-poker]: http://www.planningpoker.com/
-[velocity]: http://en.wikipedia.org/wiki/Velocity_(software_development)
+Viva [#NoEstimates](https://twitter.com/search?q=%23NoEstimates)!

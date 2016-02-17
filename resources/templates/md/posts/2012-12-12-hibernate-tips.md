@@ -30,7 +30,7 @@ developer sanity in the age of fast servers.
 
 ## Tip #2: Use Flyway for Schema Management
 
-If you haven't hear of [Flyway][flyway-home], you need to click the link and get up to
+If you haven't hear of [Flyway](http://flywaydb.org), you need to click the link and get up to
 speed. One of Rails best features was helping developers manage their database changes in
 an agile way. After a few attempts, the Java community has finally caught up with our Ruby
 peers. If you're also using Spring ORM and Hibernate, you should take it a step further and
@@ -67,7 +67,8 @@ versions. Of course you have those already, right?
 ## Tip #3: Don't Fear UserTypes
 
 Most people use Hibernate to map their entity objects into tables, but this still leaves custom
-types on their own. For instance, QThru stores and uses [UPC][upc-wikipedia] data throughout our
+types on their own. For instance, QThru stores and uses
+[UPC](http://en.wikipedia.org/wiki/Universal_Product_Code) data throughout our
 application and it would be a shame to not have Hibernate convert between a VARCHAR field and a
 UPC object that we've defined. That's where UserTypes some into play. To get started, you'll need
 to create a new class that extends UserType. In our UPC example I ended up with
@@ -152,8 +153,9 @@ With our UserType in place, we now need to let Hibernate know that UPC instances
 use the new UPCType class to perform the actual CRUD operation. If you're using the JPA / Hibernate
 annotation library, this is kind of annoying. You need to the use @TypeDef annotation
 but you don't want to repeat this everywhere. Fortunately, you can avoid repeating the
-TypeDef everywhere if you [annotate the package][java-package-annotate]. Unfortunately,
-you'll need to annotate the package.
+TypeDef everywhere if you
+[annotate the package](http://docs.oracle.com/javase/specs/jls/se5.0/html/packages.html#7.4.1.1).
+Unfortunately, you'll need to annotate the package.
 
 To annotate the package, you'll need to create a file called package-info.java in the
 package you want to annotate. Within the package-info.java file you can annotate the
@@ -189,7 +191,3 @@ With this in place the rest of the team can just add a @Column annotation and us
 type in any entity objects without worrying about the internal representation or any rules
 associated with the UPC class. Those are all kept inside UPC and Hibernate continues to be
 in charge of saving and loading data fields, no matter what type they are.
-
-[flyway-home]: http://flywaydb.org
-[upc-wikipedia]: http://en.wikipedia.org/wiki/Universal_Product_Code
-[java-package-annotate]: http://docs.oracle.com/javase/specs/jls/se5.0/html/packages.html#7.4.1.1

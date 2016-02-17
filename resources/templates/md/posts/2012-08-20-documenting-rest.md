@@ -11,10 +11,12 @@ service developers and the new outsourced group and some interesting communicati
 concerns. The largest is, how do we communicate our API to those using the API?
 
 When I started researching how people document their ReST APIs, I found a lot of
-posts simply playing the \"it should be self documenting\" card. As a developer for
+posts simply playing the "it should be self documenting" card. As a developer for
 the last 12 years, I knew that was the same misguided line that people have been
-saying in this industry forever - think [XML][xml-myths]. Frankly, there's a lot of
-information to convey and sometimes I need more than a verb and a URL.
+saying in this industry forever - think
+[XML](http://workflow.healthbase.info/monographs/XML_myths_Browne.pdf). Frankly,
+there's a lot of information to convey and sometimes I need more than a verb and
+a URL.
 
 The first thought was to look for a way to to include some extra information in the
 JavaDoc comments for the methods of my business objects that handle these API entries
@@ -46,19 +48,17 @@ endpoint and method, that are important to ReST but not necessarily exposed in t
 (could be hidden in the framework). I didn't want to write another version of JavaDoc but
 I wanted to control how the documentation is generated.
 
-As it turns out, the JavaDoc tool does allow for an extension via the [Doclet API][doclet-spec].
+As it turns out, the JavaDoc tool does allow for an extension via the
+[Doclet API](http://docs.oracle.com/javase/1.5.0/docs/guide/javadoc/doclet/spec/index.html).
 Invoking the JavaDoc tool with the -doclet command line switch will tell JavaDoc to parse
 all the doc comment blocks from the Java code, construct a comment document object model and
 then pass control to the custom Doclet with the comment DOM. The custom Doclet is then free
 to query the DOM for information about the comments and the artifacts each comment appear
 next to in the source code.
 
-I eventually was able to create a custom Doclet that generated a [markdown text][markdown-spec]
+I eventually was able to create a custom Doclet that generated a
+[markdown text](http://daringfireball.net/projects/markdown/)
 document with all the information I needed from the code. Honestly, why not hand the documentation
 to another developer as a text file, the most universal file type developers know.
 
 In Part 2, I'll dig into constructing the Doclet plugin and the twist I added to my simple project.
-
-[xml-myths]: http://workflow.healthbase.info/monographs/XML_myths_Browne.pdf
-[doclet-spec]: http://docs.oracle.com/javase/1.5.0/docs/guide/javadoc/doclet/spec/index.html
-[markdown-spec]: http://daringfireball.net/projects/markdown/
