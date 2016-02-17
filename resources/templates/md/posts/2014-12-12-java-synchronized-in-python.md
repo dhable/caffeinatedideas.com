@@ -2,15 +2,15 @@
  :layout :post
  :tags ["python" "kata"]}
 
-A recent student posed the question, \"Is there a way to lock execution of an entire
-method in Python using Lock instead of writing out a with-block?\" My answer
+A recent student posed the question, "Is there a way to lock execution of an entire
+method in Python using Lock instead of writing out a with-block?" My answer
 started with all the good reasons why we wouldn't want to hide the locking behavior
 in magic, why adding it to all methods on all objects in python would be bad for
 performance and testing and then to argue that the current syntax based on the with
 keyword isn't that painful. Then I tried to see if I could replicate the problem
 using some python magic.
 
-## Java-like 'synchronized' Construct
+### Java-like 'synchronized' Construct
 
 What the student was really looking for was something similar to the synchronized keyword
 in the Java language. If you aren't familiar with Java, every object instance has a
@@ -50,7 +50,7 @@ class LinkedList:
 
 Let's see if we can cut down that python code.
 
-## Decorators
+### Decorators
 
 My first thought was to define a decorator, called ```synchronized``` that would
 return a new method with the locking semantics. Injecting the lock would need to
@@ -172,7 +172,7 @@ What we really need is more control over the class as the class is being defined
 hooks into the instance creation process.
 
 
-## Metaclasses
+### Metaclasses
 
 Python provides the metaclass mechanics if you need more control over the creation of
 classes or want to perform a bit more "magic" in your code. There are plenty of
@@ -286,7 +286,7 @@ good documentation for our code base. The metaclass is also a separate block of 
 can be unit tested and reused across the entire system.
 
 
-## What's The Point?
+### What's The Point?
 
 The usefulness of these solutions is in the process of trying to bend and morph python
 into a new and interesting shape through the various extension mechanisms that are provided
