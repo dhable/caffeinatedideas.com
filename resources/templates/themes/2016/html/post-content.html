@@ -7,15 +7,17 @@
     </div>
     <h2>{{post.title}}</h2>
 </div>
+
 <div>
     {% if post.toc %}{{post.toc|safe}}{% endif %}
     {{post.content|safe}}
 </div>
+
 {% if post.tags|not-empty %}
 <div id="post-tags">
     <b>Tags: </b>
     {% for tag in post.tags %}
-    <a href="{{tag.uri}}">{{tag.name}}</a>
+    <a href="{{tag.uri}}" class="label label-default">{{tag.name}}</a>
     {% endfor %}
 </div>
 {% endif %}

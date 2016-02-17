@@ -4,6 +4,7 @@
   <title>{{title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   {% style "css/app.css" %}
 </head>
 
@@ -27,7 +28,41 @@
     </nav>
 
     <div class="container">
-      {% block content %}{% endblock %}
+      <div class="row">
+        <div class="col-md-9">
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-3">
+
+          <div class="card">
+            <h3 class="card-header">Links</h3>
+            <div class="card-block">
+              <ul class="block-list">
+                <li><a href="http://danhable.com">danhable.com</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {% if latest-posts|not-empty %}
+          <div class="card">
+            <h3 class="card-header" style="margin-bottom: 0">Recent Posts</h3>
+            <div class="list-group">
+                {% for post in latest-posts %}
+                <a href="{{post.uri}}" class="list-group-item">
+                  <p class="list-group-item-heading">
+                    <i class="fa fa-fw fa-caret-right"></i>
+                    {{post.title}}
+                  </p>
+                  <p class="list-group-item-text text-smaller">
+                    {{post.date}}
+                  </p>
+                </a>
+                {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
 
     <footer class="container">
@@ -39,7 +74,7 @@
               <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/>
             </a>
           </span>
-          <span class="cc-text">
+          <span class="cc-text text-smaller">
             This work by
             <a xmlns:cc="http://creativecommons.org/ns#" href="http://caffeinatedideas.com"
                property="cc:attributionName" rel="cc:attributionURL">Daniel T. Hable</a>
@@ -54,5 +89,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    {% script "js/highlight.pack.js" %}
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

@@ -2,3 +2,11 @@ html, body {
   margin: 30px;
   padding: 0;
 }
+
+.block-list {
+  margin: 0 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+.text-smaller { font-size: 0.8em; }
