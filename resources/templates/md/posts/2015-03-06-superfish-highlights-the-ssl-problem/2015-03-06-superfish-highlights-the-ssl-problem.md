@@ -45,7 +45,7 @@ are trusted without question is because they are located inside your computer's 
 
 Let's take a look at an example with google.com. Here's the certificate chain for google.com on March 6th, 2015.
 
-![google.com Certificate Chain](/assets/superfish/google_cert.png)
+![google.com Certificate Chain](/posts/2015-03-06-superfish-highlights-the-ssl-problem/google_cert.png)
 
 Following the chain, my browser trusts that google.com and all subdomains are trusted because they are also trusted
 by Google Internet Authority G2. Likewise, Google Internet Authority G2 can be trusted because it's trusted by
@@ -60,17 +60,17 @@ So what happens if we swapped out GeoTrust Global CA as the top level certificat
 VeriSign Class 3 Public Primary Certification Authority - G5? Well, that would fail because when the browser attempts
 to validate Google Internet Authority G2, the certificate signatures wouldn't match.
 
-![Swap Top Level Cert](/assets/superfish/ca_cert_swap.png)
+![Swap Top Level Cert](/posts/2015-03-06-superfish-highlights-the-ssl-problem/ca_cert_swap.png)
 
 Now, I could generate a new certificate for Google Internet Authority G2 based off the VeriSign certificate. Now
 the top two certificate signatures would match leaving the final certificate, google.com, as the last failing certificate.
 
-![Swap Intermediate Cert](/assets/superfish/l2_cert_swap.png)
+![Swap Intermediate Cert](/posts/2015-03-06-superfish-highlights-the-ssl-problem/l2_cert_swap.png)
 
 When I replace the final google.com certificate, I would then have a certificate chain that's cryptographically valid
 and worse yet, the browser has no way to know that all of the certificates have been spoofed.
 
-![Swap All Certs](/assets/superfish/all_cert_swap.png)
+![Swap All Certs](/posts/2015-03-06-superfish-highlights-the-ssl-problem/all_cert_swap.png)
 
 Notice, none of this required sophisticated knowledge of cryptography or super computing clusters to brute force
 attack any algorithms. This type of attack is simple if you have access to the certificate store of the end user's
