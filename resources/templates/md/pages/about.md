@@ -1,4 +1,4 @@
-{:title "About"
+{:title "About Caffeinated Ideas"
  :layout :page
  :page-index 0
  :navbar? true}
