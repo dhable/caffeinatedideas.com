@@ -11,6 +11,7 @@
  :rss-filters        ["cryogen"]
  :recent-posts       5
  :post-date-format   "yyyy-MM-dd"
+ :archive-group-format "yyyy"
  :sass-src           nil
  :sass-dest          nil
  :theme              "2016"
