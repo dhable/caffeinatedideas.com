@@ -38,36 +38,36 @@
           <div class="card">
             <h3 class="card-header">Dan Hable</h3>
             <div class="card-block">
-              <a href="http://twitter.com/dhable">
-                <span class="fa-stack">
-                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-fw fa-twitter fa-stack-1x"></i>
-                </span>
-              </a>
-              <a href="https://www.linkedin.com/in/dhable">
-                <span class="fa-stack">
+              <span class="fa-stack">
+                <a href="https://www.linkedin.com/in/dhable">
                   <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
                   <i class="fa fw-fw fa-linkedin fa-stack-1x"></i>
-                </span>
-              </a>
-              <a href="https://github.com/dhable">
-                <span class="fa-stack">
+                </a>
+              </span>
+              <span class="fa-stack">
+                <a href="https://github.com/dhable">
                   <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
                   <i class="fa fa-fw fa-github-alt fa-stack-1x"></i>
-                </span>
-              </a>
-              <a href="http://stackoverflow.com/users/67927/dan-hable">
-                <span class="fa-stack">
+                </a>
+              </span>
+              <span class="fa-stack">
+                <a href="http://stackoverflow.com/users/67927/dan-hable">
                   <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
                   <i class="fa fa-fw fa-stack-overflow fa-stack-1x"></i>
-                </span>
-              </a>
-              <a href="">
-                <span class="fa-stack">
+                </a>
+              </span>
+              <span class="fa-stack">
+                <a href="http://twitter.com/dhable">
                   <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-fw "></i>
-                </span>
-              </a>
+                  <i class="fa fa-fw fa-twitter fa-stack-1x"></i>
+                </a>
+              </span>
+              <span class="fa-stack">
+                <a href="http://www.reddit.com/user/dhable/">
+                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-fw fa-reddit-alien fa-stack-1x"></i>
+                </a>
+              </span>
             </div>
           </div>
 
@@ -78,11 +78,10 @@
                 {% for post in latest-posts %}
                 <a href="{{post.uri}}" class="list-group-item">
                   <p class="list-group-item-heading">
-                    <i class="fa fa-fw fa-caret-right"></i>
                     {{post.title}}
                   </p>
                   <p class="list-group-item-text text-smaller">
-                    {{post.date}}
+                    {{post.date|date:"YYYY-MM-dd"}}
                   </p>
                 </a>
                 {% endfor %}
@@ -91,9 +90,9 @@
           {% endif %}
 
           <div class="card">
-            <h3 class="card-header">Recent Plays</h3>
-            <div class="list-group">
-              <script language="javascript" src="http://boardgamegeek.com/jswidget.php?username=dhable&numitems=5&text=none&images=medium&show=recentplays&imagesonly=1&imagepos=left&domains%5B%5D=boardgame"></script>
+            <h3 class="card-header">Recent Games</h3>
+            <div class="card-block">
+              <script language="javascript" src="http://boardgamegeek.com/jswidget.php?username=dhable&numitems=5&text=none&images=medium&show=recentplays&imagesonly=1&imagepos=center&domains%5B%5D=boardgame"></script>
             </div>
           </div>
         </div>
