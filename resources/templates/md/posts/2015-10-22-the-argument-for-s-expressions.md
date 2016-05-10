@@ -9,7 +9,7 @@ easy for the humans.
 </div>
 
 I found myself back in our Python code base today working with a set of nested
-dictionary objects. As I set out to look for the equivalent of Clojure's ```get-in```
+dictionary objects. As I set out to look for the equivalent of Clojure's `get-in`
 function, I ended up at a [nifty solution using reduce][1]. Inspired,
 I ended up with the following function in our Util module:
 
@@ -30,7 +30,7 @@ class UtilTests(unittest.TestCase):
         self.assertFalse(get_in({}, ["keya", "keyb"]), False)
 ```
 
-The problem is with the except block of code in the ```get_in``` function - I
+The problem is with the except block of code in the `get_in` function - I
 should have passed in the multiple types as a tuple instead of a comma separated
 list. Implementing that small change causes the failing unit test to succeed.
 

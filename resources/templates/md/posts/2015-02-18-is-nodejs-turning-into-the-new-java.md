@@ -46,9 +46,9 @@ so the concept is introduced early on. Armed with a tool, the average developer 
 of better or more efficient tool that may be offered to them.
 
 This pattern isn't new either - look at C++. Everyone who learned C++ was first introduced to allocation via pointers
-and the ```new``` keyword. While better options existed, such as
+and the `new` keyword. While better options existed, such as
 [object allocation on the stack](https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization) or the use
-of ```auto_ptr``` from the STL library, developers still continued to allocate memory with pointers. Combined with sloppy
+of `auto_ptr` from the STL library, developers still continued to allocate memory with pointers. Combined with sloppy
 designs, this led to [memory leaks](https://en.wikipedia.org/wiki/Memory_leak) and
 [null pointer reference](http://stackoverflow.com/a/2727872/67927) bugs being common in
 C++ code. Java solved this problem by making garbage collection the default regardless of how the object was allocated. In

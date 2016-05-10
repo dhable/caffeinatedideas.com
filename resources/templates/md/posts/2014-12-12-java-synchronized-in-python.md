@@ -16,7 +16,7 @@ What the student was really looking for was something similar to the synchronize
 in the Java language. If you aren't familiar with Java, every object instance has a
 mutex that can be locked by a single thread. When you add the synchronized keyword in a
 method signature or a synchronized block, Java adds the code to acquire the lock on
-the object currently bound to ```this```.  The end result is that the developer can ensure
+the object currently bound to `this`.  The end result is that the developer can ensure
 a method is thread safe simply by stating:
 
 ```java
@@ -30,7 +30,7 @@ public class LinkedList {
 To replicate this behavior in python, we'd need two extra pieces of functionality.
 
 1. Python objects do not implicitly contain a mutex lock, so we need to allocate
-an instance of ```threading.Lock``` on self during object construction.
+an instance of `threading.Lock` on self during object construction.
 
 2. We need to acquire this implicit Lock when the method starts and then release
 the Lock whenever flow exits our methods.
@@ -52,9 +52,9 @@ Let's see if we can cut down that python code.
 
 ### Decorators
 
-My first thought was to define a decorator, called ```synchronized``` that would
+My first thought was to define a decorator, called `synchronized` that would
 return a new method with the locking semantics. Injecting the lock would need to
-be done in the wrapping method since ```self``` isn't defined when the decorator
+be done in the wrapping method since `self` isn't defined when the decorator
 is executed. Here's my first attempt:
 
 ```python
@@ -82,15 +82,15 @@ class LinkedList:
         pass
 ```
 
-A nice first attempt but horribly broken - the ```hasattr()``` check on self and
+A nice first attempt but horribly broken - the `hasattr()` check on self and
 the construction of the Lock object is not thread safe. Solving this problem is
-simple enough if we can either ensure that ```_auto_lock``` is created in the
-class ```__init__``` method or we introduce a new Lock somewhere else in the
+simple enough if we can either ensure that `_auto_lock` is created in the
+class `__init__` method or we introduce a new Lock somewhere else in the
 process.
 
-Solving the problem in ```__init__``` can take multiple forms. The simplest solution
+Solving the problem in `__init__` can take multiple forms. The simplest solution
 is just require the user of the synchronized decorator to declare a member
-called ```_auto_lock``` and raise an exception if the lock is missing. Then our
+called `_auto_lock` and raise an exception if the lock is missing. Then our
 decorator would look like:
 
 ```python
@@ -124,11 +124,11 @@ class LinkedList:
 
 The downside here is that users are required to make two changes to their classes
 in order to use the synchronized behavior. This also means that the developer has
-read the documentation where we mention that they need to add ```_auto_lock``` to
-the ```self``` instance. Relying on the user of our decorator is not as automatic
+read the documentation where we mention that they need to add `_auto_lock` to
+the `self` instance. Relying on the user of our decorator is not as automatic
 as the Java synchronized block.
 
-The other solution is to introduce a Lock to prevent assigning ```_auto_lock```
+The other solution is to introduce a Lock to prevent assigning `_auto_lock`
 multiple times. The downside with this approach is the performance hit we need to
 take when the synchronized method is called the first time on new object instances.
 To try to make this process somewhat tolerable, we use the
@@ -180,7 +180,7 @@ resources that explain
 [metaclasses in python](http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Metaprogramming.html)
 far better that I could and I would suggest taking a look at them before continuing.
 
-The first order of business is to create ```_auto_lock``` automatically on self. The
+The first order of business is to create `_auto_lock` automatically on self. The
 only action that our user needs to take is to declare that their class definition uses
 our metaclass. Here's our metaclass solution:
 
@@ -218,17 +218,17 @@ class LinkedList:
         pass
 ```
 
-The first thing to notice is that the metaclass ```__init__``` method doesn't get passed
-a reference to self (instance of ```Synchronized```) but instead is passed an instance of
-the object that is mixing in the behaviors of Synchronized (instance of ```LinkedList```).
+The first thing to notice is that the metaclass `__init__` method doesn't get passed
+a reference to self (instance of `Synchronized`) but instead is passed an instance of
+the object that is mixing in the behaviors of Synchronized (instance of `LinkedList`).
 Also interesting is that since our code is being called as part of the object instance
 creation process, we're in a thread-safe block of code.
 
 Now we want to provide a synchronized version of our methods. Since we want to make usage
 of the behavior as simple as possible, we need a new way to determine if a method should be synchronized.
-We'll do this by naming convention - if the method name starts with ```synchronized_``` then
-we'll wrap execution of the method to use ```_auto_lock```. Using the ```cls```
-reference, we can use ```dir``` to find the methods with the matching names and then
+We'll do this by naming convention - if the method name starts with `synchronized_` then
+we'll wrap execution of the method to use `_auto_lock`. Using the `cls`
+reference, we can use `dir` to find the methods with the matching names and then
 [monkey patch](http://en.wikipedia.org/wiki/Monkey_patch) them with a decorator-like function.
 
 ```python

@@ -8,7 +8,7 @@ can save the rants about obfuscating code for some other time). Per the norm
 for this activity, the test group ran into issues in a section of code and needed
 help investigating. As I dug into the issue, I turned to the log files and found
 that they were absolutely worthless. While we suspected that the obfuscation
-processor renamed or removed a class, we couldn\'t find the telltale signs of
+processor renamed or removed a class, we couldn't find the telltale signs of
 such an activity - no exceptions at all.
 
 After an hour tracing the source code, I found what seems to be a common pattern
