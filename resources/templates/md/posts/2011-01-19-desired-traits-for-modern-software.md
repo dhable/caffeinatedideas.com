@@ -49,10 +49,12 @@ there:
 	individual nodes won't cause cascading issues and bring the whole system down.
 
 
-> Disclaimer: Security was in a close race for the #3 spot on my list but there are
-> plenty of products that are wildly successful even though they suffer from numerous
-> security exploits. I don't encourage it, but with extendability and maintainability
-> you should be able to add new security features in.
+<div class="alert alert-info">
+__Disclaimer__: Security was in a close race for the #3 spot on my list but there are
+plenty of products that are wildly successful even though they suffer from numerous
+security exploits. I don't encourage it, but with extendability and maintainability
+you should be able to add new security features in.
+</div>
 
 If we can add on to our software, it's easy to deploy new versions and the
 existing software can handle some uncertainty with execution then it's easy to

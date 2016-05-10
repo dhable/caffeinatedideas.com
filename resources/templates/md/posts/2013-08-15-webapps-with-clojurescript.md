@@ -70,9 +70,11 @@ the project file brings in a few Leinengen plug-ins - one for copying resource
 files from a source location to the destination and cljsbuild to make it easier
 to integrate Clojurescript into Leinengen.
 
-__Quick Note:__ I ran into a bug with lein-resource 0.3.0 where the contents
+<div class="alert alert-info">
+__Note__: I ran into a bug with lein-resource 0.3.0 where the contents
 of the resource file were replaced with the name of the file. Not super helpful
 but I do know that 0.3.1 fixed this problem.
+</div>
 
 Lines 6 and 7 are used to declare where the Clojurescript sources are kept relative
 to the project. You can omit these lines but I've found a few occurrences where

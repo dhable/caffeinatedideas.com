@@ -17,10 +17,11 @@ the HTML content. Superfish would then add new HTML code to the stream before th
 with ads not placed on the site by the site author or would replace existing ads with Superfish ads. The end goal was
 to increase the impressions for Superfish ads over traditional ad networks.
 
-> __Side Note__:
-> Performing this kind of injection for non-SSL sites doesn't break security, although it's unethical. We
-> unfortunately live in an internet where the content is supported by ads. Removing the ads from a site and
-> replacing it with another set basically takes money out of the site's pocket to line Lenovo's pocket.
+<div class="alert alert-info">
+__Side Note__: Performing this kind of injection for non-SSL sites doesn't break security, although it's unethical. We
+unfortunately live in an internet where the content is supported by ads. Removing the ads from a site and
+replacing it with another set basically takes money out of the site's pocket to line Lenovo's pocket.
+</div>
 
 Since more sites are running SSL, Superfish also contained a "feature" by which it would unwrap the SSL
 connection from the site, then reestablish a SSL connection to the browser. In order to prevent the browser
@@ -52,9 +53,11 @@ by Google Internet Authority G2. Likewise, Google Internet Authority G2 can be t
 GeoTrust Global CA and the only reason that GeoTrust Global CA is trusted is because it was installed locally as part
 of my Mac OS X installation.
 
-> __Side Note__: The decision on which certificates get bundled with browsers and operating systems is a
-> very interesting and very political. Just like network pairing agreements, it's often based  on personal relationships
-> and boatloads of money being transferred between companies.
+<div class="alert alert-info">
+__Side Note__: The decision on which certificates get bundled with browsers and operating systems is a
+very interesting and very political. Just like network pairing agreements, it's often based  on personal relationships
+and boatloads of money being transferred between companies.
+</div>
 
 So what happens if we swapped out GeoTrust Global CA as the top level certificate and replaced it with
 VeriSign Class 3 Public Primary Certification Authority - G5? Well, that would fail because when the browser attempts
@@ -98,9 +101,11 @@ still failed to fix the problem for non-Chromium users and was only possible bec
 
 Having SSL is simply not enough anymore.
 
-> __Caveat__: While the outlook for SSL is grim right now, you should still pay a reputable certificate authority
-> for a 1 year certificate and protect all HTTP traffic with SSL. If the entire internet used 1 year certificates,
-> we limit the exposure to at most a single year.
+<div class="alert alert-info">
+__Caveat__: While the outlook for SSL is grim right now, you should still pay a reputable certificate authority
+for a 1 year certificate and protect all HTTP traffic with SSL. If the entire internet used 1 year certificates,
+we limit the exposure to at most a single year.
+</div>
 
 
 ## Technical Solutions

@@ -6,7 +6,7 @@
 > fences properly, even though they were hidden. "He loved doing things right.
 > He even cared about the look of the parts you couldn't see."
 >
-> Excerpt From: Walter Isaacson. "Steve Jobs." iBooks. [https://itun.es/us/QyFUz.l](https://itun.es/us/QyFUz.l)
+> -- Walter Isaacson. "Steve Jobs." iBooks. [https://itun.es/us/QyFUz.l](https://itun.es/us/QyFUz.l)
 
 Today I had to investigate a ticket that failed the end to end verification step.
 The comment in the ticket contained a good amount of details about the environment

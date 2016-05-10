@@ -18,9 +18,8 @@ The adoption of a new technology isn't the interesting part of the story. Engine
 individuals like the challenge of learning and adopting a new technology. It's more interesting to see the blatant bashing
 of Java, the technology node.js is trying to replace. For instance:
 
-> "Monolithic applications, mainly written in Java, are killing development cycles, stifling innovation and keeping
-> Java-heavy IT organizations many steps behind their competitors, especially those who have embraced a microservices
-> architecture"
+> Monolithic applications, mainly written in Java, are killing development cycles, stifling innovation and keeping
+> Java-heavy IT organizations many steps behind their competitors, especially those who have embraced a microservices architecture"
 >
 > -- Joe McCann, NodeSource Co-Founder and CEO ([source](http://techcrunch.com/2015/02/09/nodesource-raises-3-million-to-build-new-programming-tools/))
 

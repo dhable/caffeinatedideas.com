@@ -39,9 +39,11 @@ from Tim Cook?
 There is a positive in all this - I have to wait a day or two before I can upgrade and
 thus watch to see if there are any major bugs that would change my mind.
 
+<div class="alert alert-info">
 __Update__: Two days later, I finally got a response from Apple. Turns out that they
 generate a PDF document with a redemption code protected by a password and email that
 to you. The password comes in a second PDF document and then you need to open AppStore
 and redeem it. For a company that enables checkout with smartphones in their brick and
 mortar stores, this seems very backwards and way to complicated. Hopefully the AppStore
 team is already streamlining this process for the next Mac OS release.
+</div>

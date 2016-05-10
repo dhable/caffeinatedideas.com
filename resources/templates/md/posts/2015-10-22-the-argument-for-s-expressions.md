@@ -2,9 +2,11 @@
  :layout :post
  :tags ["opinion" "PLT" "s-expressions"]}
 
-> 27 Dec 2015: I updated the title of this post to better reflect the fact that
-> in addition to enabling macros, s-expressions also make the syntax rules
-> easy for the humans.
+<div class="alert alert-info">
+__27 Dec 2015__: I updated the title of this post to better reflect the fact that
+in addition to enabling macros, s-expressions also make the syntax rules
+easy for the humans.
+</div>
 
 I found myself back in our Python code base today working with a set of nested
 dictionary objects. As I set out to look for the equivalent of Clojure's ```get-in```

@@ -6,7 +6,7 @@ I've decided to assemble a list of some cool features I found in the last week
 working with Hibernate. If you're going to use an ORM, you might as well learn to
 use it effectively.
 
-## Tip #1: Scan for Entity Classes
+## Tip 1: Scan for Entity Classes
 
 If you're using Spring ORM and Hibernate like we are at QThru, you've probably
 started off with a session factory that listed each of the entity objects in the
@@ -28,7 +28,7 @@ declaring them. Is that really a problem for most of us? The session factory is 
 be wired and constructed when you bootstrap your application, a small price to pay for
 developer sanity in the age of fast servers.
 
-## Tip #2: Use Flyway for Schema Management
+## Tip 2: Use Flyway for Schema Management
 
 If you haven't hear of [Flyway](http://flywaydb.org), you need to click the link and get up to
 speed. One of Rails best features was helping developers manage their database changes in
@@ -64,7 +64,7 @@ countless hours and taken the pain out of schema changes. Since bad code happens
 to make sure you have good database backups or snapshots before deploying new application
 versions. Of course you have those already, right?
 
-## Tip #3: Don't Fear UserTypes
+## Tip 3: Don't Fear UserTypes
 
 Most people use Hibernate to map their entity objects into tables, but this still leaves custom
 types on their own. For instance, QThru stores and uses
