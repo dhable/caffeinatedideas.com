@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <title>{{title}}</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
@@ -36,61 +39,58 @@
         <div class="col-md-3">
 
           <div class="card">
-            <h3 class="card-header">Dan Hable</h3>
+            <!-- <h5 class="card-header">About Me</h5> -->
             <div class="card-block">
-              <span class="fa-stack">
-                <a href="https://www.linkedin.com/in/dhable">
-                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fw-fw fa-linkedin fa-stack-1x"></i>
+              <div class="media">
+                <a class="media-left" href=""#>
+                  <img class="media-object" src="/img/dan.jpg" alt="Dan Hable's Picture" width="64" height="64">
                 </a>
-              </span>
-              <span class="fa-stack">
-                <a href="https://github.com/dhable">
-                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-fw fa-github-alt fa-stack-1x"></i>
-                </a>
-              </span>
-              <span class="fa-stack">
-                <a href="http://stackoverflow.com/users/67927/dan-hable">
-                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-fw fa-stack-overflow fa-stack-1x"></i>
-                </a>
-              </span>
-              <span class="fa-stack">
-                <a href="http://twitter.com/dhable">
-                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-fw fa-twitter fa-stack-1x"></i>
-                </a>
-              </span>
-              <span class="fa-stack">
-                <a href="http://www.reddit.com/user/dhable/">
-                  <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-fw fa-reddit-alien fa-stack-1x"></i>
-                </a>
-              </span>
+                <div class="media-body">
+                  <h4 class="media-heading">Dan Hable</h4>
+                  <span class="fa-stack">
+                    <a href="https://www.linkedin.com/in/dhable">
+                      <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
+                      <i class="fa fw-fw fa-linkedin fa-stack-1x"></i>
+                    </a>
+                  </span>
+                  <span class="fa-stack">
+                    <a href="https://github.com/dhable">
+                      <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-fw fa-github-alt fa-stack-1x"></i>
+                    </a>
+                  </span>
+                  <span class="fa-stack">
+                    <a href="http://stackoverflow.com/users/67927/dan-hable">
+                      <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-fw fa-stack-overflow fa-stack-1x"></i>
+                    </a>
+                  </span>
+                  <span class="fa-stack">
+                    <a href="http://twitter.com/dhable">
+                      <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-fw fa-twitter fa-stack-1x"></i>
+                    </a>
+                  </span>
+                  <span class="fa-stack">
+                    <a href="http://www.reddit.com/user/dhable/">
+                      <i class="fa fa-fw fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-fw fa-reddit-alien fa-stack-1x"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
           {% if latest-posts|not-empty %}
           <div class="card">
-            <h3 class="card-header" style="margin-bottom: 0">Recent Posts</h3>
-            <div class="list-group">
-                {% for post in latest-posts %}
-                <a href="{{post.uri}}" class="list-group-item">
-                  <p class="list-group-item-heading">
-                    {{post.title}}
-                  </p>
-                  <p class="list-group-item-text text-smaller">
-                    {{post.date|date:"YYYY-MM-dd"}}
-                  </p>
-                </a>
-                {% endfor %}
-            </div>
+            <a class="twitter-timeline" href="https://twitter.com/dhable" data-widget-id="731143742741057536">Tweets by @dhable</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           </div>
           {% endif %}
 
           <div class="card">
-            <h3 class="card-header">Recent Games</h3>
+            <h5 class="card-header">Recently Played</h5>
             <div class="card-block">
               <script language="javascript" src="http://boardgamegeek.com/jswidget.php?username=dhable&numitems=5&text=none&images=medium&show=recentplays&imagesonly=1&imagepos=center&domains%5B%5D=boardgame"></script>
             </div>

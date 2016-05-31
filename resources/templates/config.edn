@@ -1,6 +1,6 @@
 {:site-title         "Caffeinated Ideas"
  :author             "Dan Hable"
- :description        "Random thoughts on tech, beer and games fueled by too much coffee."
+ :description        "Random thoughts on tech, startups and games fueled by too much coffee."
  :site-url           "http://caffeinatedideas.com"
  :post-root          "posts"
  :page-root          "pages"
@@ -20,6 +20,6 @@
  :disqus?            true
  :disqus-shortname   "caffeinatedideas"
  :ignored-files      [#"\.#.*" #".*\.swp$"]
- :posts-per-page     5
- :blocks-per-preview 2
- :previews?          false}
+ :posts-per-page     6
+ :blocks-per-preview 1
+ :previews?          true}

@@ -1,20 +1,32 @@
 {% extends "/html/base.html" %}
 {% block content %}
-<div id="post">
-    {% include "/html/post-content.html" %}
-    {% if disqus? %}
-    <div id="comments">
-        <a href="{{post.uri}}#disqus_thread">View Comments</a>
-    </div>
-    {% endif %}
 
-    <div id="prev-next">
-        {% if post.prev %}
-        <a href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
-        {% endif %}
-        {% if post.next %}
-        <a class="right" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
-        {% endif %}
-    </div>
+<!-- TODO: add spacing here -->
+
+<div class="card card-block">
+  <h4 class="card-title">Caffeinated Ideas</h4>
+  <i class="card-text">noun, plural</i>
+  <p class="card-text">
+    <ol>
+      <li>Solutions to technical problems brainstormed during coffee breaks.</li>
+      <li>Unrestricted &amp; creative thoughts that seem interesting and deserve further exploration.</li>
+      <li>This blog maintained by <a href="http://danhable.com">Dan</a> since 2011.</li>
+    </ol>
+  </p>
 </div>
+<br/>
+<br/>
+<br/>
+<div class="card-columns">
+  {% for post in posts %}
+    <div class="card">
+      <div class="card-header"><a href="{{post.uri}}">{{post.title}}</a></div>
+      <div class="card-block">
+        <p class="card-text">{{post.content|safe}}</p>
+        <p class="card-text"><small class="text-muted">Posted {{post.date|date:"yyyy MMM dd"}}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
 {% endblock %}
