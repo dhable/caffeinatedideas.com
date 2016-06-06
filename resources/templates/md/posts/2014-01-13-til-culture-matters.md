@@ -1,6 +1,6 @@
 {:title "TIL Culture Matters"
  :layout :post
- :tags ["startup"]}
+ :tags ["startup" "qthru"]}
 
 For me, 2013 was a year of many lessons learned out of the unfortunate bankruptcy
 of QThru. It just seemed right to document all of the things I've learned through
