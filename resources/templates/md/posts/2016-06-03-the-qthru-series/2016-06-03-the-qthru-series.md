@@ -17,6 +17,13 @@ become the first, and currently unpaid, full time employee for QThru.
 
 ![QThru Website circa May 2013](/posts/2016-06-03-the-qthru-series/banner.jpg)
 
+<div class="card">
+<div class="card-block">
+__Post In The Series__:
+* [QThru Business Model](/2016/06/16/qthru-business-model.html)
+</div>
+</div>
+
 Honestly, this was the most fun I've had professionally. We spent the
 summer working from offices leased by other startups and coffee shops. We were
 free to experiment on how to produce a professional app with the smallest
