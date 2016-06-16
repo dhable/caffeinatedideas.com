@@ -1,8 +1,6 @@
 {% extends "/html/base.html" %}
 {% block content %}
 
-<!-- TODO: add spacing here -->
-
 <div class="card card-block">
   <h4 class="card-title">Caffeinated Ideas</h4>
   <i class="card-text">noun, plural</i>
@@ -16,17 +14,20 @@
 </div>
 <br/>
 <br/>
+<h3>Recent Posts</h3>
 <br/>
-<div class="card-columns">
-  {% for post in posts %}
-    <div class="card">
-      <div class="card-header"><a href="{{post.uri}}">{{post.title}}</a></div>
-      <div class="card-block">
-        <p class="card-text">{{post.content|safe}}</p>
-        <p class="card-text"><small class="text-muted">Posted {{post.date|date:"yyyy MMM dd"}}</small></p>
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+    {% for post in posts %}
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title"><a href="{{post.uri}}">{{post.title}}</a></h4>
+          <p class="card-text">{{post.content|safe}}</p>
+          <p class="card-text"><small class="text-muted">Posted {{post.date|date:"yyyy MMM dd"}}</small></p>
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
