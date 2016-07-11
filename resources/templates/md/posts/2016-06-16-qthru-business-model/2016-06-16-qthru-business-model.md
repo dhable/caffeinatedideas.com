@@ -4,6 +4,7 @@
 
 > I'm talking about liquid. Rich enough to have your own jet. Rich enough not to
 > waste time. Fifty, a hundred million dollars, buddy. A player. Or nothing.
+>
 > -- Gordon Gekko
 
 <div class="alert alert-info">
