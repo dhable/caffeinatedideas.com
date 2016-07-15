@@ -32,3 +32,18 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
+.post-summary {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.post-summary:last-of-type {
+  border: 0;
+}
+
+h5 a, h5 a:hover, h5 a:visited {
+  color: Black;
+  text-decoration: none;
+}
