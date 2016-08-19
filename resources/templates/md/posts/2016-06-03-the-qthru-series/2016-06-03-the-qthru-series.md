@@ -22,6 +22,7 @@ become the first, and currently unpaid, full time employee for QThru.
 __Post In The Series__:
 * [QThru Business Model](/2016/06/16/qthru-business-model.html)
 * [QThru Platform Architecture](/2016/06/28/qthru-platform-architecture.html)
+* [QThru Warp Pipe POS Integration](/2016/08/19/qthru-warp-pipe-pos-integration.html)
 </div>
 </div>
 
