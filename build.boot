@@ -3,13 +3,15 @@
   :resource-paths #{"src"}
   :dependencies   '[[org.clojure/clojure "1.9.0-alpha10"]
                     [markdown-clj "0.9.89"]
-                    [selmer "1.0.7"]])
+                    [selmer "1.0.7"]
+                    [clj-time "0.12.0"]])
 
 (require '[danhable.site-gen :refer :all])
 
 (task-options!
-  site-gen {:post-dir "./resources/posts"
-            :site-dir "./target/site"})
+  site-gen {:post-dir     "./resources/posts"
+            :template-dir "./resources/template"
+            :site-dir     "./target/site"})
 
 
 ;; Tasks:
