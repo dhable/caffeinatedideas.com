@@ -1,0 +1,6 @@
+{:template-name "post"
+ :resources {"nosql.png" nil
+             "springmvc.png" nil}
+ :title "Smarter Architectures with NoSQL"
+ :tags ["idea"]
+ :content #include "article.md"}

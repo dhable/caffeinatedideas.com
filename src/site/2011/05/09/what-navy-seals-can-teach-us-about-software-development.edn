@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "What Navy SEALs Can Teach Us About Software Development"
+ :tags ["idea" "agile" "process"]
+ :content #include "article.md"}

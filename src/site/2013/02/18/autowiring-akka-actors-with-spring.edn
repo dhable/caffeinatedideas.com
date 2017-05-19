@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Autowiring Akka Actors with Spring"
+ :tags ["java" "concurrency"]
+ :content #include "article.md"}

@@ -1,23 +1,32 @@
 (set-env!
-  :source-paths   #{"src"}
-  :resource-paths #{"src"}
-  :dependencies   '[[org.clojure/clojure "1.9.0-alpha10"]
-                    [markdown-clj "0.9.89"]
-                    [selmer "1.0.7"]
-                    [clj-time "0.12.0"]])
+  :source-paths   #{"src/clojure" "tests" "src/site"}
+  :resource-paths #{"resources"}
+  :dependencies   '[[org.clojure/clojure "1.9.0-alpha16"]
+                    [markdown-clj "0.9.99"]
+                    [selmer "1.10.7"]
+                    [clj-time "0.13.0"]
+                    [boot/core "RELEASE" :scope "test"]
+                    [adzerk/boot-test "1.2.0" :scope "test"]
+                    [onetom/boot-lein-generate "0.1.3" :scope "test"]])
 
-(require '[danhable.site-gen :refer :all])
+(require '[adzerk.boot-test :refer :all]
+         '[boot.lein]
+         '[danhable.berg.boot :refer :all])
 
-(task-options!
-  site-gen {:post-dir     "./resources/posts"
-            :template-dir "./resources/template"
-            :site-dir     "./target/site"})
+(boot.lein/generate)
+
+
+;;(task-options!
+;;  generate-site {:post-dir     "resources/posts"
+;;                 :page-dir     "resources/pages"
+;;                 :template-dir "resources/template"
+;;                 :site-dir     "target/site"})
 
 
 ;; Tasks:
 ;;
 ;;  test - Run unit tests on clojure code
-;;  site-gen - Compile source into static site
+;;  generate-site - Compile source into static site
 ;;  publish - Sync site to S3 or other server
 ;;
 ;; V2:

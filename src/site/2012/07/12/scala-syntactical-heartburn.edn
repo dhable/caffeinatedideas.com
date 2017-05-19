@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Scala Syntactical Heartburn"
+ :tags ["scala" "rants"]
+ :content #include "article.md"}

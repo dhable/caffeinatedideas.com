@@ -1,0 +1,4 @@
+{:title "This is a title"
+ :resources {}
+ :template-name "post"
+ :content "loaded other.edn"}

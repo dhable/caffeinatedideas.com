@@ -1,0 +1,9 @@
+{:template-name "post"
+ :resources ["1.jpg"
+             "2.jpg"
+             "3.jpg"]
+ :title "QThru: The Platform Architecture"
+ :tags ["retrospective" "qthru" "startup"]
+ :content #include "article.md"}
+
+

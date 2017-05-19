@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Another argument for s-expressions"
+ :tags ["opinion" "PLT" "s-expressions"]
+ :content #include "article.md"}

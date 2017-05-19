@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "JavaScript Dependency Injection Pattern"
+ :tags ["javascript" "patterns"]
+ :content #include "article.md"}

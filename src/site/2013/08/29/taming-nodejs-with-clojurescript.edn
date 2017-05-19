@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Taming node.js with Clojurescript"
+ :tags ["clojurescript" "node.js"]
+ :content #include "article.md"}

@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources ["lines.jpg"]
+ :title "QThru: The Business Model"
+ :tags ["retrospective" "qthru" "startup"]
+ :content #include "article.md"}

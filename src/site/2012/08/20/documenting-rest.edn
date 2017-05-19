@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Documenting ReST"
+ :tags ["tools" "clojure"]
+ :content #include "article.md"}

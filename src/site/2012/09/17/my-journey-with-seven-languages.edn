@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "My Journey with Seven Languages"
+ :tags ["education" "book review"]
+ :content #include "article.md"}

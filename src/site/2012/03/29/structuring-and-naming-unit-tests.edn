@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Structuring and Naming Unit Tests"
+ :tags ["java" "testing" "agile"]
+ :content #include "article.md"}

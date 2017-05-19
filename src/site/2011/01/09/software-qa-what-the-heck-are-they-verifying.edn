@@ -1,0 +1,5 @@
+{:template-name "post"
+ :resources {}
+ :title "Software QA: What the heck are they verifying?"
+ :tags ["testing" "process"]
+ :content #include "article.md"}
