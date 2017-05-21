@@ -3,3 +3,6 @@ _site
 .env
 target/
 resources/public/
+project.clj
+.nrepl-history
+*.swp
