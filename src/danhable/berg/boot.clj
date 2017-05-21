@@ -4,25 +4,18 @@
             [boot.core :refer [deftask] :as boot]
             [danhable.berg.site :as site]))
 
-;(deftask generate-site
-;   ""
-;   [p post-dir     DIR str "The post source directory"
-;    g page-dir     DIR str "The page source directory"
-;    s site-dir     DIR str "The compiled site directory"
-;    t template-dir DIR str "The template directory"]
-;
-
 (deftask assemble
   "Generates static site output from source files and themes."
-  []
-  (let [site-target-dir (io/as-file "target")] ;; TODO: should take these options in from build.boot
+  [s source DIR str "Where the site source files are located"
+   t theme  DIR str "Base directory of the template to apply"
+   o output DIR str "The output or target directory for the site"]
+  (let [site-target-dir (io/as-file output)]
     (boot/empty-dir! site-target-dir)
     (boot/with-pre-wrap
       [fs]
-      (-> (site/new-Site {:theme "src/themes/default"
-                          :sources "src/site"
+      (-> (site/new-Site {:theme theme
+                          :sources source
                           :target site-target-dir})
           site/compile-site
           site/write-to-disk)
       (-> fs (boot/add-resource site-target-dir) boot/commit!))))
-

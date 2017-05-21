@@ -1,6 +1,5 @@
 (set-env!
-  :source-paths   #{"src/clojure" "tests" "src/site"}
-  :resource-paths #{"resources"}
+  :resource-paths #{"src"}
   :dependencies   '[[org.clojure/clojure "1.9.0-alpha16"]
                     [markdown-clj "0.9.99"]
                     [selmer "1.10.7"]
@@ -15,12 +14,10 @@
 
 (boot.lein/generate)
 
-
-;;(task-options!
-;;  generate-site {:post-dir     "resources/posts"
-;;                 :page-dir     "resources/pages"
-;;                 :template-dir "resources/template"
-;;                 :site-dir     "target/site"})
+(task-options!
+  assemble {:source "resources/site"
+            :theme  "resources/themes/default"
+            :output "target"})
 
 
 ;; Tasks:
