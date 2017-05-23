@@ -6,3 +6,4 @@ resources/public/
 project.clj
 .nrepl-history
 *.swp
+s3.properties

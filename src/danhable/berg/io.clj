@@ -4,7 +4,7 @@
   (:require [clojure.java.io :as io]
             [clojure.string :as str])
   (:import [java.io PushbackReader File]
-           [java.util EnumSet]
+           [java.util EnumSet Properties]
            [java.nio.file Files FileVisitOption FileVisitResult SimpleFileVisitor Path]
            [java.nio.file.attribute FileAttribute]))
 
@@ -110,3 +110,11 @@
   Strings, Files or Paths as input."
   [base f]
   (.relativize (as-path base) (as-path f)))
+
+
+(defn load-properties
+  [filename]
+  (with-open [stream (io/input-stream filename)]
+    (let [props (Properties.)]
+      (.load props stream)
+      props)))

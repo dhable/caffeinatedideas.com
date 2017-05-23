@@ -12,18 +12,22 @@
 (require '[adzerk.boot-test :refer :all]
          '[boot.lein]
          '[danhable.berg.boot :refer :all]
+         '[danhable.berg.io :refer [load-properties]]
          '[hashobject.boot-s3 :refer :all])
 
 (boot.lein/generate)
+
+(def s3-properties (load-properties "s3.properties"))
+(prn s3-properties)
 
 (task-options!
   assemble {:source "resources/site"
             :theme  "resources/themes/default"
             :output "target"}
   s3-sync {:source "."
-           :bucket "caffideas-test-bucket"
-           :access-key "" ;; TODO: how to store these?
-           :secret-key ""})
+           :bucket (.get s3-properties "bucket")
+           :access-key (.get s3-properties "access-key")
+           :secret-key (.get s3-properties "secret-key")})
 
 (deftask publish
   "Build the site from sources and then upload the result to S3."
