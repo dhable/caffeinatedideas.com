@@ -19,8 +19,6 @@
       TOCEntry->path (Tuple) -> url path
 
 
-
-
       Open Decisions:
       [design; hard]
         - How do I want to handle site content stuff (title, next page, prev page, etc)?
@@ -31,10 +29,6 @@
 
         [design; hard]
         - Working with images is very much undefined at this point, should work for attachements in general
-
-        [medium]
-        - Separate out dev resources from resources?
-        - Should site/ and themes/ live in the resources directory?
       "
   (:require [clojure.java.io :as io]
             [danhable.berg.page :as page]
