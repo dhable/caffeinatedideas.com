@@ -25,14 +25,6 @@
       (is (true? (is-page-source? test-path))))))
 
 
-(deftest test-path-bound-slurp
-  (testing "should return function bound to a directory when asking for file content"
-    (let [test-base-dir (io/as-file "resources/page_tests")
-          bound-slurp (path-bound-slurp test-base-dir)]
-      (is (= "This is file b.txt"
-             (bound-slurp "b.txt"))))))
-
-
 (deftest test-read-page-content
   (testing "should return Clojure data structure resolving all reader macros in process"
     (is (= {:title "This is a title"

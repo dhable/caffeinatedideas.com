@@ -42,6 +42,17 @@
     (is (= " metadata" (trim-extension " metadata.edn ")))))
 
 
+(deftest test-get-file-extension
+  (testing "should return nil when filename is nil"
+    (is (nil? (get-file-extension nil))))
+
+  (testing "should return empty string if there is no extension"
+    (is (= "" (get-file-extension "metadata"))))
+
+  (testing "should return extension if present"
+    (is (= ".edn" (get-file-extension "metadata.edn")))))
+
+
 (deftest test-replace-file-extension
   (let [test-file (io/file "/tmp/blog/metadata.edn")
         test-file-without-ext (io/file "/tmp/blog/metadata")]

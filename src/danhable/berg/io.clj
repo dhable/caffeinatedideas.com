@@ -41,6 +41,17 @@
     filename)))
 
 
+(defn get-file-extension
+  "Takes a filename string and returns the extension, which is defined to be the
+  part of the filename after the right most dot character. If the filename is nil,
+  the value returned is nil. In cases where there is no extension, an empty string
+  is returned."
+  [^String filename]
+  (if-let [ext-pos (str/last-index-of filename ".")]
+    (subs filename ext-pos)
+    nil))
+
+
 (defn replace-file-extension
   "Replaces any existing extension on java.io.File f with new-extension and return
   the results as a new java.io.File. If f is missing an extension, new-extension is

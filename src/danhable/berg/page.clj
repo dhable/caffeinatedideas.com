@@ -4,19 +4,25 @@
   in the code base."
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]
+            [markdown.core :as markdown]
             [danhable.berg.io :as io+]))
 
 
 (defrecord Page [source-file url-path template-name resources data rendered-view])
 
 
-(defn path-bound-slurp
-  "Returns a function that acts like slurp but will prepend base-dir to the
-  file path argument for slurp before slurping the file contents. Returns the
-  raw file contents."
-  [base-dir]
-  (fn [filename]
-    (slurp (io/file base-dir filename))))
+(defmulti include-external-content (fn [base-dir filename]
+                                     (.toLowerCase (io+/get-file-extension filename))))
+
+(defmethod include-external-content ".md"
+  [base-dir filename]
+  (-> (io/file base-dir filename)
+      slurp
+      markdown/md-to-html-string))
+
+(defmethod include-external-content :default
+  [base-dir filename]
+  (slurp (io/file base-dir filename)))
 
 
 (defn read-page-content
@@ -24,7 +30,7 @@
   the contents as a Clojure data structure."
   [f]
   (let [base-dir (.getParent f)
-        custom-reader-macros {'include (path-bound-slurp base-dir)}]
+        custom-reader-macros {'include (partial include-external-content base-dir)}]
     (try
       (with-open [reader (io+/pushback-reader f)]
         (edn/read {:readers custom-reader-macros} reader))
