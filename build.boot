@@ -18,7 +18,6 @@
 (boot.lein/generate)
 
 (def s3-properties (load-properties "s3.properties"))
-(prn s3-properties)
 
 (task-options!
   assemble {:source "resources/site"
