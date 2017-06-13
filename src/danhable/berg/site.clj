@@ -72,6 +72,9 @@
 
 
 (defn build-tag-set
+  "Given a sequence of pages, returns a set of all the tags contained in the page
+  data. Returns an empty set if pages is nil, empty or no :tags element is present
+  in the page data."
   [pages]
   (transduce (comp
                (map #(get-in % [:data :tags]))
