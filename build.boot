@@ -1,5 +1,6 @@
 (set-env!
-  :resource-paths #{"src"}
+  :source-paths #{"src" "tests"}
+  :resource-paths #{"resources" "dev-resources"}
   :dependencies   '[[org.clojure/clojure "1.8.0"]
                     [markdown-clj "0.9.99"]
                     [selmer "1.10.7"]

@@ -19,56 +19,96 @@
       TOCEntry->path (Tuple) -> url path
 
 
+
       Open Decisions:
-      [design; hard]
         - How do I want to handle site content stuff (title, next page, prev page, etc)?
 
-        [design; hard]
-        - How do I want to design things like RSS feed generation?
-          special, non-HTML template?
+        Object Model for Templates:
+          - site:
+            - title: from config
+            - description: from config
+            - date-format: from config
+            - author: from config
+            - site-url: from config
+            - tags: set of tags used in all the posts
+            * site-map: ordered list of all the pages in the site (not sure I need this)
 
-        [design; hard]
-        - Working with images is very much undefined at this point, should work for attachements in general
+          - page:
+            - title: this is the page specific title (blog post title)
+            - tags list: vector of tag strings
+            - content: string of page content
+            - resources: vector of java.io.File objects
       "
-  (:require [clojure.java.io :as io]
+  (:require [clojure.set :as set]
+            [clojure.java.io :as io]
             [danhable.berg.page :as page]
             [danhable.berg.theme :as theme]))
 
 
-(defrecord Site [pages theme conf target-dir])
+(defrecord Site [pages theme conf target-dir tags])
 
 
-(def ^:private default-site-conf {:title "Default Site Title"
+(def ^:private default-site-conf {:title "Caffeinated Ideas"
                                   :description ""
-                                  :author ""
-                                  :site-url ""
-                                  :date-format ""
+                                  :author "Dan Hable"
+                                  :site-url "http://caffeinatedideas.com"
+                                  :date-format "YYYY MMM dd"
                                   :theme "resources/themes/default"
                                   :sources "resources/site"
                                   :target "target/site"})
 
 
+(defn update-all
+  "For every element in ks, updates the value for that key in m by applying
+  function f to the current value. Unlike update-in, this function does not
+  support nested maps. It is designed for multiple, similar updates to a single
+  map level."
+  [m ks f]
+  (if (and f m)
+    (reduce #(update-in %1 [%2] f)
+            m
+            ks)
+    m))
+
+
+(defn build-tag-set
+  [pages]
+  (transduce (comp
+               (map #(get-in % [:data :tags]))
+               (map set))
+             set/union
+             #{}
+             pages))
+
+
+(defn make-site-context
+  [site]
+  (merge (select-keys site [:tags])
+         (select-keys (:conf site) [:title :description :author :date-format :site-url])))
+
+
 (defn new-Site
-  ""
   [options]
   (let [site-conf (as-> options $
                         (merge default-site-conf $)
+                        (update-all $ [:theme :sources :target] io/as-file)
                         (select-keys $ (keys default-site-conf)))
-        theme-dir (io/as-file (:theme site-conf))
-        source-dir (io/as-file (:sources site-conf))
-        target-dir (io/as-file (:target site-conf))]
+        pages (page/load-all-pages (:sources site-conf))]
     (map->Site {:conf site-conf
-                :target-dir target-dir
-                :pages (page/load-all-pages source-dir)
-                :theme (theme/new-Theme theme-dir)})))
+                :target-dir (:target site-conf)
+                :pages pages
+                :theme (theme/new-Theme (:theme site-conf))
+                :tags (build-tag-set pages)})))
 
 
 (defn compile-site
   [site]
-  (let [{:keys [pages theme]} site]
-    (->> pages
-         (map #(assoc %1 :rendered-view (theme/apply-to-page theme %1)))
-         (assoc site :pages))))
+  (let [{:keys [pages theme]} site
+        post-rendered-pages (map #(let [context {:site (make-site-context site)
+                                                 :page (page/make-page-context %1)}
+                                        rendered-page (theme/apply-to-page theme %1 context)]
+                                    (assoc %1 :rendered-view rendered-page)) pages)]
+    (assoc site :pages post-rendered-pages)))
 
 
 (defn write-to-disk

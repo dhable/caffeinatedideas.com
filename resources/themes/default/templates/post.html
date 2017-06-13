@@ -1,29 +1,36 @@
 {% extends "_base.html" %}
-{%block subtitle %}: {{post.title}}{% endblock %}
+
+{%block subtitle %}: {{page.title}}{% endblock %}
 {% block content %}
+
 <div id="post">
-    {% include "post-content.html" %}
+    <div class="post-header">
+        <div id="post-meta" class="row">
+            <div class="col-lg-6">{{page.date|date:longDate}}</div>
+        </div>
+        <h2>{{page.title}}</h2>
+    </div>
 
-    <nav class="post-pagination-control">
-      <ul class="pager">
-        <li class="pager-prev {% if not post.prev %}disabled{% endif %}">
-          <a href="{{post.prev.uri}}">&laquo; Newer</a>
-        </li>
-        <li class="pager-next {% if not post.next %}disabled{% endif %}">
-          <a href="{{post.next.uri}}">Older &raquo;</a>
-        </li>
-      </ul>
-    </nav>
+    <div>
+        {{page.content|safe}}
+    </div>
 
-    {% if disqus-shortname %}
+    {% if page.tags|not-empty %}
+    <div id="post-tags">
+        <b>Tags: </b>
+        {% for tag in page.tags %}
+        <a href="{{tag.uri}}" class="label label-default">{{tag}}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//{{disqus-shortname}}.disqus.com/embed.js';
+            dsq.src = '//caffeinatedideas.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
-    {% endif %}
 </div>
 {% endblock %}

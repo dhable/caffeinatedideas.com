@@ -53,18 +53,17 @@
   [base-dir]
   (let [base-path (.toPath base-dir)]
     (->> (io+/list-files base-dir :recursive? true)
-         (map #(vector (str (io+/relativize base-path %1))
-                       %1))
+         (map #(vector (str (io+/relativize base-path %1)) %1))
          (into {}))))
 
 
 (defn apply-to-page
   "Apply a theme to a page if the template defined in the page data is part of this theme. Returns
   the result of this application such that it can be written to output files."
-  [theme page]
+  [theme page context]
   (let [template-name (:template-name page)
         template-node (get (:templates theme) template-name)]
-    (selmer/render-template template-node (:data page))))
+    (selmer/render-template template-node context)))
 
 
 (defn copy-static-files

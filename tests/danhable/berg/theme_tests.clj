@@ -40,20 +40,21 @@
 
 (deftest test-load-templates
   (testing "should load up templates"
-    (let [actual (load-templates (io/as-file "resources/theme_tests/templates"))]
+    (let [actual (load-templates (io/as-file "dev-resources/theme_tests/templates"))]
       (is (= ["index" "thing"] (keys actual))))))
 
 
+;; TODO: Refactor this test. it got ugly
 (deftest test-apply-to-page
   (testing "should render a template"
-    (let [test-theme (new-Theme (io/as-file "resources/theme_tests"))]
+    (let [test-theme (new-Theme (io/as-file "dev-resources/theme_tests"))]
       (is (= "<h1>Base Template</h1>\n\n<h3>Thing SUB TEXT</h3>\n"
              (apply-to-page test-theme {:template-name "thing"
-                                        :data {:thing "SUB TEXT"}}))))))
+                                        :data {:thing "SUB TEXT"}} {:site nil :page {:thing "SUB TEXT"}}))))))
 
 (deftest test-new-Theme
   (testing "should find all static files"
-    (let [test-theme (new-Theme (io/as-file "resources/theme_tests"))]
+    (let [test-theme (new-Theme (io/as-file "dev-resources/theme_tests"))]
       (is (= ["app.css" "images/a.jpg"]
              (->> test-theme
                   :static-files

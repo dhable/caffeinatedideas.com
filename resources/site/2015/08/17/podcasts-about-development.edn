@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Podcasts About Development"
  :tags ["craftsmanship" "podcasts"]
  :content #include "article.md"}

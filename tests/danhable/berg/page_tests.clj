@@ -31,23 +31,23 @@
             :resources {}
             :template-name "post"
             :content "This is file b.txt"}
-           (read-page-content (io/as-file "resources/page_tests/included_content.edn"))))))
+           (read-page-content (io/as-file "dev-resources/page_tests/included_content.edn"))))))
 
 
 (deftest test-new-Page
   (testing "create new page object from source file"
-    (let [page (new-Page (io/as-file "resources/page_tests") (io/as-file "resources/page_tests/included_content.edn"))]
-      (is (= "resources/page_tests/included_content.edn" (.toString (:source-file page))))
+    (let [page (new-Page (io/as-file "dev-resources/page_tests") (io/as-file "dev-resources/page_tests/included_content.edn"))]
+      (is (= "dev-resources/page_tests/included_content.edn" (.toString (:source-file page))))
       (is (= "included_content.html" (.toString (:url-path page))))
       (is (= "post" (:template-name page)))
-      (is (= {} (:resources page)))
+      (is (= [] (:resources page)))
       (is (=  {:title "This is a title", :content "This is file b.txt"}
               (:data page))))))
 
 (deftest test-load-all-pages
   (testing "loading all page objects"
-    (let [pages (load-all-pages (io/as-file "resources/page_tests"))
+    (let [pages (load-all-pages (io/as-file "dev-resources/page_tests"))
           source-files (map #(.toString (:source-file %)) pages)]
-      (is (= ["resources/page_tests/included_content.edn"
-              "resources/page_tests/subdir/other.edn"]
+      (is (= ["dev-resources/page_tests/included_content.edn"
+              "dev-resources/page_tests/subdir/other.edn"]
              source-files)))))

@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Webapps with Clojurescript"
  :tags ["clojurescript"]
  :content #include "article.md"}

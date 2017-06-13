@@ -78,27 +78,27 @@
 
 
 (deftest test-list-files
-  (let [resource-dir (io/as-file "resources/list_files_test")]
+  (let [resource-dir (io/as-file "dev-resources/list_files_test")]
     (testing "should list all files when no options supplied"
       (is (= (map str (list-files resource-dir))
-            ["resources/list_files_test/a.edn"
-             "resources/list_files_test/b.edn"
-             "resources/list_files_test/c.txt"])))
+            ["dev-resources/list_files_test/a.edn"
+             "dev-resources/list_files_test/b.edn"
+             "dev-resources/list_files_test/c.txt"])))
 
     (testing "should list all files in all subdirectories as well when recursive is used"
       (is (= (map str (list-files resource-dir :recursive? true))
-             ["resources/list_files_test/a.edn"
-              "resources/list_files_test/b.edn"
-              "resources/list_files_test/c.txt"
-              "resources/list_files_test/sub1/d.edn"
-              "resources/list_files_test/sub1/sub2/e.edn"])))
+             ["dev-resources/list_files_test/a.edn"
+              "dev-resources/list_files_test/b.edn"
+              "dev-resources/list_files_test/c.txt"
+              "dev-resources/list_files_test/sub1/d.edn"
+              "dev-resources/list_files_test/sub1/sub2/e.edn"])))
 
     (testing "should only return files when filter returns true for them"
       (is (= (map str (list-files resource-dir :recursive? true :filter #(.. % getFileName toString (endsWith ".edn"))))
-             ["resources/list_files_test/a.edn"
-              "resources/list_files_test/b.edn"
-              "resources/list_files_test/sub1/d.edn"
-              "resources/list_files_test/sub1/sub2/e.edn"])))
+             ["dev-resources/list_files_test/a.edn"
+              "dev-resources/list_files_test/b.edn"
+              "dev-resources/list_files_test/sub1/d.edn"
+              "dev-resources/list_files_test/sub1/sub2/e.edn"])))
 
     (testing "should return an empty list if the filter matches nothing"
       (is (empty? (list-files resource-dir :recursive? true :filter (constantly false)))))))

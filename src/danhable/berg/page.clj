@@ -48,12 +48,25 @@
     false))
 
 
+(defn load-resource-files
+  [src-file res-list]
+  (map #(io/file (.getParent src-file) %) res-list))
+
+
 (defn write-to-disk
   [page target-dir]
-  ;; TODO: need to figure out resources thing
   (let [target-file (io/file target-dir (:url-path page))]
     (io+/touch! target-file)
-    (spit target-file (:rendered-view page))))
+    (spit target-file (:rendered-view page)))
+
+
+  (doseq [resource (:resources page)] ;; TODO: refactor this block of logic
+    (let [resource-name (.getName resource)
+          dest-dir (io/file target-dir (.getParent (:url-path page)))
+          dest-resource (io/file dest-dir resource-name)]
+      (io+/touch! dest-resource)
+      (io/copy resource dest-resource)))
+  )
 
 
 (defn generate-relative-page-url
@@ -64,6 +77,11 @@
         (io+/replace-file-extension $ ".html")))
 
 
+(defn make-page-context
+  [page]
+  (get page :data))
+
+
 (defn new-Page
   "Given a page File object, f, create a new instance of the Page record by reading the
   contents of the file and pulling the data apart into the correct fields."
@@ -72,7 +90,7 @@
     (map->Page {:source-file f
                 :url-path (generate-relative-page-url f base-dir)
                 :template-name (:template-name content)
-                :resources (:resources content)
+                :resources (load-resource-files f (:resources content))
                 :data (dissoc content :template-name :resources)})))
 
 

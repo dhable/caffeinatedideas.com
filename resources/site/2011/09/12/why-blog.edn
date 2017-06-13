@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Why Blog?"
  :tags ["education" "idea"]
  :content #include "article.md"}

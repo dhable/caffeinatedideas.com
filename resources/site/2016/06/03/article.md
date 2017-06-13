@@ -11,7 +11,7 @@ for another developer and we talked about how to proceed. After a quick meeting
 with the existing dev team, I walked away from a paying job with benefits to
 become the first, and currently unpaid, full time employee for QThru.
 
-![QThru Website circa May 2013](/posts/2016-06-03-the-qthru-series/banner.jpg)
+![QThru Website circa May 2013](banner.jpg)
 
 <div class="card">
 <div class="card-block">

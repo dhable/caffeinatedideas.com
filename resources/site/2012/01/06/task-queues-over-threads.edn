@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Task Queues Over Threads"
  :tags ["python" "concurrency"]
  :content #include "article.md"}

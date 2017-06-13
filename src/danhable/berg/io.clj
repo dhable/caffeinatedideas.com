@@ -35,10 +35,10 @@
   dot seperator. If the filename is nil or doesn't contain an extension, the value
   is simply returned."
   [^String filename]
-  (when-not (nil? filename)
-  (if-let [ext-pos (str/last-index-of filename ".")]
-    (subs filename 0 ext-pos)
-    filename)))
+  (when filename
+    (if-let [ext-pos (str/last-index-of filename ".")]
+      (subs filename 0 ext-pos)
+      filename)))
 
 
 (defn get-file-extension
@@ -47,9 +47,10 @@
   the value returned is nil. In cases where there is no extension, an empty string
   is returned."
   [^String filename]
-  (if-let [ext-pos (str/last-index-of filename ".")]
-    (subs filename ext-pos)
-    nil))
+  (when filename
+    (if-let [ext-pos (str/last-index-of filename ".")]
+      (subs filename ext-pos)
+      "")))
 
 
 (defn replace-file-extension

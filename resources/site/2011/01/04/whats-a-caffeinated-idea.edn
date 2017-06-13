@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "What's a Caffeinated Idea?"
  :tags ["commentary" "idea"]
  :content #include "article.md"}

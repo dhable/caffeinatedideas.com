@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Breaking Statically Typed Languages"
  :tags ["rants"]
  :content #include "article.md"}

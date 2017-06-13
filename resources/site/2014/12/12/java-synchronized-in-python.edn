@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Java 'synchronized' in Python"
  :tags ["python" "kata"]
  :content #include "article.md"}

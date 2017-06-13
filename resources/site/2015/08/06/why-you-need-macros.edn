@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "Why You Need Macros"
  :tags ["languages" "patterns"]
  :content #include "article.md"}

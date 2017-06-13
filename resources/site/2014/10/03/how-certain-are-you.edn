@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :title "How Certain Are You?"
  :tags ["agile" "process"]
  :content #include "article.md"}
