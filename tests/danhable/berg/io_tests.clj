@@ -58,23 +58,23 @@
         test-file-without-ext (io/file "/tmp/blog/metadata")]
     (testing "should return original file unchanged if new-extension is nil"
       (is (= "/tmp/blog/metadata.edn"
-             (.toString (replace-file-extension test-file nil)))))
+             (str (replace-file-extension test-file nil)))))
 
     (testing "should return original without extension if new-extension is emptry string"
       (is (= "/tmp/blog/metadata"
-             (.toString (replace-file-extension test-file "")))))
+             (str (replace-file-extension test-file "")))))
 
     (testing "should replace the extension if new-extension starts with a dot"
       (is (= "/tmp/blog/metadata.html"
-             (.toString (replace-file-extension test-file ".html")))))
+             (str (replace-file-extension test-file ".html")))))
 
     (testing "should add dot if the new-extension does not start with a dot"
       (is (= "/tmp/blog/metadata.html"
-             (.toString (replace-file-extension test-file "html")))))
+             (str (replace-file-extension test-file "html")))))
 
     (testing "should append new-extension if original file does not have an extension"
       (is (= "/tmp/blog/metadata.html"
-             (.toString (replace-file-extension test-file-without-ext "html")))))))
+             (str (replace-file-extension test-file-without-ext "html")))))))
 
 
 (deftest test-list-files
@@ -128,15 +128,15 @@
   (testing "should return Path object if provided with a File instance"
     (let [f (io/as-file "/tmp/b.txt")
           p (as-path f)]
-      (is (= (.toString f)
-             (.toString p)))))
+      (is (= (str f)
+             (str p)))))
 
   (testing "should return Path object if provided with a String instance"
     (is (= "/tmp/c.txt"
-           (.toString (as-path "/tmp/c.txt"))))))
+           (str (as-path "/tmp/c.txt"))))))
 
 
 (deftest test-relativize
   (let [actual (relativize "/a/b" "/a/b/c/d.txt")]
     (is (= "c/d.txt"
-           (.toString actual)))))
+           (str actual)))))

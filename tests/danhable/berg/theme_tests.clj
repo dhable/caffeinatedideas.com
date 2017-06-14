@@ -56,6 +56,6 @@
   (testing "should find all static files"
     (let [test-theme (new-Theme (io/as-file "dev-resources/theme_tests"))]
       (is (= ["app.css" "images/a.jpg"]
-             (->> test-theme
-                  :static-files
-                  keys))))))
+             (-> test-theme
+                 (get :static-files)
+                 keys))))))

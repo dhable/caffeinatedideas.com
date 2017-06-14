@@ -37,17 +37,17 @@
 (deftest test-new-Page
   (testing "create new page object from source file"
     (let [page (new-Page (io/as-file "dev-resources/page_tests") (io/as-file "dev-resources/page_tests/included_content.edn"))]
-      (is (= "dev-resources/page_tests/included_content.edn" (.toString (:source-file page))))
-      (is (= "included_content.html" (.toString (:url-path page))))
-      (is (= "post" (:template-name page)))
-      (is (= [] (:resources page)))
+      (is (= "dev-resources/page_tests/included_content.edn" (str (get page :source-file))))
+      (is (= "included_content.html" (str (get page :url-path))))
+      (is (= "post" (get page :template-name)))
+      (is (= [] (get page :resources)))
       (is (=  {:title "This is a title", :content "This is file b.txt"}
               (:data page))))))
 
 (deftest test-load-all-pages
   (testing "loading all page objects"
     (let [pages (load-all-pages (io/as-file "dev-resources/page_tests"))
-          source-files (map #(.toString (:source-file %)) pages)]
+          source-files (map #(str (get % :source-file)) pages)]
       (is (= ["dev-resources/page_tests/included_content.edn"
               "dev-resources/page_tests/subdir/other.edn"]
              source-files)))))

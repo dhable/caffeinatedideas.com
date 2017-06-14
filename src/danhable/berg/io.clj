@@ -25,9 +25,9 @@
   (when-not (nil? extension)
     (let [te (str/trim extension)]
       (cond
-        (= (.length te) 0)         te
-        (str/starts-with? te ".")  te
-        :else                      (str "." (str/trim te))))))
+        (zero? (.length te))      te
+        (str/starts-with? te ".") te
+        :else                     (str "." (str/trim te))))))
 
 
 (defn trim-extension
@@ -77,7 +77,8 @@
              path should be included in the result."
   [^File cwd & {:keys [recursive? filter]}]
   (let [results (atom [])
-        filter-fn (if filter filter (constantly true))]
+        filter-fn (or filter
+                      (constantly true))]
     (Files/walkFileTree (.toPath cwd)
                         (EnumSet/noneOf FileVisitOption)
                         (if recursive? Integer/MAX_VALUE 1)

@@ -34,7 +34,7 @@
   of the file with any extension stripped from it."
   [f]
   (when f
-    (-> (.getName f) io+/trim-extension)))
+    (io+/trim-extension (.getName f))))
 
 
 (defn load-templates
