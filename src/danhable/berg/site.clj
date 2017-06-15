@@ -1,44 +1,9 @@
 (ns danhable.berg.site
-  "
-    site map?
-    table of contents - listing of where everything is in the site
-
-      what data structure makes sense here? tree? list?
-
-       Tuple( [section1, section2, section3], Page )
-
-      sort (list of tuples) -> list of tuples
-
-      slice (list of tuples, [sections to select on]) -> list of matching tuples
-
-      apply-to (list of tuples, some-fn) -> list of results
-
-      path->TOCEntry (url-path) -> Tuple(...)
-        creates a tuple structure from a url path
-
-      TOCEntry->path (Tuple) -> url path
-
-
-
-      Open Decisions:
-        - How do I want to handle site content stuff (title, next page, prev page, etc)?
-
-        Object Model for Templates:
-          - site:
-            - title: from config
-            - description: from config
-            - date-format: from config
-            - author: from config
-            - site-url: from config
-            - tags: set of tags used in all the posts
-            * site-map: ordered list of all the pages in the site (not sure I need this)
-
-          - page:
-            - title: this is the page specific title (blog post title)
-            - tags list: vector of tag strings
-            - content: string of page content
-            - resources: vector of java.io.File objects
-      "
+  "Contains the logic and data structures that define what the entire site looks like.
+  A site contains a set of configuration items, a sequence of Page objects and a Theme
+  object. Some elements, like tags, are computed from the Page data. Having them hardcoded
+  in the site seems like it could be improved later on, just not sure how I want to abstract
+  that logic out at this point."
   (:require [clojure.set :as set]
             [clojure.java.io :as io]
             [danhable.berg.page :as page]
@@ -86,7 +51,7 @@
 
 (defn make-site-context
   [site]
-  (merge (select-keys site [:tags])
+  (merge (select-keys site [:tags :pages])
          (select-keys (:conf site) [:title :description :author :date-format :site-url])))
 
 
