@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "TIL Culture Matters"
- :tags ["startup" "qthru"]
- :content #include "article.md"}
+ :data {:title "TIL Culture Matters"
+        :tags ["startup" "qthru"]
+        :content #include "article.md"}}

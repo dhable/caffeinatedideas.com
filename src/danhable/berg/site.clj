@@ -84,4 +84,4 @@
   (let [target-dir (:target-dir site)]
     (theme/copy-static-files (:theme site) target-dir)
     (doseq [p (:pages site)]
-      (page/write-to-disk p target-dir))))
+      (page/write-rendered-page p target-dir))))

@@ -14,7 +14,7 @@ For example, let's build a mobile application for managing your shopping list. F
 first iteration we'll use Java/Spring/MySQL stack for the service that the mobile
 application will call.
 
-![Spring Web Architecture](/2013/06/16/springmvc.png)
+![Spring Web Architecture](springmvc.png)
 
 So where's the problem with this very common architecture? The dev team needs to write
 all the code to handle something as mundane as reading and writing information to a
@@ -29,7 +29,7 @@ this middle component that doesn't add any value to the process. Let's take some
 from Scrooge McDuck and work smarter, not harder. Let's rebuild our solution but this time
 use a document database, like CouchDB.
 
-![NoSQL Alternative Web Architecture](/posts/2013-06-16-smarter-architecture-with-nosql/nosql.png)
+![NoSQL Alternative Web Architecture](nosql.png)
 
 Turns out that CouchDB exposes all of it's database operations through a restful API and
 the documents are all stored as JSON. We can exploit that fact to eliminate all of the

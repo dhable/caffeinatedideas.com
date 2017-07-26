@@ -1,1 +1,2 @@
-{}
+{:template-name "index"
+ :data {:title "Home"}}

@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "State of the Union: Application Logging"
- :tags ["architecture" "idea" "logging"]
- :content #include "article.md"}
+ :data {:title "State of the Union: Application Logging"
+        :tags ["architecture" "idea" "logging"]
+        :content #include "article.md"}}

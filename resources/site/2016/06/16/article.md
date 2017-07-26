@@ -33,7 +33,7 @@ time. To expedite the development, Aaron found and partnered with Scandit for
 the barcode scanner. Early days on iOS didn't have a native barcode scanning
 library in the SDK.
 
-![Checkout Lines](/posts/2016-06-16-qthru-business-model/lines.jpg)
+![Checkout Lines](lines.jpg)
 
 To monetize the platform, QThru's initial business model was to charge a
 transaction fee (I believe of 2.5%) to the retailer. Right away the financial

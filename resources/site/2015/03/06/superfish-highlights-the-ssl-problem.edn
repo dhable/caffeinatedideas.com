@@ -3,6 +3,6 @@
              "ca_cert_swap.png"
              "google_cert.png"
              "l2_cert_swap.png"]
- :title "Superfish Highlights the SSL Problem"
- :tags ["security"]
- :content #include "article.md"}
+ :data {:title "Superfish Highlights the SSL Problem"
+        :tags ["security"]
+        :content #include "article.md"}}

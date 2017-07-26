@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <ul>
+    {% for page in site.pages %}
+        <li>
+            <a href="{{page.url-path}}">
+                {{page.data.title}}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

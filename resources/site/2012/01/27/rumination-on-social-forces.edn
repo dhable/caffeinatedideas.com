@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "Rumination on Social Forces"
- :tags ["idea"]
- :content #include "article.md"}
+ :data {:title "Rumination on Social Forces"
+        :tags ["idea"]
+        :content #include "article.md"}}

@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "stat command"
- :tags ["linux" "reminder"]
- :content #include "article.md"}
+ :data {:title "stat command"
+        :tags ["linux" "reminder"]
+        :content #include "article.md"}}

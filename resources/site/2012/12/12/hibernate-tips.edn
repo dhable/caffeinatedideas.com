@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources {}
- :title "Hibernate Tips"
- :tags ["java" "database"]
- :content #include "article.md"}
+ :data {:title "Hibernate Tips"
+        :tags ["java" "database"]
+        :content #include "article.md"}}

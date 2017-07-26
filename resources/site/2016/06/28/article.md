@@ -35,7 +35,7 @@ management into the app, started flushing out unit tests, setup a continuous
 integration build and started an effort to migrate our test environments into
 the free tier of [Heroku][2].
 
-![Early QThru Architecture Diagram](/posts/2016-07-13-qthru-platform-architecture/1.png)
+![Early QThru Architecture Diagram](1.png)
 
 Our unit testing effort was 100% successful. [Jon Wang][10] focused on building
 end to end tests against an embedded database while I focused on refactoring
@@ -65,7 +65,7 @@ changes to the load code to iterate on the data processing quicker. We needed
 to split out the batch data processing from the online API. This resulted in
 a process we called Yoshi that would import up all the data.
 
-![Mid QThru Architecture Diagram](/posts/2016-07-13-qthru-platform-architecture/2.png)
+![Mid QThru Architecture Diagram](2.png)
 
 <div class="alert alert-info">I came up with a naming scheme based on artifacts
 from the Super Mario Bros universe. I was tired of the dry component names from
@@ -114,7 +114,7 @@ communicate in real time with an individual POS terminal to assemble the cart
 and run through the checkout process. Keeping with our naming scheme, we called
 this new component "Warp Pipe" and wrote the whole system in 3 months in node.js.
 
-![Final QThru Architecture Diagram](/posts/2016-07-13-qthru-platform-architecture/3.png)
+![Final QThru Architecture Diagram](3.png)
 
 David Clarke also joined the company around this time and started building out
 a web portal for retailers to upload files or edit prices manually in the QThru

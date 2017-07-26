@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "ORM Rant, Continued"
- :tags ["database" "architecture" "rant"]
- :content #include "article.md"}
+ :data {:title "ORM Rant, Continued"
+        :tags ["database" "architecture" "rant"]
+        :content #include "article.md"}}

@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "Stone Age Project Teams?"
- :tags ["idea" "agile" "process"]
- :content #include "article.md"}
+ :data {:title "Stone Age Project Teams?"
+        :tags ["idea" "agile" "process"]
+        :content #include "article.md"}}

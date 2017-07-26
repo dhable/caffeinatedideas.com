@@ -1,6 +1,7 @@
 {:template-name "post"
  :resources ["banner.jpg"]
- :title "The QThru Series"
- :tags ["retrospective" "qthru"]
- :content #include "article.md"}
+ :data {:title "The QThru Series"
+        :tags ["retrospective" "qthru"]
+        :content #include "article.md"}}
+
 

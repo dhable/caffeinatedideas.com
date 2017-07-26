@@ -1,5 +1,5 @@
 {:template-name "post"
  :resources []
- :title "RIP LandlordCompanion.com"
- :tags ["startup"]
- :content #include "article.md"}
+ :data {:title "RIP LandlordCompanion.com"
+        :tags ["startup"]
+        :content #include "article.md"}}

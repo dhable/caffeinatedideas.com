@@ -25,7 +25,7 @@
              (update-all test-input ["bcd" "def" "abc" "cde"] inc))))))
 
 
-(deftest test-build-tag-set
+#_(deftest test-build-tag-set
   (testing "should return empty set when pages is nil"
     (is (= #{} (build-tag-set nil))))
 
