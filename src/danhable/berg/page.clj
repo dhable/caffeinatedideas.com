@@ -25,7 +25,8 @@
   [base-dir filename]
   (-> (io/file base-dir filename)
       slurp
-      markdown/md-to-html-string))
+      (markdown/md-to-html-string :reference-links? true
+                                  :footnotes? true)))
 
 (defmethod include-external-content :default
   [base-dir filename]
