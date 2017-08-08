@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "stat command"
+ :data {:is-blog-post true
+        :title "stat command"
         :tags ["linux" "reminder"]
+        :posted #inst "2015-09-01"
         :content #include "article.md"}}

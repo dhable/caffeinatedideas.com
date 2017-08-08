@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "TIL Culture Matters"
+ :data {:is-blog-post true
+        :title "TIL Culture Matters"
         :tags ["startup" "qthru"]
+        :posted #inst "2014-01-13"
         :content #include "article.md"}}

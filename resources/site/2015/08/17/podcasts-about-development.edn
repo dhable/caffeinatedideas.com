@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Podcasts About Development"
+ :data {:is-blog-post true
+        :title "Podcasts About Development"
         :tags ["craftsmanship" "podcasts"]
+        :posted #inst "2015-08-17"
         :content #include "article.md"}}

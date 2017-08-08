@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "RIP LandlordCompanion.com"
+ :data {:is-blog-post true
+        :title "RIP LandlordCompanion.com"
         :tags ["startup"]
+        :posted #inst "2012-06-28"
         :content #include "article.md"}}

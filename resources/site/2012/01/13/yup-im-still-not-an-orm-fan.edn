@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Yup, I'm Still Not An ORM Fan"
+ :data {:is-blog-post true
+        :title "Yup, I'm Still Not An ORM Fan"
         :tags ["database" "rants"]
+        :posted #inst "2012-01-13"
         :content #include "article.md"}}

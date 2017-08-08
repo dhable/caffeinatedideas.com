@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources {}
- :data {:title "Documenting ReST - Part 2"
+ :data {:is-blog-post true
+        :title "Documenting ReST - Part 2"
         :tags ["tools" "clojure"]
+        :posted #inst "2012-09-07"
         :content #include "article.md"}}

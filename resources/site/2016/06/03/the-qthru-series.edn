@@ -1,7 +1,9 @@
 {:template-name "post"
  :resources ["banner.jpg"]
- :data {:title "The QThru Series"
+ :data {:is-blog-post true
+        :title "The QThru Series"
         :tags ["retrospective" "qthru"]
+        :posted #inst "2016-06-03"
         :content #include "article.md"}}
 
 

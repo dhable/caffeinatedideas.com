@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "How Certain Are You?"
+ :data {:is-blog-post true
+        :title "How Certain Are You?"
         :tags ["agile" "process"]
+        :posted #inst "2014-10-03"
         :content #include "article.md"}}

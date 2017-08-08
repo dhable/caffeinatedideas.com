@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Desired Traits for Modern Software"
+ :data {:is-blog-post true
+        :title "Desired Traits for Modern Software"
         :tags ["idea"]
+        :posted #inst "2011-01-19"
         :content #include "article.md"}}

@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Why Blog?"
+ :data {:is-blog-post true
+        :title "Why Blog?"
         :tags ["education" "idea"]
+        :posted #inst "2011-09-12"
         :content #include "article.md"}}

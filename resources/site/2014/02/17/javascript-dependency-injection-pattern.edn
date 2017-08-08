@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "JavaScript Dependency Injection Pattern"
+ :data {:is-blog-post true
+        :title "JavaScript Dependency Injection Pattern"
         :tags ["javascript" "patterns"]
+        :posted #inst "2014-02-17"
         :content #include "article.md"}}

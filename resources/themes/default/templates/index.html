@@ -1,13 +1,19 @@
 {% extends "_base.html" %}
 
 {% block content %}
-    <ul>
-    {% for page in site.pages %}
-        <li>
-            <a href="{{page.url-path}}">
-                {{page.data.title}}
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
+    {% with posts_by_year = site.pages|group-by-year:data.posted %}
+        {% for year, posts in posts_by_year|sort-reversed %}
+            <div class="archive-year">
+                <i class="fa fa-calendar-o fa-fw"></i>&nbsp;{{year}}
+            </div>
+            <ul class="archive-content">
+                {% for p in posts %}
+                <li>
+                    <span class="date">{{p.data.posted|date:"MMM dd"}}</span>
+                    <a href="{{p.url-path}}">{{p.data.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endwith %}
 {% endblock %}

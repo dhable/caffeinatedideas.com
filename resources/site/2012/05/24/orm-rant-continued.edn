@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "ORM Rant, Continued"
+ :data {:is-blog-post true
+        :title "ORM Rant, Continued"
         :tags ["database" "architecture" "rant"]
+        :posted #inst "2012-05-24"
         :content #include "article.md"}}

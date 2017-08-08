@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Great developers build tools"
+ :data {:is-blog-post true
+        :title "Great developers build tools"
         :tags ["craftsmanship" "tools"]
+        :posted #inst "2015-04-03"
         :content #include "article.md"}}

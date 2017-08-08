@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Structuring and Naming Unit Tests"
+ :data {:is-blog-post true
+        :title "Structuring and Naming Unit Tests"
         :tags ["java" "testing" "agile"]
+        :posted #inst "2012-03-29"
         :content #include "article.md"}}

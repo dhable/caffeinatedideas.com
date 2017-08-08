@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Rumination on Social Forces"
+ :data {:is-blog-post true
+        :title "Rumination on Social Forces"
         :tags ["idea"]
+        :posted #inst "2012-01-27"
         :content #include "article.md"}}

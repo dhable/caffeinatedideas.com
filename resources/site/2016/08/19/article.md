@@ -82,8 +82,8 @@ keystrokes, and release a terminal. In keeping with the XML nature of the
 
 <!-- Emit keystrokes; <t> elements are literal text, <c> are special control keys -->
 <parrot xmlns="q:warppipe:1.0">
-   <t>1234567890</t>
-   <c>ENTER</c>
+  <t>1234567890</t>
+  <c>ENTER</c>
 </parrot>
 
 <!-- Release a Terminal -->
@@ -115,71 +115,71 @@ up gathering 4 different XML schemas that we would need to check for:
 ```
 <!-- Scan Item -->
 <ISS45-WinposEvent>
-	<EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161319" TransactionType="4092" Status="Success" />
-	<Params>
-		<Param Name="Till Num" Value="115" />
-	</Params>
+  <EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161319" TransactionType="4092" Status="Success" />
+  <Params>
+    <Param Name="Till Num" Value="115" />
+  </Params>
 </ISS45-WinposEvent>
 <ISS45-WinposEvent>
-	<EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161319" TransactionType="4002" Status="Success" />
-	<Params>
-		<Param Name="Till Num" Value="115" />
-		<Param Name="Item Code" Value="00007695041533" />
-		<Param Name="Description" Value="Yogi Chai Rooibos   " />
-		<Param Name="Entry Method" Value="MANUAL" />
-		<Param Name="STD Price" Value="2.99" />
-		<Param Name="Actual Price" Value="2.99" />
-		<Param Name="Quantity" Value="1" />
-		<Param Name="Sales Amount" Value="2.99" />
-		<Param Name="Required Age" Value="0" />
-		<Param Name="Actual Age" Value="0" />
-	</Params>
+  <EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161319" TransactionType="4002" Status="Success" />
+  <Params>
+    <Param Name="Till Num" Value="115" />
+    <Param Name="Item Code" Value="00007695041533" />
+    <Param Name="Description" Value="Yogi Chai Rooibos   " />
+    <Param Name="Entry Method" Value="MANUAL" />
+    <Param Name="STD Price" Value="2.99" />
+    <Param Name="Actual Price" Value="2.99" />
+    <Param Name="Quantity" Value="1" />
+    <Param Name="Sales Amount" Value="2.99" />
+    <Param Name="Required Age" Value="0" />
+    <Param Name="Actual Age" Value="0" />
+  </Params>
 </ISS45-WinposEvent>
 
 <!-- Enter Tender Mode -->
 <ISS45-WinposEvent>
-	<EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161332" TransactionType="4065" Status="Success" />
-	<Params>
-		<Param Name="Till Num" Value="115" />
-		<Param Name="Gross Amount" Value="2.99" />
-		<Param Name="Net Amount" Value="2.99" />
-		<Param Name="Elements" Value="0" />
-		<Param Name="Tax Total" Value="" />
-		<Param Name="Grand Total" Value="2.99" />
-	</Params>
+  <EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161332" TransactionType="4065" Status="Success" />
+  <Params>
+    <Param Name="Till Num" Value="115" />
+    <Param Name="Gross Amount" Value="2.99" />
+    <Param Name="Net Amount" Value="2.99" />
+    <Param Name="Elements" Value="0" />
+    <Param Name="Tax Total" Value="" />
+    <Param Name="Grand Total" Value="2.99" />
+  </Params>
 </ISS45-WinposEvent>
 
 <!-- Complete Sale -->
 <ISS45-WinposEvent>
-	<EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161340" TransactionType="4003" Status="Success" />
-	<Params>
-		<Param Name="Till Num" Value="115" />
-		<Param Name="Tender Type" Value="1" />
-		<Param Name="Amount" Value="2.99" />
-	</Params>
+  <EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161340" TransactionType="4003" Status="Success" />
+  <Params>
+    <Param Name="Till Num" Value="115" />
+    <Param Name="Tender Type" Value="1" />
+    <Param Name="Amount" Value="2.99" />
+  </Params>
 </ISS45-WinposEvent>
 <ISS45-WinposEvent>
-	<EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161340" TransactionType="4082" Status="Success" />
-	<Params>
-		<Param Name="Till Num" Value="115" />
-	</Params>
+  <EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161340" TransactionType="4082" Status="Success" />
+  <Params>
+    <Param Name="Till Num" Value="115" />
+  </Params>
 </ISS45-WinposEvent>
 
 <!-- Price Inquiry with No Option -->
 <ISS45-WinposEvent>
-	<EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161437" TransactionType="4047" Status="Success" />
-	<Params>
-		<Param Name="Till Num" Value="116" />
-		<Param Name="Item Code" Value="00007695041533" />
-		<Param Name="Description" Value="Yogi Chai Rooibos   " />
-		<Param Name="Entry Method" Value="MANUAL" />
-		<Param Name="STD Price" Value="2.99" />
-		<Param Name="Actual Price" Value="2.99" />
-		<Param Name="Quantity" Value="1" />
-		<Param Name="Sales Amount" Value="2.99" />
-		<Param Name="Required Age" Value="0" />
-		<Param Name="Actual Age" Value="0" />
-	</Params>
+  <EventHeader Terminal="1" Operator="1" Authorizer="1" TimeStamp="20130122161437" TransactionType="4047" Status="Success" />
+  <Params>
+    <Param Name="Till Num" Value="116" />
+    <Param Name="Item Code" Value="00007695041533" />
+    <Param Name="Description" Value="Yogi Chai Rooibos   " />
+    <Param Name="Entry Method" Value="MANUAL" />
+    <Param Name="STD Price" Value="2.99" />
+    <Param Name="Actual Price" Value="2.99" />
+    <Param Name="Quantity" Value="1" />
+    <Param Name="Sales Amount" Value="2.99" />
+    <Param Name="Required Age" Value="0" />
+    <Param Name="Actual Age" Value="0" />
+  </Params>
 </ISS45-WinposEvent>
 ```
 

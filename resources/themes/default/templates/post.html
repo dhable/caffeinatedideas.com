@@ -1,29 +1,11 @@
 {% extends "_base.html" %}
 
-{%block subtitle %}: {{page.data.title}}{% endblock %}
 {% block content %}
 
-<div id="post">
-    <div class="post-header">
-        <div id="post-meta" class="row">
-            <div class="col-lg-6">{{page.date|date:longDate}}</div>
-        </div>
-        <h2>{{page.title}}</h2>
-    </div>
-
-    <div>
-        {{page.content|safe}}
-    </div>
-
-    {% if page.tags|not-empty %}
-    <div id="post-tags">
-        <b>Tags: </b>
-        {% for tag in page.tags %}
-        <a href="{{tag.uri}}" class="label label-default">{{tag}}</a>
-        {% endfor %}
-    </div>
-    {% endif %}
-
+<div class="post">
+    <h1 class="post-title">{{page.title}}</h1>
+    <span class="post-date">{{page.posted|date:longDate}}</span>
+    {{page.content|safe}}
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         (function() {
@@ -32,5 +14,7 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
+
 </div>
+
 {% endblock %}

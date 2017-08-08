@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "State of the Union: Application Logging"
+ :data {:is-blog-post true
+        :title "State of the Union: Application Logging"
         :tags ["architecture" "idea" "logging"]
+        :posted #inst "2011-01-20"
         :content #include "article.md"}}

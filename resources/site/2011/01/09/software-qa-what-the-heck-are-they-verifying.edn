@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Software QA: What the heck are they verifying?"
+ :data {:is-blog-post true
+        :title "Software QA: What the heck are they verifying?"
         :tags ["testing" "process"]
+        :posted #inst "2011-01-09"
         :content #include "article.md"}}

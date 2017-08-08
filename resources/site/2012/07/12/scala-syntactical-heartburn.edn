@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Scala Syntactical Heartburn"
+ :data {:is-blog-post true
+        :title "Scala Syntactical Heartburn"
         :tags ["scala" "rants"]
+        :posted #inst "2012-07-12"
         :content #include "article.md"}}

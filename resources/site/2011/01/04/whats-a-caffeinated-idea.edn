@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "What's a Caffeinated Idea?"
+ :data {:is-blog-post true
+        :title "What's a Caffeinated Idea?"
         :tags ["commentary" "idea"]
+        :posted #inst "2011-01-04"
         :content #include "article.md"}}

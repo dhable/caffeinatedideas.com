@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Autowiring Akka Actors with Spring"
+ :data {:is-blog-post true
+        :title "Autowiring Akka Actors with Spring"
         :tags ["java" "concurrency"]
+        :posted #inst "2013-02-18"
         :content #include "article.md"}}

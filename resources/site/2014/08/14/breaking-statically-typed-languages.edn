@@ -1,5 +1,7 @@
 {:template-name "post"
  :resources []
- :data {:title "Breaking Statically Typed Languages"
+ :data {:is-blog-post true
+        :title "Breaking Statically Typed Languages"
         :tags ["rants"]
+        :posted #inst "2014-08-14"
         :content #include "article.md"}}
