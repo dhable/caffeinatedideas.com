@@ -1,7 +1,7 @@
 {% extends "_base.html" %}
 
 {% block content %}
-    {% with posts_by_year = site.pages|group-by-year:data.posted %}
+    {% with posts_by_year = site.pages|group-by-year %}
         {% for year, posts in posts_by_year|sort-reversed %}
             <div class="archive-year">
                 <i class="fa fa-calendar-o fa-fw"></i>&nbsp;{{year}}

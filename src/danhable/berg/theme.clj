@@ -13,7 +13,8 @@
   (:require [clojure.java.io :as io]
             [selmer.parser :as selmer]
             [selmer.util :as selmer-util]
-            [danhable.berg.io :as io+]))
+            [danhable.berg.io :as io+]
+            [danhable.berg.theme.filters :as theme-filters]))
 
 
 (defrecord Theme [name base-dir templates static-files])
@@ -50,6 +51,9 @@
 
 
 (defn load-static-files
+  "Given a base-dir, recursively looks at all files and returns a map of those files.
+  The keys are the path relative to the base-path and the values are java.io.File objects
+  for the absolute files."
   [base-dir]
   (let [base-path (.toPath base-dir)]
     (->> (io+/list-files base-dir :recursive? true)
@@ -67,6 +71,9 @@
 
 
 (defn copy-static-files
+  "Given a Theme record and a target-dir directory, this function copies all of the static files
+  on the Theme object to target-dir and building the relative path for the files in target-dir
+  to ensure the end directory structure matches the source structure. Returns nil."
   [theme target-dir]
   (doseq [[relpath f] (:static-files theme)]
     (let [target-file (io/file target-dir relpath)]
@@ -78,6 +85,7 @@
   "From a theme's base directory, read through all the files and create a new Theme
   record."
   [base-dir]
+  (theme-filters/load-custom-filters!)
   (map->Theme {:name (.getName base-dir)
                :base-dir base-dir
                :templates (load-templates (io/file base-dir "templates"))
