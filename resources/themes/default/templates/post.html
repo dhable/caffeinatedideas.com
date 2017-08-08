@@ -3,9 +3,9 @@
 {% block content %}
 
 <div class="post">
-    <h1 class="post-title">{{page.title}}</h1>
-    <span class="post-date">{{page.posted|date:longDate}}</span>
-    {{page.content|safe}}
+    <h1 class="post-title">{{data.title}}</h1>
+    <span class="post-date">{{data.posted|date:longDate}}</span>
+    {{data.content|safe}}
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         (function() {

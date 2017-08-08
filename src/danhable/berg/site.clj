@@ -73,7 +73,7 @@
   [site]
   (let [{:keys [pages theme]} site
         post-rendered-pages (map #(let [context {:site (make-site-context site)
-                                                 :page (page/make-page-context %1)}
+                                                 :data (page/make-page-context %1)}
                                         rendered-page (theme/apply-to-page theme %1 context)]
                                     (assoc %1 :rendered-view rendered-page)) pages)]
     (assoc site :pages post-rendered-pages)))
