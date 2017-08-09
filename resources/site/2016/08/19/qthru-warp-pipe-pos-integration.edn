@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "QThru: Warp Pipe POS Integration"
         :tags ["retrospective" "qthru" "startup"]
-        :posted #inst "2016-08-19"
+        :posted #date "2016-08-19"
         :content #include "article.md"}}

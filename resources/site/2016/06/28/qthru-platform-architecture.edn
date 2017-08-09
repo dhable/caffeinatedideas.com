@@ -5,5 +5,5 @@
  :data {:is-blog-post true
         :title "QThru: The Platform Architecture"
         :tags ["retrospective" "qthru" "startup"]
-        :posted #inst "2016-06-28"
+        :posted #date "2016-06-28"
         :content #include "article.md"}}

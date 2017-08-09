@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "RIP LandlordCompanion.com"
         :tags ["startup"]
-        :posted #inst "2012-06-28"
+        :posted #date "2012-06-28"
         :content #include "article.md"}}

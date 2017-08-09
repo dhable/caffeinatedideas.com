@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "My Journey with Seven Languages"
         :tags ["education" "book review"]
-        :posted #inst "2012-09-17"
+        :posted #date "2012-09-17"
         :content #include "article.md"}}

@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Rumination on Social Forces"
         :tags ["idea"]
-        :posted #inst "2012-01-27"
+        :posted #date "2012-01-27"
         :content #include "article.md"}}

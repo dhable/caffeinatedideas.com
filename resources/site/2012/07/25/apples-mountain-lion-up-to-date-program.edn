@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Apple's Mountain Lion Up-to-Date Program"
         :tags ["ux" "rants"]
-        :posted #inst "2012-07-25"
+        :posted #date "2012-07-25"
         :content #include "article.md"}}

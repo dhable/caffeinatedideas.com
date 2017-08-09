@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Is node.js turning into the new Java?"
         :tags ["java" "node.js"]
-        :posted #inst "2015-02-18"
+        :posted #date "2015-02-18"
         :content #include "article.md"}}

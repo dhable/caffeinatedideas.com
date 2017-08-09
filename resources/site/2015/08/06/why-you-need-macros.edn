@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Why You Need Macros"
         :tags ["languages" "patterns"]
-        :posted #inst "2015-08-06"
+        :posted #date "2015-08-06"
         :content #include "article.md"}}

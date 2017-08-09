@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "What Navy SEALs Can Teach Us About Software Development"
         :tags ["idea" "agile" "process"]
-        :posted #inst "2011-05-09"
+        :posted #date "2011-05-09"
         :content #include "article.md"}}

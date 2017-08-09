@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Taming node.js with Clojurescript"
         :tags ["clojurescript" "node.js"]
-        :posted #inst "2013-08-29"
+        :posted #date "2013-08-29"
         :content #include "article.md"}}

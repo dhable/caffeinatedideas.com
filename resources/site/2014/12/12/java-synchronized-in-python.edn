@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Java 'synchronized' in Python"
         :tags ["python" "kata"]
-        :posted #inst "2014-12-12"
+        :posted #date "2014-12-12"
         :content #include "article.md"}}

@@ -4,6 +4,7 @@
   structure in the code base."
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]
+            [clj-time.format :as time-format]
             [markdown.core :as markdown]
             [danhable.berg.io :as io+]))
 
@@ -38,7 +39,8 @@
   the contents as a Clojure data structure."
   [f]
   (let [base-dir (.getParent f)
-        custom-reader-macros {'include (partial include-external-content base-dir)}]
+        custom-reader-macros {'include (partial include-external-content base-dir)
+                              'date (partial time-format/parse (time-format/formatter "yyyy-MM-dd"))}]
     (try
       (with-open [reader (io+/pushback-reader f)]
         (edn/read {:readers custom-reader-macros} reader))

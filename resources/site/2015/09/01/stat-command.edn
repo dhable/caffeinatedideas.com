@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "stat command"
         :tags ["linux" "reminder"]
-        :posted #inst "2015-09-01"
+        :posted #date "2015-09-01"
         :content #include "article.md"}}

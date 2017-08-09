@@ -3,8 +3,8 @@
   filters that can be used in the templates. Filters here were added to
   make the process of writing templates easier and with less code even if
   the same functionality could be achieved using built in filters."
-  (:require [selmer.filters :as selmer-filters])
-  (:import [java.text SimpleDateFormat]))
+  (:require [clj-time.core :as clj-time]
+            [selmer.filters :as selmer-filters]))
 
 
 (defn group-by-year-filter
@@ -15,8 +15,7 @@
   (let [ks [:data :posted]]
     (->> coll
          (filter #(not (nil? (get-in % ks))))
-         (group-by #(.format (SimpleDateFormat. "yyyy")
-                             (get-in % ks))))))
+         (group-by #(clj-time/year (get-in % ks))))))
 
 
 (defn load-custom-filters!

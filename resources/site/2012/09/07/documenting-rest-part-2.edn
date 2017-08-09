@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Documenting ReST - Part 2"
         :tags ["tools" "clojure"]
-        :posted #inst "2012-09-07"
+        :posted #date "2012-09-07"
         :content #include "article.md"}}

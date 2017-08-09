@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Stone Age Project Teams?"
         :tags ["idea" "agile" "process"]
-        :posted #inst "2011-04-20"
+        :posted #date "2011-04-20"
         :content #include "article.md"}}

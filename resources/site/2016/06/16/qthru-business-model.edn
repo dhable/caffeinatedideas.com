@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "QThru: The Business Model"
         :tags ["retrospective" "qthru" "startup"]
-        :posted #inst "2016-06-16"
+        :posted #date "2016-06-16"
         :content #include "article.md"}}

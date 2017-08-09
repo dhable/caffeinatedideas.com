@@ -3,5 +3,5 @@
  :data {:is-blog-post true
         :title "Another argument for s-expressions"
         :tags ["opinion" "PLT" "s-expressions"]
-        :posted #inst "2015-10-22"
+        :posted #date "2015-10-22"
         :content #include "article.md"}}
