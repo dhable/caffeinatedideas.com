@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "The Five W's of Engineering Leadership"
+        :tags ["leadership" "musing"]
+        :posted #date "2017-08-09"
+        :content #include "article.md"}}
