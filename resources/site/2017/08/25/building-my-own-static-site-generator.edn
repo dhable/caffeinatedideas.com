@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Building My Own Static Site Generator"
+        :tags ["retrospective" "clojure" "design"]
+        :posted #date "2017-08-25"
+        :content #include "article.md"}}
