@@ -1,5 +1,5 @@
 It's only been two weeks since
-[news of Lenovo bundling Superfish on their laptops](http://arstechnica.com/security/2015/02/lenovo-pcs-ship-with-man-in-the-middle-adware-that-breaks-https-connections/))
+[news of Lenovo bundling Superfish on their laptops](http://arstechnica.com/security/2015/02/lenovo-pcs-ship-with-man-in-the-middle-adware-that-breaks-https-connections/)
 was brought to the public's attention. While the focus has been on who at Lenovo knew about the bundle,
 few people are really talking about what it means to the security of the Internet. Developers used to just
 enable SSL on their services to check off their security requirements. Developers now need to think
