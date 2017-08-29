@@ -7,7 +7,7 @@
                 <i class="fa fa-calendar-o fa-fw"></i>&nbsp;{{year}}
             </div>
             <ul class="archive-content">
-                {% for p in posts %}
+                {% for p in posts|nested-sort-by-reversed:data.posted %}
                 <li>
                     <span class="date">{{p.data.posted|date:"MMM dd"}}</span>
                     <a href="{{p.url-path}}">{{p.data.title}}</a>
