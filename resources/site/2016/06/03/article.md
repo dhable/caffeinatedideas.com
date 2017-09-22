@@ -19,6 +19,7 @@ __Post In The Series__:
 * [QThru Business Model](/2016/06/16/qthru-business-model.html)
 * [QThru Platform Architecture](/2016/06/28/qthru-platform-architecture.html)
 * [QThru Warp Pipe POS Integration](/2016/08/19/qthru-warp-pipe-pos-integration.html)
+* [QThru Data Model](/2017/09/22/qthru-data-model.html)
 </div>
 </div>
 
