@@ -67,11 +67,3 @@
     (assemble)
     (serve :dir target-dir)))
 
-
-;; V2:
-;;  spell-check - Run spell checker on my posts
-;;  dead-link-check - Check all links on the site to see if still valid
-;;
-;; V3:
-;;  cloudfront cache invalidation and support
-;;  prevent regenerating pages if they didn't change
