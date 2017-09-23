@@ -27,10 +27,10 @@
 
 (deftest test-read-page-content
   (testing "should return Clojure data structure resolving all reader macros in process"
-    (is (= {:title "This is a title"
+    (is (= {:template-name "post"
             :resources {}
-            :template-name "post"
-            :content "This is file b.txt"}
+            :data {:title "This is a title"
+                   :content "This is file b.txt"}}
            (read-page-content (io/as-file "dev-resources/page_tests/included_content.edn"))))))
 
 

@@ -1,4 +1,4 @@
-{:title "This is a title"
+{:template-name "post"
  :resources {}
- :template-name "post"
- :content "loaded other.edn"}
+ :data {:title "This is a title"
+        :content "loaded other.edn"}}
