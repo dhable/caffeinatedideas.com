@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources ["taxes.png"]
+ :data {:is-blog-post true
+        :title "Modeling Sales Tax Rates"
+        :tags ["retrospective" "qthru" "startup"]
+        :posted #date "2017-09-23"
+        :content #include "article.md"}}
