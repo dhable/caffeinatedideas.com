@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Benchmarking Clojure Performance with a byte counting InputStream"
+        :tags ["clojure" "performance"]
+        :posted #date "2017-10-25"
+        :content #include "article.md"}}
