@@ -1,6 +1,6 @@
 sudo: false
 language: java
-script: boot -v run-tests
+script: boot run-tests check-source-code
 install:
   - mkdir -p ~/bin
   - export PATH=~/bin:$PATH
