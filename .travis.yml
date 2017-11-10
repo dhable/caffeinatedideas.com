@@ -2,14 +2,13 @@ sudo: false
 language: java
 script: boot run-tests check-source-code
 install:
-  - mkdir -p ~/m2_repo
-  - export BOOT_LOCAL_REPO=~/m2_repo
   - mkdir -p ~/bin
   - export PATH=~/bin:$PATH
   - curl -L https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh -o ~/bin/boot
   - chmod +x ~/bin/boot
 env:
   matrix:
+    # Runs tests twice, using Clj 1.7 and 1.8
     - BOOT_CLOJURE_VERSION=1.8.0
     - BOOT_CLOJURE_VERSION=1.9.0-beta3
 jdk:
