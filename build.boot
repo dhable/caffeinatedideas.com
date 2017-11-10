@@ -2,8 +2,8 @@
   :source-paths #{"src" "tests"}
   :resource-paths #{"resources" "dev-resources"}
   :dependencies   '[[org.clojure/clojure "1.8.0"]
-                    [markdown-clj "0.9.99"]
-                    [selmer "1.10.7"]
+                    [markdown-clj "1.0.1"]
+                    [selmer "1.11.2"]
                     [clj-time "0.14.0"]
                     [boot/core "RELEASE" :scope "test"]
                     [adzerk/boot-test "1.2.0" :scope "test"]
