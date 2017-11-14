@@ -23,7 +23,9 @@
 (boot.lein/generate)
 
 
-(def s3-properties (load-properties "s3.properties"))
+(def s3-properties (if (System/getenv "CI_BUILD")
+                     (java.util.Properties.)
+                     (load-properties "s3.properties")))
 (def target-dir "target")
 
 

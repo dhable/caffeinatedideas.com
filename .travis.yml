@@ -1,15 +1,18 @@
 sudo: false
 language: java
-script: boot assemble
+script: boot run-tests check-source-code
 install:
   - mkdir -p ~/bin
   - export PATH=~/bin:$PATH
   - curl -L https://github.com/boot-clj/boot-bin/releases/download/2.7.2/boot.sh -o ~/bin/boot
   - chmod +x ~/bin/boot
 env:
-  - BOOT_CLOJURE_VERSION=1.8.0
+  global:
+    - BOOT_CLOJURE_VERSION=1.8.0
+    - CI_BUILD=1
 jdk:
   - oraclejdk8
+  - oraclejdk9
 cache:
   directories:
   - $HOME/.m2
