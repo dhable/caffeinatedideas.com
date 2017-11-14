@@ -2,13 +2,13 @@
   :source-paths #{"src" "tests"}
   :resource-paths #{"resources" "dev-resources"}
   :dependencies   '[[markdown-clj "1.0.1"]
-                    [selmer "1.11.2"]
-                    [clj-time "0.14.0"]
+                    [selmer "1.11.3"]
+                    [clj-time "0.14.2"]
                     [boot/core "RELEASE" :scope "test"]
                     [adzerk/boot-test "1.2.0" :scope "test"]
-                    [tolitius/boot-check "0.1.4"]
+                    [tolitius/boot-check "0.1.6"]
                     [onetom/boot-lein-generate "0.1.3" :scope "test"]
-                    [hashobject/boot-s3 "0.1.2-SNAPSHOT"]
+                    [hashobject/boot-s3 "0.1.3-SNAPSHOT"]
                     [pandeiro/boot-http "0.8.3"]])
 
 (require '[adzerk.boot-test :refer :all]
