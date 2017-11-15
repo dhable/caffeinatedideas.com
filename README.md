@@ -7,29 +7,24 @@ Boot script to generate static HTML files from blog content.
 
 This is a rough list of improvements I'd like to make to the site generator:
 
-* Draft Mode
-  A way of keeping all in progress posts in the source tree but excluded from the publish
-  task.
+* Draft Mode: A way of keeping all in progress posts in the source tree but excluded 
+  from the publish task.
   
-* Author UI
-  Build a simple ClojureScript UI that provides a means of editing the content and post
-  metadata files for me. Single click to move from draft to published file.
+* Author UI: Build a simple ClojureScript UI that provides a means of editing the content 
+  and post metadata files for me. Single click to move from draft to published file.
    
-* Link Linter
-  Checks all of the HTML links to ensure that they point to live sites and pages still.
-  Generates a report of all links that need to be addressed.
+* Link Linter: Checks all of the HTML links to ensure that they point to live sites and 
+  pages still. Generates a report of all links that need to be addressed.
   
 * More Unit Test Coverage
 
-* Setup CI Builds
-  Setup a free tier CI build on the repo to avoid having broken unit tests sit too long
-  in the code base.
+* ~~Setup CI Builds: Setup a free tier CI build on the repo to avoid having broken unit tests 
+  sit too long in the code base.~~
   
 * Spell Checker
 
-* Thumbnail Image Handling
-  Provide a new markdown handler to generate thumbnail images and embed those on the main
-  page but provide a link to an expanded version.
+* Thumbnail Image Handling: Provide a new markdown handler to generate thumbnail images and 
+  embed those on the main page but provide a link to an expanded version.
 
 
 ## Licenses
