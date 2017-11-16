@@ -11,7 +11,6 @@ env:
     - CI_BUILD=1
   matrix:
     - BOOT_CLOJURE_VERSION=1.8.0
-    - BOOT_CLOJURE_VERSION=1.9.0-RC1
 jdk:
   - oraclejdk8
   - oraclejdk9
