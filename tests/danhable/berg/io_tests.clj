@@ -1,7 +1,8 @@
 (ns danhable.berg.io-tests
   (:require [clojure.test :refer :all]
             [clojure.java.io :as io]
-            [danhable.berg.io :refer :all]))
+            [danhable.berg.io :refer :all])
+  (:import [java.io IOException]))
 
 
 (deftest test-normalize-extension
@@ -137,6 +138,28 @@
 
 
 (deftest test-relativize
-  (let [actual (relativize "/a/b" "/a/b/c/d.txt")]
-    (is (= "c/d.txt"
-           (str actual)))))
+  (testing "should return path and file portion not specific to base path"
+    (let [actual (relativize "/a/b" "/a/b/c/d.txt")]
+      (is (= "c/d.txt"
+             (str actual)))))
+
+  (testing "should go up directory level base and file are in different paths"
+    (let [actual (relativize "/x/y/z" "/a/b/c/d.txt")]
+      (is (= "../../../a/b/c/d.txt"
+             (str actual)))))
+
+  (testing "should only include the filename if the base path and file path are same"
+    (let [actual (relativize "/a/b/c" "/a/b/c/d.txt")]
+      (is (= "d.txt"
+             (str actual))))))
+
+
+(deftest test-load-properties
+  (testing "should return nil if file doesn't exist"
+    (is (nil? (load-properties "dev-resources/load_properties_test/missing.properties"))))
+
+  (testing "should load valid properties file"
+    (let [actual (load-properties "dev-resources/load_properties_test/test.properties")]
+      (is (= "1" (.getProperty actual "a")))
+      (is (= "2" (.getProperty actual "b")))
+      (is (= "3" (.getProperty actual "c"))))))

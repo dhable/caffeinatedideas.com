@@ -126,8 +126,11 @@
 
 
 (defn load-properties
+  "Wrapper around creating a java.util.Properties instance with the contents from
+  filename. Returns nil if filename does not reference an actual file."
   [filename]
-  (with-open [stream (io/input-stream filename)]
-    (let [props (Properties.)]
-      (.load props stream)
-      props)))
+  (when (.exists (io/file filename))
+    (with-open [stream (io/input-stream filename)]
+      (let [props (Properties.)]
+        (.load props stream)
+        props))))

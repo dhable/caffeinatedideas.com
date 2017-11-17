@@ -43,11 +43,12 @@
   template names and opaque blobs that are enough details for apply-to-page to produce
   rendered output."
   [base-dir]
-  (selmer-util/set-custom-resource-path! (.toURI base-dir))
-  (->> (io+/list-files base-dir :recursive? false :filter (comp not is-private-template-file?))
-       (map #(vector (template-name %1)
-                     (selmer/parse selmer/parse-file (.getName %1) {})))
-       (into {})))
+  (when (.exists base-dir)
+    (selmer-util/set-custom-resource-path! (.toURI base-dir))
+    (->> (io+/list-files base-dir :recursive? false :filter (comp not is-private-template-file?))
+         (map #(vector (template-name %1)
+                       (selmer/parse selmer/parse-file (.getName %1) {})))
+         (into {}))))
 
 
 (defn load-static-files
@@ -55,10 +56,11 @@
   The keys are the path relative to the base-path and the values are java.io.File objects
   for the absolute files."
   [base-dir]
-  (let [base-path (.toPath base-dir)]
-    (->> (io+/list-files base-dir :recursive? true)
-         (map #(vector (str (io+/relativize base-path %1)) %1))
-         (into {}))))
+  (when (.exists base-dir)
+    (let [base-path (.toPath base-dir)]
+      (->> (io+/list-files base-dir :recursive? true)
+           (map #(vector (str (io+/relativize base-path %1)) %1))
+           (into {})))))
 
 
 (defn apply-to-page
