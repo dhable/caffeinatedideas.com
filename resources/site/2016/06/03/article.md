@@ -21,6 +21,7 @@ __Post In The Series__:
 * [QThru Warp Pipe POS Integration](/2016/08/19/qthru-warp-pipe-pos-integration.html)
 * [QThru Data Model](/2017/09/22/qthru-data-model.html)
 * [Modeling Tax Rates](/2017/09/23/modeling-sales-tax-rates.html)
+* [Rebooting QThru](/2017/11/28/rebooting-qthru.html)
 </div>
 </div>
 

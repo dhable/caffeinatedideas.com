@@ -1,0 +1,8 @@
+{:template-name "post"
+ :resources ["weekly_sales.png"
+             "favorites.png"]
+ :data {:is-blog-post true
+        :title "Rebooting QThru"
+        :tags ["retrospective" "qthru" "startup"]
+        :posted #date "2017-11-28"
+        :content #include "article.md"}}
