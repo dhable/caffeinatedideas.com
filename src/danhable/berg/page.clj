@@ -9,14 +9,12 @@
             [danhable.berg.io :as io+]))
 
 
-(defrecord Page [source-file      ; java.io.File instance pointing to EDN source
-                 url-path         ; string pointing to uri destination (becomes target file name later)
-                 template-name    ; string containing the template that can render this
-                 resources        ; list of additional static files in the same dir as source that need to be included
-                 data             ; dict of custom values for this page
-                                  ; way to figure out the publication date? maybe just make it part of the data?
-                 rendered-view    ; string containing application of the template
-                 ])
+(defrecord Page [source-file      #_"java.io.File instance pointing to EDN source"
+                 url-path         #_"string pointing to uri destination (becomes target file name later)"
+                 template-name    #_"string containing the template that can render this"
+                 resources        #_"list of additional static files in the same dir as source that need to be included"
+                 data             #_"dict of custom values for this page"
+                 rendered-view    #_"string containing application of the template" ])
 
 
 (defmulti include-external-content (fn [base-dir filename]
