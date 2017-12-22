@@ -32,7 +32,7 @@
   assemble {:source "resources/site"
             :theme  "resources/themes/default"
             :output target-dir}
-  s3-sync {:source "."
+  s3-sync {:source "target"
            :bucket (.get s3-properties "bucket")
            :access-key (.get s3-properties "access-key")
            :secret-key (.get s3-properties "secret-key")})
