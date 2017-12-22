@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Why Learn a Lisp"
+        :tags ["reflection" "clojure" "lisp"]
+        :posted #date "2017-12-22"
+        :content #include "article.md"}}
