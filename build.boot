@@ -1,12 +1,12 @@
 (set-env!
   :source-paths #{"src" "tests"}
   :resource-paths #{"resources" "dev-resources"}
-  :dependencies   '[[markdown-clj "1.0.1"]
-                    [selmer "1.11.3"]
-                    [clj-time "0.14.2"]
+  :dependencies   '[[markdown-clj "1.0.2"]
+                    [selmer "1.11.7"]
+                    [clj-time "0.14.3"]
                     [boot/core "RELEASE" :scope "test"]
                     [adzerk/boot-test "1.2.0" :scope "test"]
-                    [tolitius/boot-check "0.1.6"]
+                    [tolitius/boot-check "0.1.9"]
                     [onetom/boot-lein-generate "0.1.3" :scope "test"]
                     [hashobject/boot-s3 "0.1.3-SNAPSHOT"]
                     [pandeiro/boot-http "0.8.3"]])
