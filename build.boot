@@ -68,3 +68,9 @@
     (assemble)
     (serve :dir target-dir)))
 
+(deftask start-http
+  "Starts a http server process that serves up the generated site content."
+  []
+  (comp
+    (serve :dir "target")
+    (wait)))
