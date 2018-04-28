@@ -131,6 +131,4 @@
   [filename]
   (when (.exists (io/file filename))
     (with-open [stream (io/input-stream filename)]
-      (let [props (Properties.)]
-        (.load props stream)
-        props))))
+      (doto (Properties.) (.load stream)))))
