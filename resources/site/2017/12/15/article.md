@@ -48,18 +48,18 @@ implementations and estimating approaches, I don't think that goal is achieved. 
 team follows a herding behavior. This can manifest itself in a few different ways:
 
 1. The outliers seek to rejoin the herd. Even though they may have had honest and valid reasons
-for their estimate, they quickly abandon those opinions and resign to the majority estimate value.
-The reasons for concession may be mental fatigue from attending long planning meetings or it could
-be a lack of confidence in their own self to participate in the process.
+ for their estimate, they quickly abandon those opinions and resign to the majority estimate value.
+ The reasons for concession may be mental fatigue from attending long planning meetings or it could
+ be a lack of confidence in their own self to participate in the process.
 
 2. The outliers, even after a lengthy discussion, refuse to change their opinion. At this point
-the lead then needs to make a decision to either ignore their opinion as an outlier or some other
-means of compromise - like picking the middle value. Even with valid points, the remaining members
-of the team might not change their estimates as they don't want to break away from the herd.
+ the lead then needs to make a decision to either ignore their opinion as an outlier or some other
+ means of compromise - like picking the middle value. Even with valid points, the remaining members
+ of the team might not change their estimates as they don't want to break away from the herd.
 
 3. Based on who one of the outliers is, the middle majority will quickly rejoin that individual.
-This mainly happens when one of the outliers is a senior engineer, lead or architect. There must be
-a reason why that individual picked their estimate simply based on their position within the company.
+ This mainly happens when one of the outliers is a senior engineer, lead or architect. There must be
+ a reason why that individual picked their estimate simply based on their position within the company.
 
 In each of these cases, the estimating principals that the group wisdom knows best breaks down into
 individuals steering and controlling the whole estimating process.
