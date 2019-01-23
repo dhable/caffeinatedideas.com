@@ -13,7 +13,6 @@ env:
     - BOOT_CLOJURE_VERSION=1.8.0
 jdk:
   - oraclejdk8
-  - oraclejdk9
 cache:
   directories:
   - $HOME/.m2
