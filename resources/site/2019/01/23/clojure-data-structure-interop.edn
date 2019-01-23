@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Problems with flatten on Java types"
+        :tags ["clojure" "retrospective"]
+        :posted #date "2019-01-23"
+        :content #include "article.md"}}
