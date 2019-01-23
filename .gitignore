@@ -7,3 +7,4 @@ project.clj
 .nrepl-history
 *.swp
 s3.properties
+m2_local/
