@@ -24,18 +24,14 @@
   multiple levels in (separated by a dot between levels). Returns a new collection
   with coll elements sorted by the nested key."
   [coll nested-key]
-  (let [keys (->> (string/split nested-key #"\.")
-                  (map keyword)
-                  vec)]
+  (let [keys (mapv keyword (string/split nested-key #"\."))]
     (sort-by #(get-in % keys) coll)))
 
 
 (defn nested-sort-by-reversed-filter
   "Just like nested-sort-by-filter but in descending order."
   [coll nested-key]
-  (let [keys (->> (string/split nested-key #"\.")
-                  (map keyword)
-                  vec)]
+  (let [keys (mapv keyword (string/split nested-key #"\."))]
     (sort-by #(get-in % keys) (comp - compare) coll)))
 
 
