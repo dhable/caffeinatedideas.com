@@ -8,3 +8,4 @@ project.clj
 *.swp
 s3.properties
 m2_local/
+.idea/
