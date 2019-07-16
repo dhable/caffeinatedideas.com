@@ -88,7 +88,7 @@
                                        (filter-fn path))
                               (swap! results conj (.toFile path)))
                             FileVisitResult/CONTINUE)))
-    @results))
+    (sort @results)))
 
 
 (defn create-tmp-dir!
