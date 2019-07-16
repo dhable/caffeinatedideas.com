@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Building a Clojure to Jython Interop"
+        :tags ["clojure" "jvm"]
+        :posted #date "2019-07-16"
+        :content #include "article.md"}}
