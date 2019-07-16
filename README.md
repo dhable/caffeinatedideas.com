@@ -3,22 +3,28 @@
 Boot script to generate static HTML files from blog content.
 
 
-## Roadmap
+## To Do List
 
-This is a rough list of improvements I'd like to make to the site generator:
+There's a list of things that I need to work on when I get time to do so:
 
-* Draft Mode: A way of keeping all in progress posts in the source tree but excluded 
-  from the publish task.
-  
+* Replace the boot-s3 upload functionality with code local to the project. The
+lib has a bunch of spec violations that's preventing me from moving this repo to
+the latest version of Clojure.
+
+* Upgrade Clojure (see above)
+
 * Link Linter: Checks all of the HTML links to ensure that they point to live sites and 
   pages still. Generates a report of all links that need to be addressed.
-  
+
 * More Unit Test Coverage
 
 * Spell Checker
 
 * Thumbnail Image Handling: Provide a new markdown handler to generate thumbnail images and 
   embed those on the main page but provide a link to an expanded version.
+  
+* Auto linker: Parse through a blog post and suggest things that should become links. Offer to
+insert the links into the markdown.
 
 
 ## Licenses
