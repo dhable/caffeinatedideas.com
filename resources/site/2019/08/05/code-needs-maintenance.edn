@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Code Needs Maintenance"
+        :tags ["idea"]
+        :posted #date "2019-08-05"
+        :content #include "article.md"}}
