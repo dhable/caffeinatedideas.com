@@ -7,11 +7,10 @@ Boot script to generate static HTML files from blog content.
 
 There's a list of things that I need to work on when I get time to do so:
 
-* Replace the boot-s3 upload functionality with code local to the project. The
-lib has a bunch of spec violations that's preventing me from moving this repo to
-the latest version of Clojure.
-
-* Upgrade Clojure (see above)
+* Replace boot with simple deps.edn functionality.
+** Implement assemble command as CLI program (DONE)
+** Implement author command as CLI program
+** Impelement publish command as CLI program
 
 * Link Linter: Checks all of the HTML links to ensure that they point to live sites and 
   pages still. Generates a report of all links that need to be addressed.

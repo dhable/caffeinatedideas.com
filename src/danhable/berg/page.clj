@@ -87,11 +87,6 @@
         (io+/replace-file-extension $ ".html")))
 
 
-(defn make-page-context
-  [page]
-  (get page :data))
-
-
 (defn new-Page
   "Given a page File object, f, create a new instance of the Page record by reading the
   contents of the file and pulling the data apart into the correct fields."

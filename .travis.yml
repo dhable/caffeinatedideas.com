@@ -1,11 +1,11 @@
-sudo: false
+dist: bionic
+sudo: true
 language: java
-script: boot run-tests check-source-code
+script: clj -A:test
 install:
-  - mkdir -p ~/bin
-  - export PATH=~/bin:$PATH
-  - curl -L https://github.com/boot-clj/boot-bin/releases/download/2.7.2/boot.sh -o ~/bin/boot
-  - chmod +x ~/bin/boot
+  - curl -O https://download.clojure.org/install/linux-install-1.10.1.466.sh
+  - chmod +x linux-install-1.10.1.466.sh
+  - sudo ./linux-install-1.10.1.466.sh
 env:
   global:
     - CI_BUILD=1
@@ -13,9 +13,9 @@ env:
     - BOOT_CLOJURE_VERSION=1.8.0
 jdk:
   - openjdk8
+  - openjdk10
+  - openjdk11
 cache:
   directories:
   - $HOME/.m2
-  - $HOME/.boot/cache/bin
-  - $HOME/.boot/cache/lib
-  - $HOME/bin
+  - .cpcache

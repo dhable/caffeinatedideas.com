@@ -1,8 +1,7 @@
-(ns danhable.berg.io-tests
+(ns danhable.berg.io-test
   (:require [clojure.test :refer :all]
             [clojure.java.io :as io]
-            [danhable.berg.io :refer :all])
-  (:import [java.io IOException]))
+            [danhable.berg.io :refer :all]))
 
 
 (deftest test-normalize-extension

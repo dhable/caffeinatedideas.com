@@ -1,4 +1,4 @@
-(ns danhable.berg.theme-tests
+(ns danhable.berg.theme-test
   (:require [clojure.test :refer :all]
             [danhable.berg.theme :refer :all]
             [clojure.java.io :as io])

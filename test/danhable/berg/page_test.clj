@@ -1,4 +1,4 @@
-(ns danhable.berg.page-tests
+(ns danhable.berg.page-test
   (:require [clojure.test :refer :all]
             [danhable.berg.page :refer :all]
             [clojure.java.io :as io]))
