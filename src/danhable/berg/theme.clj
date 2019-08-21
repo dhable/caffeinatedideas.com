@@ -17,7 +17,10 @@
             [danhable.berg.theme.filters :as theme-filters]))
 
 
-(defrecord Theme [name base-dir templates static-files])
+(defrecord Theme [name          #_ "The name of the template, which also happens to be the name of the template directory"
+                  base-dir      #_ "A java.io.File object pointing to the template directory."
+                  templates     #_ "A list of all the non-tmpl .html files in the templates directory. An impl template file starts with an underscore."
+                  static-files  #_ "A list of all files (recursively) in the static directory."])
 
 
 (defn is-private-template-file?
