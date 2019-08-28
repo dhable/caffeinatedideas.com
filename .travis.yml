@@ -1,4 +1,4 @@
-dist: bionic
+dist: xenial
 sudo: true
 language: java
 script: clojure -A:test
@@ -10,6 +10,7 @@ env:
   global:
     - CI_BUILD=1
 jdk:
+  - openjdk8
   - openjdk10
   - openjdk11
 cache:
