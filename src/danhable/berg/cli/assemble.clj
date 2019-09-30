@@ -2,18 +2,8 @@
   "Implementation of the command line utility for assembling the site from source files and a template."
   (:require [clojure.java.io :as io]
             [danhable.berg.site :as site]
-            [danhable.berg.cli.common :refer [exec>]])
+            [danhable.berg.cli.common :refer [exec> site-options]])
   (:import [org.apache.commons.io FileUtils]))
-
-
-(def site-options {:title "Caffeinated Ideas"
-                   :description ""
-                   :author "Dan Hable"
-                   :site-url "http://caffeinatedideas.com"
-                   :date-format "YYYY MMM dd"
-                   :theme "resources/themes/default"
-                   :sources "resources/site"
-                   :target "target"})
 
 
 (defn -main [& _]

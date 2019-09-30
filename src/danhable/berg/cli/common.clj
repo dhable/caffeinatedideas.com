@@ -2,6 +2,16 @@
   "Collection of useful functions to make it easier to write consistent CLI commands.")
 
 
+(def site-options {:title "Caffeinated Ideas"
+                   :description ""
+                   :author "Dan Hable"
+                   :site-url "http://caffeinatedideas.com"
+                   :date-format "YYYY MMM dd"
+                   :theme "resources/themes/default"
+                   :sources "resources/site"
+                   :target "target"})
+
+
 (defmacro timed
   "Like cloure.core/time but instead of printing off the timing with prn, returns a map
   with the form result (:ret) and the nanoseconds taken to execute (:time)."
