@@ -64,9 +64,9 @@ in python. In fact, I'd like to be able to write something that just looks like 
 
 (def PI (myapp.legacy/pi_value))   ; => 3.1415
 
-(def (myapp.legacy/circ 2))        ; => 12.566
+(myapp.legacy/circ 2)              ; => 12.566
 
-(def (myapp.legacy/factorial 4))   ; => 24
+(myapp.legacy/factorial 4)         ; => 24
 ```
 
 In summary, I'd like the `jy/import` function to expose vars in the current namespace that have the same name as their
