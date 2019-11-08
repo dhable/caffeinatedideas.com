@@ -9,7 +9,9 @@
                    :date-format "YYYY MMM dd"
                    :theme "resources/themes/default"
                    :sources "resources/site"
-                   :target "target"})
+                   :target "target"
+                   :bucket "caffeinatedideas.com"
+                   :s3-whitelist #{"keybase.txt"}})
 
 
 (defmacro timed

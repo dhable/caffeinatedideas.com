@@ -10,5 +10,6 @@
                       :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
                                                                :sha     "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}
                       :main-opts   ["-m" "cognitect.test-runner"]}
-           :assemble {:main-opts ["-m" "danhable.berg.cli.assemble"]}}
+           :assemble {:main-opts ["-m" "danhable.berg.cli.assemble"]}
+           :publish  {:main-opts ["-m" "danhable.berg.cli.publish"]}}
 }

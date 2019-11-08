@@ -70,7 +70,7 @@
   "Walk the filesystem starting at cwd and generate a list of java.io.File objects for all
   located files. Optionally takes two key/value pairs with additional options:
 
-    recursive? - a boolean that can limit the file list to a single path or to recursivly
+    recursive? - a boolean that can limit the file list to a single path or to recursively
                  generate a list of files
 
     filter - a function that will be called with each Path object and returns true if the
@@ -132,3 +132,8 @@
   (when (.exists (io/file filename))
     (with-open [stream (io/input-stream filename)]
       (doto (Properties.) (.load stream)))))
+
+(defn content-type
+  "Wrapper around Java 7 NIO method for trying to determine the MIME content type of a file."
+  [f]
+  (Files/probeContentType (as-path f)))
