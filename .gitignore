@@ -10,3 +10,4 @@ s3.properties
 m2_local/
 .idea/
 .cpcache/
+trace.edn
