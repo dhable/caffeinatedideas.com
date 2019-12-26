@@ -11,3 +11,4 @@ m2_local/
 .idea/
 .cpcache/
 trace.edn
+*.iml
