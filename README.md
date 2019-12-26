@@ -8,9 +8,8 @@ Boot script to generate static HTML files from blog content.
 There's a list of things that I need to work on when I get time to do so:
 
 * Replace boot with simple deps.edn functionality.
-** Implement assemble command as CLI program (DONE)
-** Implement author command as CLI program
-** Implement publish command as CLI program
+    * Implement assemble command as CLI program (DONE)
+    * Implement publish command as CLI program (DONE)
 
 * Link Linter: Checks all of the HTML links to ensure that they point to live sites and 
   pages still. Generates a report of all links that need to be addressed.
