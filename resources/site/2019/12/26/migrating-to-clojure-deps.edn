@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Migrating to Clojure Deps"
+        :tags ["clojure"]
+        :posted #date "2019-12-26"
+        :content #include "article.md"}}
