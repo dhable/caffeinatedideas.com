@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "My 2020 Tech Radar"
+        :tags ["planning"]
+        :posted #date "2020-01-15"
+        :content #include "article.md"}}
