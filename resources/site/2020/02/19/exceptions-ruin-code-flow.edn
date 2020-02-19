@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Exceptions Ruin Code Flow"
+        :tags ["design"]
+        :posted #date "2020-02-19"
+        :content #include "article.md"}}
