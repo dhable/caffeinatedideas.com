@@ -7,20 +7,15 @@ Boot script to generate static HTML files from blog content.
 
 There's a list of things that I need to work on when I get time to do so:
 
-* Replace boot with simple deps.edn functionality.
-    * Implement assemble command as CLI program (DONE)
-    * Implement publish command as CLI program (DONE)
-    * Implement new [post | page] command as CLI program - create directories and new files for a post
-    * Incremental assemble
+* New Features
+  * Implement new [post | page] command as CLI program - create directories and new files for a post
+  * Link linter
+  * Link suggestor
 
-* Link Linter: Checks all of the HTML links to ensure that they point to live sites and 
-  pages still. Generates a report of all links that need to be addressed.
-
-* Thumbnail Image Handling: Provide a new markdown handler to generate thumbnail images and 
-  embed those on the main page but provide a link to an expanded version.
-  
-* Auto linker: Parse through a blog post and suggest things that should become links. Offer to
-insert the links into the markdown.
+* Code Improvements
+  * Replace defrecord usage with prismatic schema or spec2
+  * Incremental assemble
+  * New thoughts on file system API
 
 
 ## Licenses
