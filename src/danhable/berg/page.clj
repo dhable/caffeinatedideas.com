@@ -4,9 +4,10 @@
   structure in the code base."
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]
-            [clj-time.format :as time-format]
             [markdown.core :as markdown]
-            [danhable.berg.io :as io+]))
+            [danhable.berg.io :as io+])
+  (:import [java.time.format DateTimeFormatter]
+           [java.time LocalDate]))
 
 
 (defrecord Page [source-file      #_"java.io.File instance pointing to EDN source"
@@ -31,6 +32,9 @@
   [base-dir filename]
   (slurp (io/file base-dir filename)))
 
+(defn date-reader
+  [value]
+  (LocalDate/parse value DateTimeFormatter/ISO_LOCAL_DATE))
 
 (defn read-page-content
   "Reads a page EDN file, f, from disk with custom reader macros defined and returns
@@ -38,7 +42,7 @@
   [f]
   (let [base-dir (.getParent f)
         custom-reader-macros {'include (partial include-external-content base-dir)
-                              'date (partial time-format/parse (time-format/formatter "yyyy-MM-dd"))}]
+                              'date date-reader}]
     (try
       (with-open [reader (io+/pushback-reader f)]
         (edn/read {:readers custom-reader-macros} reader))

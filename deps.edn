@@ -1,14 +1,13 @@
-{:deps    {markdown-clj                {:mvn/version "1.0.7"}
-           selmer                      {:mvn/version "1.11.7"}
-           clj-time                    {:mvn/version "0.15.1"}
+{:deps    {markdown-clj                {:mvn/version "1.10.4"}
+           selmer                      {:mvn/version "1.12.23"}
            commons-io                  {:mvn/version "2.6"}
-           com.cognitect.aws/api       {:mvn/version "0.8.352"}
-           com.cognitect.aws/endpoints {:mvn/version "1.1.11.602"}
-           com.cognitect.aws/s3        {:mvn/version "726.2.488.0"}}
+           com.cognitect.aws/api       {:mvn/version "0.8.456"}
+           com.cognitect.aws/endpoints {:mvn/version "1.1.11.753"}
+           com.cognitect.aws/s3        {:mvn/version "784.2.593.0"}}
 
  :aliases {:test     {:extra-paths ["test"]
                       :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                                                               :sha     "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}
+                                                               :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
                       :main-opts   ["-m" "cognitect.test-runner"]}
            :assemble {:main-opts ["-m" "danhable.berg.cli.assemble"]}
            :publish  {:main-opts ["-m" "danhable.berg.cli.publish"]}}

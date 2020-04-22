@@ -4,7 +4,6 @@
   make the process of writing templates easier and with less code even if
   the same functionality could be achieved using built in filters."
   (:require [clojure.string :as string]
-            [clj-time.core :as clj-time]
             [selmer.filters :as selmer-filters]))
 
 
@@ -16,7 +15,7 @@
   (let [ks [:data :posted]]
     (->> coll
          (filter #(not (nil? (get-in % ks))))
-         (group-by #(clj-time/year (get-in % ks))))))
+         (group-by #(.getYear (get-in % ks))))))
 
 
 (defn nested-sort-by-filter
