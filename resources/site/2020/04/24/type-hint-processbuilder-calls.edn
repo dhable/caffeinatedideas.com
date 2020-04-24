@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "Type Hint ProcessBuilder Calls"
+        :tags ["clojure"]
+        :posted #date "2020-04-24"
+        :content #include "article.md"}}
