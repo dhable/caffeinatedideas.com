@@ -1,6 +1,6 @@
 # Caffeinated Ideas Static Site
 
-Boot script to generate static HTML files from blog content.
+Clojure project to generate static HTML files from blog content.
 
 
 ## To Do List
