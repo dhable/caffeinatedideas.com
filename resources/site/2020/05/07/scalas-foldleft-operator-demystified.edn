@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources ["left.png" "right.png"]
+ :data {:is-blog-post true
+        :title "Scala's foldLeft Operator Demystified"
+        :tags ["scala"]
+        :posted #date "2020-05-07"
+        :content #include "article.md"}}
