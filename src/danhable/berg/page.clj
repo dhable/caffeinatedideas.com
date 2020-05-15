@@ -4,7 +4,7 @@
   structure in the code base."
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]
-            [markdown.core :as markdown]
+            [danhable.berg.commonmark :as commonmark]
             [danhable.berg.io :as io+])
   (:import [java.time.format DateTimeFormatter]
            [java.time LocalDate]))
@@ -25,8 +25,7 @@
   [base-dir filename]
   (-> (io/file base-dir filename)
       slurp
-      (markdown/md-to-html-string :reference-links? true
-                                  :footnotes? true)))
+      commonmark/md-to-html-string))
 
 (defmethod include-external-content :default
   [base-dir filename]
