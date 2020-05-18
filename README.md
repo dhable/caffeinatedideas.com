@@ -2,6 +2,8 @@
 
 Clojure project to generate static HTML files from blog content.
 
+[![Build Status](https://travis-ci.org/dhable/caffeinatedideas.com.svg?branch=master)](https://travis-ci.org/dhable/caffeinatedideas.com)
+
 
 ## To Do List
 
