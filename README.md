@@ -24,7 +24,7 @@ There's a list of things that I need to work on when I get time to do so:
 
 ### Clojure Source Code
 
-   Copyright 2017 Daniel T. Hable.
+   Copyright 2017-2020 Daniel T. Hable.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
