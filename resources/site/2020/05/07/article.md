@@ -33,11 +33,27 @@ Now we can graph each of the function applications where the function, + in our 
 is a node with two children pointers and the elements of the list, ints in our example, are
 leafs.The tree for the foldLeft operations visually then becomes
 
-![Left operators](left.png)
+```
+       +
+      / \
+     +   3
+    / \
+   +   2
+  / \
+ 0   1
+```
 
 and the foldRight visually becomes
 
-![right operators](right.png)
+```
+   +
+  / \
+ 1   +
+    / \
+   2   +
+      / \
+     3   0
+```
 
 When visualized this way, the symbolic versions of foldLeft, `/:`, and foldRight, `\:`, are
 visual hints as to the order of function application. 
