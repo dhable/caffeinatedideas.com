@@ -1,5 +1,5 @@
 {:template-name "post"
- :resources ["left.png" "right.png"]
+ :resources []
  :data {:is-blog-post true
         :title "Scala's foldLeft Operator Demystified"
         :tags ["scala"]
