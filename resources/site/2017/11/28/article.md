@@ -11,11 +11,13 @@ needed as Aaron was unable to book any deals since we got funding. With that sin
 answer, I started helping produce a plan to adjust course with QThru assuming that the
 company could be taken over.   
 
-<div class="alert alert-info">
+<div class="highlight-box">
+
 This is the sixth in a series of retrospective thoughts on QThru, a mobile
 self checkout startup that went bust. See my
 "[QThru Series](/2016/06/03/the-qthru-series.html)" post for a list of all the
 topics.
+
 </div>
 
 On a sunny July afternoon, I ended up meeting the individual who would take over as CEO

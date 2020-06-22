@@ -3,11 +3,13 @@
 >
 > -- Gordon Gekko
 
-<div class="alert alert-info">
+<div class="highlight-box">
+
 This is the second in a series of retrospective thoughts on QThru, a mobile
 self checkout startup that went bust. See my
 "[QThru Series](/2016/06/03/the-qthru-series.html)" post for a list of all the
 topics.
+
 </div>
 
 In 2009, the smartphone app market was on fire. Apple's decision to release a

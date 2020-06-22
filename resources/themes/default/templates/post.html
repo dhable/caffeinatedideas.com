@@ -4,7 +4,7 @@
 
 <div class="post">
     <h1 class="post-title">{{data.title}}</h1>
-    <span class="post-date">{{data.posted|date:longDate}}</span>
+    <div class="post-date">Posted on {{data.posted|date:longDate}}</div>
     {{data.content|safe}}
     <div id="disqus_thread"></div>
     <script type="text/javascript">

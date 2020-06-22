@@ -13,8 +13,8 @@ become the first, and currently unpaid, full time employee for QThru.
 
 ![QThru Website circa May 2013](banner.jpg)
 
-<div class="card">
-<div class="card-block">
+<div class="highlight-box">
+
 __Post In The Series__:
 * [QThru Business Model](/2016/06/16/qthru-business-model.html)
 * [QThru Platform Architecture](/2016/06/28/qthru-platform-architecture.html)
@@ -22,7 +22,7 @@ __Post In The Series__:
 * [QThru Data Model](/2017/09/22/qthru-data-model.html)
 * [Modeling Tax Rates](/2017/09/23/modeling-sales-tax-rates.html)
 * [Rebooting QThru](/2017/11/28/rebooting-qthru.html)
-</div>
+
 </div>
 
 Honestly, this was the most fun I've had professionally. We spent the

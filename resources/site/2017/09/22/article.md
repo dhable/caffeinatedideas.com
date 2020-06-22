@@ -9,11 +9,13 @@ of operation, the data model was transformed and enriched as we better understoo
 the domain. In this post, I'm going to point out some of the decisions we made 
 about our data model and whether they were helpful or not.  
 
-<div class="alert alert-info">
+<div class="highlight-box">
+
 This is the fourth in a series of retrospective thoughts on QThru, a mobile
 self checkout startup that went bust. See my
 "[QThru Series](/2016/06/03/the-qthru-series.html)" post for a list of all the
 topics.
+
 </div>
 
 

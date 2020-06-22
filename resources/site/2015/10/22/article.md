@@ -45,10 +45,12 @@ about the problem I'm solving.
 
 It's a good thing I decided to write a unit test before shipping. :)
 
-<div class="alert alert-info">
+<div class="highlight-box">
+
 __27 Dec 2015__: I updated the title of this post to better reflect the fact that
 in addition to enabling macros, s-expressions also make the syntax rules
 easy for the humans.
+
 </div>
 
 [1]: http://stackoverflow.com/a/14484711/67927

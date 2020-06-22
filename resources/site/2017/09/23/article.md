@@ -8,11 +8,13 @@ Retailers with physical locations very often collect and submit that tax on beha
 consumer to make the transaction easier. This means that any point of sale needs to have 
 support built in to compute and add the sales tax on to the cart. 
 
-<div class="alert alert-info">
+<div class="highlight-box">
+
 This is the fifth in a series of retrospective thoughts on QThru, a mobile
 self checkout startup that went bust. See my
 "[QThru Series](/2016/06/03/the-qthru-series.html)" post for a list of all the
 topics.
+
 </div>
 
 At QThru, we wanted to easy the setup process for business owners setting up their retail

@@ -3,9 +3,9 @@
 {% block content %}
     {% with posts_by_year = site.pages|group-by-year %}
         {% for year, posts in posts_by_year|sort-reversed %}
-            <div class="archive-year">
+            <h2 class="archive-year">
                 <i class="fa fa-calendar-o fa-fw"></i>&nbsp;{{year}}
-            </div>
+            </h2>
             <ul class="archive-content">
                 {% for p in posts|nested-sort-by-reversed:data.posted %}
                 <li>

@@ -12,12 +12,14 @@ systems and that we could just use a copy of that data file. This was not true.
 We also assumed that the pricing managers and staff at the grocery stores would
 comfortable setting up the import program. This was also not true.
 
- <div class="alert alert-info">
- This is the fourth in a series of retrospective thoughts on QThru, a mobile
+ <div class="highlight-box">
+
+This is the fourth in a series of retrospective thoughts on QThru, a mobile
  self checkout startup that went bust. See my
  "[QThru Series](/2016/06/03/the-qthru-series.html)" post for a list of all the
  topics.
- </div>
+
+</div>
 
 Our assumptions generated some friction with potential customers during the sales
 cycle. We also had a skew of additional problems with data consistency. We learned

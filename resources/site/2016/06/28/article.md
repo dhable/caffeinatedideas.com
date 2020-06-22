@@ -7,11 +7,13 @@ important to publish what we learned from building a mobile commerce company
 by a set of engineers that only had experience in the email and message space.
 What we designed had some good parts but also some failures.
 
-<div class="alert alert-info">
+<div class="highlight-box">
+
 This is the third in a series of retrospective thoughts on QThru, a mobile
 self checkout startup that went bust. See my
 "[QThru Series](/2016/06/03/the-qthru-series.html)" post for a list of all the
 topics.
+
 </div>
 
 Much of the architecture of QThru was created in an evolutionary manner over
