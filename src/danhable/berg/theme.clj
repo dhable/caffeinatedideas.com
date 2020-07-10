@@ -25,7 +25,7 @@
 
 (defn is-private-template-file?
   "Predicate function that returns true if path is a java.nio.file.Path to a
-  private teamplate file. These are files that start their filename with an
+  private template file. These are files that start their filename with an
   underscore and are only used as imports from other templates."
   [path]
   (if path

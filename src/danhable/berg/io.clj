@@ -17,7 +17,7 @@
 
 
 (defn normalize-extension
-  "Takes some text indended to be used as an extension for a filename and
+  "Takes some text intended to be used as an extension for a filename and
   normalizes to ensure that it starts with a dot. If the extension text
   already starts with a dot, is of 0 length or nil then that value is
   returned unaltered."
@@ -32,7 +32,7 @@
 
 (defn trim-extension
   "Takes a filename string and returns the filename without the extension or the
-  dot seperator. If the filename is nil or doesn't contain an extension, the value
+  dot separator. If the filename is nil or doesn't contain an extension, the value
   is simply returned."
   [^String filename]
   (when filename

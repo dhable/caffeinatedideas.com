@@ -104,7 +104,7 @@
 
 
 (defn load-all-pages
-  "Given a base directory, recursivly looks for all EDN files and creates Page objects
+  "Given a base directory, recursively looks for all EDN files and creates Page objects
   for them."
   [base-dir]
   (map (partial new-Page base-dir) (io+/list-files base-dir :recursive? true
