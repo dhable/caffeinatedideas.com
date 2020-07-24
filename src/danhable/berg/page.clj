@@ -4,18 +4,22 @@
   structure in the code base."
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]
+            [schema.core :as s]
             [danhable.berg.commonmark :as commonmark]
             [danhable.berg.io :as io+])
   (:import [java.time.format DateTimeFormatter]
            [java.time LocalDate]))
 
 
-(defrecord Page [source-file      #_"java.io.File instance pointing to EDN source"
-                 url-path         #_"string pointing to uri destination (becomes target file name later)"
-                 template-name    #_"string containing the template that can render this"
-                 resources        #_"list of additional static files in the same dir as source that need to be included"
-                 data             #_"dict of custom values for this page"
-                 rendered-view    #_"string containing application of the template" ])
+(s/defschema PageType
+  "Defines a map object containing all the attributes that represent a source page
+  from disk. This is what's translated into an output page when compiled."
+  {:source-file io+/FileType
+   :url-path io+/FileType
+   :template-name s/Str
+   :resources (s/maybe [s/Str])
+   :data s/Any ;; Opaque content that is consumed by the individual template pages
+   (s/optional-key :rendered-view) (s/maybe s/Str)})
 
 
 (defmulti include-external-content (fn [base-dir filename]
@@ -31,14 +35,14 @@
   [base-dir filename]
   (slurp (io/file base-dir filename)))
 
-(defn date-reader
-  [value]
+(s/defn date-reader :- LocalDate
+  [value :- s/Str]
   (LocalDate/parse value DateTimeFormatter/ISO_LOCAL_DATE))
 
-(defn read-page-content
+(s/defn read-page-content :- s/Any
   "Reads a page EDN file, f, from disk with custom reader macros defined and returns
   the contents as a Clojure data structure."
-  [f]
+  [f :- io+/FileType]
   (let [base-dir (.getParent f)
         custom-reader-macros {'include (partial include-external-content base-dir)
                               'date date-reader}]
@@ -50,22 +54,23 @@
         (throw e)))))
 
 
-(defn is-page-source?
+(s/defn is-page-source? :- s/Bool
   "Predicate function to determine whether a java.nio.files.Path instance references
   a valid site source file. Valid site sources have a .edn extension."
-  [path]
+  [path :- (s/maybe io+/PathType)]
   (if path
     (.. path getFileName toString (endsWith ".edn"))
     false))
 
 
-(defn get-resource-files
-  [src-file res-list]
-  (map #(io/file (.getParent src-file) %) res-list))
+(s/defn get-resource-files :- (s/maybe [io+/FileType])
+  [src-file :- io+/FileType, res-list :- (s/maybe [s/Str])]
+  (let [parent-dir (.getParent src-file)]
+    (map #(io/file parent-dir %) res-list)))
 
 
-(defn write-resource-file
-  [page resource target-dir]
+(s/defn write-resource-file :- nil
+  [page :- PageType, resource :- io+/FileType, target-dir :- io+/FileType]
   (let [resource-name (.getName resource)
         dest-dir (io/file target-dir (.getParent (:url-path page)))
         dest-resource (io/file dest-dir resource-name)]
@@ -73,8 +78,8 @@
     (io/copy resource dest-resource)))
 
 
-(defn write-rendered-page
-  [page target-dir]
+(s/defn write-rendered-page :- nil
+  [page :- PageType, target-dir :- io+/FileType]
   (let [target-file (io/file target-dir (:url-path page))]
     (io+/touch! target-file)
     (spit target-file (:rendered-view page)))
@@ -82,30 +87,29 @@
     (write-resource-file page resource target-dir)))
 
 
-(defn generate-relative-page-url
-  [src-file rel-base]
+(s/defn generate-relative-page-url :- io+/FileType
+  [src-file :- io+/FileType, rel-base :- io+/FileType]
   (as-> src-file $
         (io+/relativize rel-base $)
         (.toFile $)
         (io+/replace-file-extension $ ".html")))
 
 
-(defn new-Page
+(s/defn new-Page :- PageType
   "Given a page File object, f, create a new instance of the Page record by reading the
   contents of the file and pulling the data apart into the correct fields."
-  [base-dir f]
+  [base-dir :- io+/FileType, f :- io+/FileType]
   (let [content (read-page-content f)]
-    (map->Page {:source-file   f
-                :url-path      (generate-relative-page-url f base-dir)
-                :template-name (get content :template-name)
-                :resources     (get-resource-files f (get content :resources))
-                :data          (get content :data)
-                })))
+    {:source-file   f
+     :url-path      (generate-relative-page-url f base-dir)
+     :template-name (get content :template-name)
+     :resources     (get-resource-files f (get content :resources))
+     :data          (get content :data)}))
 
 
-(defn load-all-pages
+(s/defn load-all-pages :- [PageType]
   "Given a base directory, recursively looks for all EDN files and creates Page objects
   for them."
-  [base-dir]
+  [base-dir :- io+/FileType]
   (map (partial new-Page base-dir) (io+/list-files base-dir :recursive? true
                                                             :filter is-page-source?)))

@@ -1,4 +1,4 @@
 {:template-name "post"
- :resources {}
+ :resources []
  :data {:title "This is a title"
         :content "loaded other.edn"}}

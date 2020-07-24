@@ -2,11 +2,18 @@
   "Enhanced I/O functions that extend and build upon the clojure.java.io namespace,
   java.io package and the java.nio.files package."
   (:require [clojure.java.io :as io]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [schema.core :as s])
   (:import [java.io PushbackReader File]
            [java.util EnumSet Properties]
            [java.nio.file Files FileVisitOption FileVisitResult SimpleFileVisitor Path]
            [java.nio.file.attribute FileAttribute]))
+
+
+(s/defschema PathType (s/pred #(instance? Path %) "Required java.nio.file.Path object instance"))
+
+
+(s/defschema FileType (s/pred #(instance? File %) "Required java.io.File object instance"))
 
 
 (defn pushback-reader
@@ -41,12 +48,12 @@
       filename)))
 
 
-(defn get-file-extension
+(s/defn get-file-extension :- (s/maybe s/Str)
   "Takes a filename string and returns the extension, which is defined to be the
   part of the filename after the right most dot character. If the filename is nil,
   the value returned is nil. In cases where there is no extension, an empty string
   is returned."
-  [^String filename]
+  [filename :- (s/maybe s/Str)]
   (when filename
     (if-let [ext-pos (str/last-index-of filename ".")]
       (subs filename ext-pos)
@@ -91,11 +98,11 @@
     (sort @results)))
 
 
-(defn create-tmp-dir!
+(s/defn create-tmp-dir! :- FileType
   "Wrapper around Java NIO Files implementation of createTempDirectory that defaults the
   file attributes and also sets the directory to delete on exit when finishing up. Returns
   a java.io.File instance to a new temp directory."
-  [prefix]
+  [prefix :- s/Str]
   (let [default-attr (make-array FileAttribute 0)
         tmp-dir-path (Files/createTempDirectory prefix default-attr)
         tmp-dir-file (.toFile tmp-dir-path)]
@@ -103,9 +110,9 @@
     tmp-dir-file))
 
 
-(defn touch!
+(s/defn touch! :- nil
   "Creates file f and all parent directories if they don't already exist. Returns nil."
-  [f]
+  [f :- FileType]
   (.mkdirs (.getParentFile f))
   (.createNewFile f))
 

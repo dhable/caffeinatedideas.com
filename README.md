@@ -15,7 +15,6 @@ There's a list of things that I need to work on when I get time to do so:
   * Link suggestor
 
 * Code Improvements
-  * Replace defrecord usage with prismatic schema or spec2
   * Incremental assemble
   * New thoughts on file system API
 

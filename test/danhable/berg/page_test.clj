@@ -1,7 +1,10 @@
 (ns danhable.berg.page-test
   (:require [clojure.test :refer :all]
+            [schema.test :as schema-test]
             [danhable.berg.page :refer :all]
             [clojure.java.io :as io]))
+
+(use-fixtures :once schema-test/validate-schemas)
 
 
 (deftest test-is-page-source
@@ -28,7 +31,7 @@
 (deftest test-read-page-content
   (testing "should return Clojure data structure resolving all reader macros in process"
     (is (= {:template-name "post"
-            :resources {}
+            :resources []
             :data {:title "This is a title"
                    :content "This is file b.txt"}}
            (read-page-content (io/as-file "dev-resources/page_tests/included_content.edn"))))))

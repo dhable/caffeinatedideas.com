@@ -1,9 +1,13 @@
 (ns danhable.berg.theme-test
   (:require [clojure.test :refer :all]
+            [schema.test :as schema-test]
             [danhable.berg.theme :refer :all]
             [clojure.java.io :as io])
   (:import [java.nio.file Files]
            [java.nio.file.attribute FileAttribute]))
+
+
+(use-fixtures :once schema-test/validate-schemas)
 
 
 (deftest test-is-private-template-file?

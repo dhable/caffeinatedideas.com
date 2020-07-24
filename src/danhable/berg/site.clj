@@ -6,18 +6,26 @@
   that logic out at this point."
   (:require [clojure.set :as set]
             [clojure.java.io :as io]
+            [schema.core :as s]
             [danhable.berg.page :as page]
-            [danhable.berg.theme :as theme]))
+            [danhable.berg.theme :as theme]
+            [danhable.berg.io :as io+]))
 
 
-(defrecord Site [pages theme conf target-dir tags])
+(s/defschema SiteType
+  "Defines the attributes of the Site, which is a collection of all pages and a theme."
+  {:pages [page/PageType]
+   :theme theme/ThemeType
+   :conf s/Any
+   :target-dir io+/FileType
+   :tags [s/Str]})
 
 
-(defn build-tag-set
+(s/defn build-tag-set :- [s/Str]
   "Given a sequence of pages, returns a set of all the tags contained in the page
   data. Returns an empty set if pages is nil, empty or no :tags element is present
   in the page data."
-  [pages]
+  [pages :- [page/PageType]]
   (transduce (comp
                (map #(get-in % [:data :tags]))
                (map set))
@@ -26,25 +34,25 @@
              pages))
 
 
-(defn template-context
-  [site page]
+(s/defn template-context :- s/Any
+  [site :- SiteType, page :- page/PageType]
   {:site (merge (select-keys site [:tags :pages])
                 (select-keys (:conf site) [:title :description :author :date-format :site-url]))
    :data (get page :data)})
 
 
-(defn new-Site
+(s/defn new-Site :- SiteType
   [{:keys [sources target theme] :as options}]
   (let [pages (page/load-all-pages (io/file sources))]
-    (map->Site {:conf options
-                :target-dir (io/file target)
-                :pages pages
-                :theme (theme/new-Theme (io/file theme))
-                :tags (build-tag-set pages)})))
+    {:conf options
+     :target-dir (io/file target)
+     :pages pages
+     :theme (theme/new-Theme (io/file theme))
+     :tags (build-tag-set pages)}))
 
 
-(defn generate-site-pages
-  [site]
+(s/defn generate-site-pages :- SiteType
+  [site :- SiteType]
   (let [{:keys [pages theme]} site
         post-rendered-pages (map #(let [context (template-context site %1)
                                         rendered-page (theme/apply-to-page theme %1 context)]
@@ -52,16 +60,16 @@
     (assoc site :pages post-rendered-pages)))
 
 
-(defn write-to-disk
-  [site]
+(s/defn write-to-disk :- nil
+  [site :- SiteType]
   (let [target-dir (:target-dir site)]
     (theme/copy-static-files (:theme site) target-dir)
     (doseq [p (:pages site)]
       (page/write-rendered-page p target-dir))))
 
 
-(defn assemble-site
-  [site-options]
+(s/defn assemble-site :- nil
+  [site-options :- s/Any]
   (-> (new-Site site-options)
       generate-site-pages
       write-to-disk))
