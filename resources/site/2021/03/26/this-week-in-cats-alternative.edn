@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "This Week in Cats: Alternative"
+        :tags ["fp" "scala" "cats"]
+        :posted #date "2021-03-26"
+        :content #include "article.md"}}
