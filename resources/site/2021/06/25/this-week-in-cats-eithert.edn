@@ -1,0 +1,7 @@
+{:template-name "post"
+ :resources []
+ :data {:is-blog-post true
+        :title "This Week in Cats: EitherT"
+        :tags ["fp" "scala" "cats"]
+        :posted #date "2021-06-25"
+        :content #include "article.md"}}

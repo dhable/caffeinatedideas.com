@@ -12,3 +12,4 @@ m2_local/
 .cpcache/
 trace.edn
 *.iml
+.lsp/
