@@ -1,7 +1,0 @@
-{:template-name "post"
- :resources []
- :data {:is-blog-post true
-        :title "Task Queues Over Threads"
-        :tags ["python" "concurrency"]
-        :posted #date "2012-01-06"
-        :content #include "article.md"}}

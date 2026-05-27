@@ -1,8 +1,0 @@
-{:template-name "post"
- :resources ["nosql.png"
-             "springmvc.png"]
- :data {:is-blog-post true
-        :title "Smarter Architectures with NoSQL"
-        :tags ["idea"]
-        :posted #date "2013-06-16"
-        :content #include "article.md"}}
