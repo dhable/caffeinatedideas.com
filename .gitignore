@@ -1,15 +1,25 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+hugo_stats.json
+
+# Hugo modules
+/.hugo_modules/
+
+# Dart Sass
+.sass-cache/
+
+# OS files
 .DS_Store
-_site
-.env
-target/
-resources/public/
-project.clj
-.nrepl-history
-*.swp
-s3.properties
-m2_local/
+Thumbs.db
+
+# Editor files
 .idea/
-.cpcache/
-trace.edn
+.vscode/
 *.iml
-.lsp/
+*.swp
+*.swo
+
+# Environment
+.env

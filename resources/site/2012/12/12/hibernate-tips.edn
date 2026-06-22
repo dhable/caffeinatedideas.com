@@ -1,7 +1,0 @@
-{:template-name "post"
- :resources {}
- :data {:is-blog-post true
-        :title "Hibernate Tips"
-        :tags ["java" "database"]
-        :posted #date "2012-12-12"
-        :content #include "article.md"}}

@@ -1,0 +1,18 @@
+baseURL = 'https://caffeinatedideas.com/'
+locale = 'en-us'
+title = 'Caffeinated Ideas'
+theme = 'hugo-theme-m10c'
+
+[params]
+avatar = "/img/avatar.png"
+description = "Solutions and half-baked-but-interesting ideas about software, sparked somewhere between the first and second cup."
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params.style]
+darkestColor = "#242930"
+darkColor = "#353b43"
+lightColor = "#afbac4"
+lightestColor = "#ffffff"
+primaryColor = "#ffb000"

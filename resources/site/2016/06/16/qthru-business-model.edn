@@ -1,7 +1,0 @@
-{:template-name "post"
- :resources ["lines.jpg"]
- :data {:is-blog-post true
-        :title "QThru: The Business Model"
-        :tags ["retrospective" "qthru" "startup"]
-        :posted #date "2016-06-16"
-        :content #include "article.md"}}

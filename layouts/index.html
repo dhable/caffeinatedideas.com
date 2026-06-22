@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <article>
+    {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
+    {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
+    {{ $posts := where .Site.RegularPages "Type" "posts" }}
+    {{ range $posts.GroupByDate "2006" }}
+      <h2 class="posts-list-year">{{ .Key }}</h2>
+      <ul class="posts-list">
+        {{ range .Pages }}
+          <li class="posts-list-item">
+            <a class="posts-list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="posts-list-item-description">
+              {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+              {{ .PublishDate.Format "Jan 2, 2006" }}
+              <span class="posts-list-item-separator">-</span>
+              {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+              {{ .ReadingTime }} min read
+            </span>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </article>
+{{ end }}
