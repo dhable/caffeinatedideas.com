@@ -1,0 +1,136 @@
+# robots.txt - blocks AI training crawlers to reduce hosting/bandwidth costs
+# Note: robots.txt is advisory; only well-behaved crawlers honor it.
+
+# --- OpenAI ---
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# --- Anthropic ---
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+# --- Google (AI training opt-out only; Googlebot search unaffected) ---
+User-agent: Google-Extended
+Disallow: /
+
+# --- Common Crawl (feeds many LLM training sets) ---
+User-agent: CCBot
+Disallow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Disallow: /
+
+# --- Meta (most restrictive: AI crawlers AND link-preview fetchers) ---
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+User-agent: meta-externalfetcher
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: Facebot
+Disallow: /
+
+# --- ByteDance ---
+User-agent: Bytespider
+Disallow: /
+
+# --- Amazon ---
+User-agent: Amazonbot
+Disallow: /
+
+# --- Apple (AI training opt-out only; Applebot search unaffected) ---
+User-agent: Applebot-Extended
+Disallow: /
+
+# --- Cohere ---
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+# --- Grok ---
+User-agent: GrokBot
+Disallow: /
+
+User-agent: xAI-Grok
+Disallow: /
+
+User-agent: Grok-DeepSearch
+Disallow: /
+
+# --- Other AI/scraper bots ---
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: PanguBot
+Disallow: /
+
+User-agent: DuckAssistBot
+Disallow: /
+
+User-agent: ISSCyberRiskCrawler
+Disallow: /
+
+User-agent: FriendlyCrawler
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+# --- User-initiated AI fetches: explicitly allowed ---
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# --- Everything else: allowed ---
+User-agent: *
+Allow: /
